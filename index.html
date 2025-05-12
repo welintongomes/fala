@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Substituidor de Sinônimos</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="manifest" href="manifest.json">
+    <link rel="shortcut icon" href="icon-512x512.png" type="image/png">
+</head>
+
+<body>
+    <header>
+        <h1></h1>
+        <p>Substitua suas palavras para enriquecer o texto</p>
+    </header>
+
+    <div class="container">
+        <div class="tabs">
+            <button class="tab active" data-tab="editor">Editor de Texto</button>
+            <button class="tab" data-tab="gerenciador">Gerenciar Sinônimos</button>
+        </div>
+
+        <!-- Aba 1: Editor de Texto -->
+        <div id="editor" class="tab-content active">
+            <div class="form-group texto-container">
+                <label for="textoEntrada">Digite ou cole seu texto:</label>
+                <textarea id="textoEntrada" placeholder="Digite ou cole seu texto aqui..."></textarea>
+                <button id="botaoMic" title="Usar microfone"><i class="mic-icon"></i></button>
+            </div>
+
+            <div class="btn-group">
+                <button id="processar" class="btn">Processar</button>
+                <button id="copiar" class="btn btn-success">Copiar</button>
+                <button id="limpar" class="btn btn-secondary">Limpar</button>
+            </div>
+
+            <h3>Texto com Sinônimos</h3>
+            <div id="resultado"></div>
+
+            <div class="sinonimos-area">
+                <h3>Sinônimos Disponíveis</h3>
+
+                <div class="pesquisa-sinonimos">
+                    <input type="text" id="filtroSinonimos" placeholder="Filtrar sinônimos disponíveis...">
+                    <small>Digite para filtrar as palavras com sinônimos disponíveis</small>
+                </div>
+
+                <div id="sinonimosArea">
+                    <!-- Os sinônimos serão inseridos aqui dinamicamente -->
+                </div>
+            </div>
+        </div>
+
+        <!-- Aba 2: Gerenciador de Sinônimos -->
+        <div id="gerenciador" class="tab-content">
+            <div class="form-group">
+                <label for="termoPesquisa">Pesquisar sinônimos:</label>
+                <input type="text" id="termoPesquisa" placeholder="Digite uma palavra para pesquisar...">
+            </div>
+
+            <div id="resultadosPesquisa" class="mb-2">
+                <!-- Resultados da pesquisa serão inseridos aqui -->
+            </div>
+
+            <h3>Adicionar ou Editar Sinônimo</h3>
+            <form id="formSinonimos" class="form-sinonimos">
+                <div class="form-group">
+                    <label for="novaPalavra">Palavra:</label>
+                    <input type="text" id="novaPalavra" placeholder="Digite uma palavra" required>
+                </div>
+                <div class="form-group">
+                    <label for="novosSinonimos">Sinônimos (separados por vírgula):</label>
+                    <textarea id="novosSinonimos" placeholder="Digite os sinônimos separados por vírgula"
+                        required></textarea>
+                </div>
+                <div class="btn-group">
+                    <button type="button" id="btnSalvar" class="btn">Salvar</button>
+                    <button type="button" id="btnCancelar" class="btn btn-secondary">Cancelar</button>
+                </div>
+            </form>
+
+            <!-- <div class="mt-2">
+                <h3>Todos os Sinônimos</h3>
+                <div id="listaSinonimos">
+                     Lista de sinônimos será inserida aqui 
+                </div>
+            </div> -->
+
+            <div class="btn-group mt-2">
+                <button id="btnExportar" class="btn">Exportar Sinônimos</button>
+                <label for="importarArquivo" class="btn">Importar Sinônimos</label>
+                <input type="file" id="importarArquivo" style="display: none" accept=".json">
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+    <script>
+        // Script para alternar entre abas
+        document.addEventListener('DOMContentLoaded', function () {
+            // Funcionamento das abas
+            const tabs = document.querySelectorAll('.tab');
+            tabs.forEach(tab => {
+                tab.addEventListener('click', function () {
+                    // Remover classe active de todas as abas
+                    tabs.forEach(t => t.classList.remove('active'));
+
+                    // Adicionar classe active à aba clicada
+                    this.classList.add('active');
+
+                    // Mostrar o conteúdo correspondente
+                    const tabContent = document.querySelectorAll('.tab-content');
+                    tabContent.forEach(content => content.classList.remove('active'));
+
+                    const targetId = this.getAttribute('data-tab');
+                    document.getElementById(targetId).classList.add('active');
+                });
+            });
+
+            // Botão limpar
+            if (document.getElementById('limpar')) {
+                document.getElementById('limpar').addEventListener('click', function () {
+                    document.getElementById('textoEntrada').value = '';
+                    document.getElementById('resultado').innerHTML = '';
+                    document.getElementById('sinonimosArea').innerHTML = '';
+                    // Limpar substituições
+                    substituicoes = {};
+                    localStorage.removeItem('textSubstituicoes');
+                });
+            }
+        });
+
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', () => {
+                navigator.serviceWorker.register('service-worker.js')
+                    .then(reg => console.log('Service worker registered'))
+                    .catch(err => console.log('Service worker error:', err));
+            });
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,1062 @@
+/* Estilos gerais - Reset e base */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background-color: #f5f7fa;
+    color: #333;
+    line-height: 1.6;
+    padding: 1rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Cabeçalho e títulos */
+header {
+    text-align: center;
+    padding: 1rem 0 1.5rem;
+    margin-bottom: 1.5rem;
+    border-bottom: 1px solid #e0e0e0;
+}
+
+h1,
+h2,
+h3 {
+    color: #2c3e50;
+    margin-bottom: 0.8rem;
+}
+
+h1 {
+    font-size: 1.8rem;
+}
+
+h2 {
+    font-size: 1.5rem;
+    margin-top: 1.5rem;
+}
+
+h3 {
+    font-size: 1.3rem;
+    margin-top: 1rem;
+}
+
+/* Containers e seções */
+.container {
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    padding: 1.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.section {
+    margin-bottom: 2rem;
+}
+
+/* Estilo para abas (tabs) */
+.tabs {
+    display: flex;
+    flex-wrap: wrap;
+    border-bottom: 2px solid #e0e0e0;
+    margin-bottom: 1rem;
+}
+
+.tab {
+    padding: 0.8rem 1.2rem;
+    border: none;
+    background: transparent;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-weight: 500;
+}
+
+.tab.active {
+    color: #3498db;
+    border-bottom: 2px solid #3498db;
+    margin-bottom: -2px;
+}
+
+.tab:hover:not(.active) {
+    background-color: #f0f0f0;
+}
+
+.tab-content {
+    display: none;
+}
+
+.tab-content.active {
+    display: block;
+}
+
+/* Formulários e inputs */
+.form-group {
+    margin-bottom: 1rem;
+}
+
+label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: 500;
+    color: #555;
+}
+
+input[type="text"],
+input[type="search"],
+textarea {
+    width: 100%;
+    padding: 0.8rem;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 1rem;
+    transition: border-color 0.3s;
+}
+
+input[type="text"]:focus,
+input[type="search"]:focus,
+textarea:focus {
+    border-color: #3498db;
+    outline: none;
+    box-shadow: 0 0 0 2px rgba(52, 152, 219, 0.2);
+}
+
+textarea {
+    min-height: 120px;
+    resize: vertical;
+}
+
+#textoEntrada {
+    min-height: 150px;
+}
+
+/* Botões */
+.btn {
+    display: inline-block;
+    padding: 0.7rem 1.2rem;
+    background-color: #3498db;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: 500;
+    text-align: center;
+    transition: all 0.3s ease;
+    margin-right: 0.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.btn:hover {
+    background-color: #2980b9;
+}
+
+.btn:active {
+    transform: translateY(1px);
+}
+
+.btn-secondary {
+    background-color: #95a5a6;
+}
+
+.btn-secondary:hover {
+    background-color: #7f8c8d;
+}
+
+.btn-danger {
+    background-color: #e74c3c;
+}
+
+.btn-danger:hover {
+    background-color: #c0392b;
+}
+
+.btn-success {
+    background-color: #2ecc71;
+}
+
+.btn-success:hover {
+    background-color: #27ae60;
+}
+
+.btn-block {
+    display: block;
+    width: 100%;
+    margin-right: 0;
+}
+
+.btn-group {
+    display: flex;
+    flex-wrap: nowrap;
+    gap: 0.5rem;
+    margin-bottom: 1rem;
+}
+
+/* Botão de microfone */
+#botaoMic {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: #3498db;
+    color: white;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    right: 15px;
+    bottom: 15px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease;
+}
+
+#botaoMic:hover {
+    background-color: #2980b9;
+    transform: scale(1.05);
+}
+
+#botaoMic.ativo {
+    background-color: #e74c3c;
+    animation: pulse 1.5s infinite;
+}
+
+.mic-icon,
+.mic-icon-ativo {
+    display: inline-block;
+    width: 24px;
+    height: 24px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.mic-icon {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='white'%3E%3Cpath d='M12 14c1.66 0 3-1.34 3-3V5c0-1.66-1.34-3-3-3S9 3.34 9 5v6c0 1.66 1.34 3 3 3zm5.91-3c-.49 0-.9.36-.98.85C16.52 14.2 14.47 16 12 16c-2.47 0-4.52-1.8-4.93-4.15-.08-.49-.49-.85-.98-.85-.61 0-1.09.54-1 1.14.49 3 2.89 5.35 6 5.85V20c0 .55.45 1 1 1s1-.45 1-1v-2.01c2.61-.45 4.74-2.36 5.62-4.85.09-.6-.39-1.14-1-1.14z'/%3E%3C/svg%3E");
+}
+
+.mic-icon-ativo {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='white'%3E%3Cpath d='M12 14c1.66 0 3-1.34 3-3V5c0-1.66-1.34-3-3-3S9 3.34 9 5v6c0 1.66 1.34 3 3 3zm-1-9c0-.55.45-1 1-1s1 .45 1 1v6c0 .55-.45 1-1 1s-1-.45-1-1V5zm6.91 6c-.49 0-.9.36-.98.85C16.52 14.2 14.47 16 12 16c-2.47 0-4.52-1.8-4.93-4.15-.08-.49-.49-.85-.98-.85-.61 0-1.09.54-1 1.14.49 3 2.89 5.35 6 5.85V20c0 .55.45 1 1 1s1-.45 1-1v-2.01c2.61-.45 4.74-2.36 5.62-4.85.09-.6-.39-1.14-1-1.14z'/%3E%3C/svg%3E");
+    animation: pulse 1.5s infinite;
+}
+
+/* Área de texto e resultado */
+.texto-container {
+    position: relative;
+    margin-bottom: 1rem;
+}
+
+#resultado {
+    background-color: #f9f9f9;
+    padding: 1rem;
+    border-radius: 4px;
+    border: 1px solid #ddd;
+    margin-top: 1rem;
+    min-height: 100px;
+    line-height: 1.6;
+    white-space: pre-wrap;
+}
+
+/* Sinônimos e palavras */
+.sinonimos-area {
+    margin-top: 1.5rem;
+}
+
+.palavra-sinonimos {
+    padding: 0.8rem;
+    border-bottom: 1px solid #eee;
+    margin-bottom: 0.5rem;
+}
+
+.palavra-sinonimos:last-child {
+    border-bottom: none;
+}
+
+.sinonimos {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-top: 0.5rem;
+}
+
+.sinonimo-btn {
+    background-color: #e8f4fc;
+    border: 1px solid #bde0fc;
+    border-radius: 30px;
+    padding: 0.4rem 0.8rem;
+    font-size: 0.9rem;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.sinonimo-btn:hover {
+    background-color: #d0e8fb;
+}
+
+.palavra-destacada {
+    background-color: #ffff99;
+    border-radius: 3px;
+    padding: 2px 4px;
+    cursor: pointer;
+}
+
+.palavra {
+    cursor: pointer;
+    display: inline-block;
+}
+
+.palavra-original {
+    color: #0066cc;
+    font-weight: bold;
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+.escondido {
+    display: none;
+}
+
+/* Gerenciador de sinônimos */
+.item-sinonimo {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 0.8rem;
+    border-bottom: 1px solid #eee;
+    align-items: center;
+}
+
+.palavra-principal {
+    font-weight: bold;
+    flex: 1 0 100%;
+    margin-bottom: 0.3rem;
+}
+
+.sinonimos-lista {
+    flex: 1;
+    color: #666;
+    font-size: 0.9rem;
+}
+
+.acoes {
+    display: flex;
+    gap: 0.5rem;
+}
+
+.editar-btn,
+.excluir-btn {
+    padding: 0.3rem 0.6rem;
+    font-size: 0.85rem;
+    background-color: #f0f0f0;
+    border: 1px solid #ddd;
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+.editar-btn:hover {
+    background-color: #e0e0e0;
+}
+
+.excluir-btn:hover {
+    background-color: #ffebee;
+}
+
+/* Resultados de pesquisa */
+.resultado-item {
+    padding: 1rem;
+    border-bottom: 1px solid #eee;
+}
+
+.palavra-resultado {
+    font-weight: bold;
+    font-size: 1.1rem;
+    margin-bottom: 0.3rem;
+}
+
+.sinonimos-resultado {
+    color: #555;
+    margin-bottom: 0.5rem;
+}
+
+.info-resultado {
+    font-size: 0.85rem;
+    color: #888;
+    font-style: italic;
+    margin-bottom: 0.5rem;
+}
+
+.acoes-resultado {
+    display: flex;
+    gap: 0.5rem;
+}
+
+.novo-sinonimo-btn {
+    text-align: center;
+    margin-bottom: 1rem;
+}
+
+/* Modal */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    overflow: auto;
+}
+
+.modal-conteudo {
+    background-color: #fff;
+    margin: 15% auto;
+    padding: 1.5rem;
+    border-radius: 8px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    width: 90%;
+    max-width: 500px;
+    position: relative;
+    animation: modalAnimate 0.3s;
+}
+
+.fechar-modal {
+    position: absolute;
+    right: 1rem;
+    top: 0.5rem;
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #aaa;
+    cursor: pointer;
+}
+
+.fechar-modal:hover {
+    color: #555;
+}
+
+/* Animações */
+@keyframes modalAnimate {
+    from {
+        transform: translateY(-50px);
+        opacity: 0;
+    }
+
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.1);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+
+/* Estilos para desktop (>= 768px) */
+@media screen and (min-width: 768px) {
+    body {
+        padding: 2rem;
+    }
+
+    h1 {
+        font-size: 2.2rem;
+    }
+
+    h2 {
+        font-size: 1.8rem;
+    }
+
+    h3 {
+        font-size: 1.5rem;
+    }
+
+    .container {
+        padding: 2rem;
+    }
+
+    .layout-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 1.5rem;
+    }
+
+    .btn-group {
+        justify-content: flex-start;
+    }
+
+    .item-sinonimo {
+        flex-wrap: nowrap;
+    }
+
+    .palavra-principal {
+        flex: 0 0 20%;
+        margin-bottom: 0;
+    }
+
+    .modal-conteudo {
+        margin: 10% auto;
+        width: 500px;
+        padding: 2rem;
+    }
+
+    /* Esconder e mostrar elementos em desktop */
+    .desktop-only {
+        display: block;
+    }
+
+    .mobile-only {
+        display: none;
+    }
+}
+
+/* Estilos para dispositivos móveis (< 768px) */
+@media screen and (max-width: 767px) {
+    body {
+        padding: 0.8rem;
+    }
+
+    .container {
+        padding: 1rem;
+        margin-bottom: 1rem;
+    }
+
+    .tab {
+        padding: 0.6rem 0.8rem;
+        font-size: 0.9rem;
+    }
+
+    .btn {
+        padding: 0.6rem 1rem;
+        font-size: 0.9rem;
+    }
+
+    .btn-group {
+        justify-content: space-between;
+    }
+
+    .item-sinonimo {
+        padding: 0.6rem;
+    }
+
+    #botaoMic {
+        width: 45px;
+        height: 45px;
+        right: 10px;
+        bottom: 10px;
+    }
+
+    /* Esconder e mostrar elementos em mobile */
+    .desktop-only {
+        display: none;
+    }
+
+    .mobile-only {
+        display: block;
+    }
+
+    /* Melhorar a experiência de toque */
+    .btn,
+    .sinonimo-btn,
+    .editar-btn,
+    .excluir-btn {
+        min-height: 38px;
+        /* Tamanho mínimo para alvos de toque */
+    }
+}
+
+/* Estilo para a funcionalidade de filtro de sinônimos */
+.pesquisa-sinonimos {
+    margin-bottom: 15px;
+}
+
+.pesquisa-sinonimos input {
+    width: 100%;
+    padding: 0.8rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    margin-bottom: 5px;
+    font-size: 1rem;
+}
+
+.pesquisa-sinonimos small {
+    color: #777;
+    font-size: 0.85em;
+    display: block;
+}
+
+.palavras-container {
+    max-height: 300px;
+    overflow-y: auto;
+    border: 1px solid #eee;
+    padding: 0.5rem;
+    border-radius: 4px;
+    margin-top: 1rem;
+}
+
+/* Utilitários */
+.text-center {
+    text-align: center;
+}
+
+.mt-1 {
+    margin-top: 0.5rem;
+}
+
+.mt-2 {
+    margin-top: 1rem;
+}
+
+.mb-1 {
+    margin-bottom: 0.5rem;
+}
+
+.mb-2 {
+    margin-bottom: 1rem;
+}
+
+/* Tela cheia para dispositivos móveis no modo paisagem */
+@media screen and (max-height: 500px) and (orientation: landscape) {
+    .container {
+        padding: 0.8rem;
+        margin-bottom: 0.8rem;
+    }
+
+    textarea {
+        min-height: 80px;
+    }
+
+    .palavras-container {
+        max-height: 150px;
+    }
+}
+
+/*----------------------*/
+/* body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 20px;
+    color: #333;
+}
+
+.container {
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+h1 {
+    color: #0066cc;
+    margin-bottom: 20px;
+}
+
+.editor-area {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-bottom: 30px;
+}
+
+textarea {
+    width: 100%;
+    min-height: 150px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 1em;
+    resize: vertical;
+}
+
+.botoes {
+    display: flex;
+    gap: 10px;
+}
+
+button {
+    padding: 8px 16px;
+    background-color: #0066cc;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 1em;
+}
+
+button:hover {
+    background-color: #0055aa;
+}
+
+#botaoMic {
+    background-color: #cc0000;
+}
+
+#botaoMic:hover {
+    background-color: #aa0000;
+}
+
+#botaoMic.ativo {
+    background-color: #00cc00;
+}
+
+#botaoMic.ativo:hover {
+    background-color: #00aa00;
+}
+
+.mic-icon,
+.mic-icon-ativo {
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    background-color: white;
+    border-radius: 8px;
+    position: relative;
+}
+
+.mic-icon::after {
+    content: '';
+    position: absolute;
+    width: 2px;
+    height: 10px;
+    background-color: #cc0000;
+    bottom: 0;
+    left: 7px;
+}
+
+.mic-icon-ativo::after {
+    content: '';
+    position: absolute;
+    width: 2px;
+    height: 10px;
+    background-color: #00cc00;
+    bottom: 0;
+    left: 7px;
+}
+
+.sinonimos-container {
+    margin-top: 20px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    padding: 15px;
+    background-color: #f9f9f9;
+}
+
+.pesquisa-sinonimos {
+    margin-bottom: 15px;
+}
+
+.palavra-sinonimos {
+    margin: 10px 0;
+    padding: 8px;
+    background-color: #fff;
+    border: 1px solid #eee;
+    border-radius: 4px;
+}
+
+.sinonimos {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 5px;
+}
+
+.sinonimo-btn {
+    background-color: #e6f2ff;
+    color: #0066cc;
+    border: 1px solid #99ccff;
+    border-radius: 3px;
+    padding: 4px 8px;
+    cursor: pointer;
+    font-size: 0.9em;
+}
+
+.sinonimo-btn:hover {
+    background-color: #cce6ff;
+}
+
+#resultado {
+    padding: 15px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    margin-top: 15px;
+    min-height: 100px;
+    background-color: #fff;
+    line-height: 1.5;
+}
+
+.hint {
+    font-size: 0.9em;
+    color: #666;
+    margin-top: 5px;
+} */
+
+/* Estilos para gerenciador de sinônimos */
+/* .gerenciador {
+    margin-top: 40px;
+}
+
+.form-sinonimos {
+    margin-bottom: 20px;
+    padding: 15px;
+    background-color: #f0f7ff;
+    border-radius: 4px;
+}
+
+.campo {
+    margin-bottom: 10px;
+}
+
+.campo label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+.campo input,
+.campo textarea {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.campo textarea {
+    min-height: 60px;
+}
+
+.acoes {
+    display: flex;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+.acoes button {
+    flex: 1;
+}
+
+.listagem {
+    margin-top: 20px;
+}
+
+.item-sinonimo {
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    margin-bottom: 10px;
+    background-color: #fff;
+}
+
+.palavra-principal {
+    font-weight: bold;
+    color: #0066cc;
+    margin-bottom: 5px;
+}
+
+.sinonimos-lista {
+    color: #666;
+    margin-bottom: 10px;
+}
+
+.editar-btn,
+.excluir-btn {
+    padding: 4px 8px;
+    font-size: 0.9em;
+}
+
+.excluir-btn {
+    background-color: #cc0000;
+}
+
+.excluir-btn:hover {
+    background-color: #aa0000;
+}
+
+.resultado-item {
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    margin-bottom: 10px;
+    background-color: #fff;
+}
+
+.palavra-resultado {
+    font-weight: bold;
+    color: #0066cc;
+    margin-bottom: 5px;
+}
+
+.info-resultado {
+    font-size: 0.85em;
+    color: #666;
+    font-style: italic;
+    margin-bottom: 8px;
+}
+
+.novo-sinonimo-btn {
+    margin-bottom: 15px;
+}
+
+.novo-sinonimo-btn button {
+    background-color: #00aa00;
+}
+
+.novo-sinonimo-btn button:hover {
+    background-color: #008800;
+} */
+
+/* Estilos para o modal */
+/* .modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.modal-conteudo {
+    background-color: white;
+    margin: 10% auto;
+    padding: 20px;
+    border-radius: 5px;
+    width: 80%;
+    max-width: 500px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    position: relative;
+}
+
+.fechar-modal {
+    position: absolute;
+    right: 15px;
+    top: 10px;
+    font-size: 24px;
+    font-weight: bold;
+    cursor: pointer;
+} */
+.resultado-secao-titulo {
+    margin: 15px 0 5px 0;
+    padding-bottom: 5px;
+    border-bottom: 1px solid #eee;
+    color: #555;
+    font-size: 1em;
+}
+
+.resultados-info {
+    background-color: #f8f8f8;
+    padding: 5px 10px;
+    margin: 5px 0;
+    border-radius: 4px;
+    color: #666;
+    font-size: 0.9em;
+}
+
+.resultado-item {
+    margin-bottom: 10px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #f0f0f0;
+}
+
+.info-resultado {
+    font-size: 0.85em;
+    color: #777;
+    font-style: italic;
+    margin: 2px 0;
+}
+
+.palavra-com-sinonimos {
+    border-bottom: 1px dashed #0066cc;
+    cursor: pointer;
+    position: relative;
+}
+
+.palavra-com-sinonimos:hover {
+    background-color: #f0f7ff;
+}
+
+.dropdown-sinonimos {
+    position: absolute;
+    background-color: white;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    z-index: 1000;
+    max-height: 200px;
+    overflow-y: auto;
+    width: auto;
+    min-width: 150px;
+}
+
+.dropdown-sinonimos div {
+    padding: 8px 12px;
+    cursor: pointer;
+}
+
+.dropdown-sinonimos div:hover {
+    background-color: #f0f7ff;
+}
+
+.dropdown-titulo {
+    font-weight: bold;
+    background-color: #f0f0f0;
+    border-bottom: 1px solid #ccc;
+}
+
+.palavra-destacada {
+    background-color: #ffff99;
+    border-radius: 3px;
+    padding: 2px 4px;
+    cursor: pointer;
+}
+
+.palavra {
+    cursor: pointer;
+}
+
+.palavra-composta {
+    border-bottom: 1px dotted #999;
+}
+
+.palavra-original {
+    color: #0066cc;
+    font-weight: bold;
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+.escondido {
+    display: none;
+}
+
+.pesquisa-sinonimos {
+    margin-bottom: 15px;
+}
+
+.pesquisa-sinonimos input {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    margin-bottom: 5px;
+}
+
+.pesquisa-sinonimos small {
+    color: #777;
+    font-size: 0.8em;
+}
+
+.palavras-container {
+    max-height: 300px;
+    overflow-y: auto;
+    border: 1px solid #eee;
+    padding: 10px;
+}
