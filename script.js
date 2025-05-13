@@ -1,256 +1,278 @@
+//1. Variáveis globais
 // Banco de dados simulado de sinônimos
 const bancoDeSinonimos = {
     //A
-    "à custa de": ["à expensa de", "em detrimento de", "à conta de"],
-    "à medida que": ["conforme", "à medida que", "à medida que"],
-    "a partir": ["desde", "a partir de", "começando"],
-    "a posteriori": ["posteriormente", "depois", "mais tarde"],
-    "a priori": ["antecipadamente", "de antemão", "de início"],
-    "a propósito": ["por acaso", "casualmente", "por oportunismo"],
-    "a respeito de": ["sobre", "acerca de", "relativo a", "em relação a"],
-    "ab-rogar": ["revogar", "anular", "cancelar", "abolir", "invalidar"],
-    "aba": ["tampa", "cobertura", "capô"],
-    "abacaxi": ["ananás"],
-    "abaixo": ["embaixo", "inferior", "em baixo"],
-    "abalar": ["balançar", "agitar", "mover", "tremer", "sacudir"],
-    "abalroar": ["colidir", "bater", "impactar", "atropelar", "acidentar"],
-    "abandonar": ["deixar", "desistir", "renunciar", "desamparar"],
-    "abarcar": ["abranger", "incluir", "compreender", "envolver"],
-    "abarroado": ["teimoso", "obstinado", "persistente", "perseverante", "aferrado"],
-    "abarrotado": ["lotado", "cheio", "repleto", "superlotado", "apinhado"],
-    "abastado": ["rico", "próspero", "endinheirado", "opulento", "abundante"],
-    "abate": ["derrubada", "redução", "abatimento", "diminuição", "eliminação"],
-    "abatido": ["triste", "desanimado", "desolado", "deprimido", "melancólico"],
-    "abaulado": ["curvado", "arredondado", "convexo", "abobadado"],
-    "abdicar": ["renunciar", "desistir", "abandonar"],
-    "ábdito": ["oculto", "escondido", "secreto", "encoberto", "velado"],
-    "abdome": ["barriga", "pança", "ventre", "abdômen", "bojo"],
-    "abdômen": ["barriga", "pança", "ventre", "abdome", "bojo"],
-    "abdução": ["rapto", "sequestro", "captura", "prisão", "arremesso"],
-    "abduzir": ["raptar", "sequestrar", "capturar", "arremessar", "tirar"],
-    "abelha": ["inseto", "himenóptero"],
-    "abelhão": ["abelha", "inseto", "himenóptero"],
-    "abençoado": ["bendito", "sagrado", "santo", "santificado"],
-    "abençoar": ["benzer", "louvar", "bendizer", "santificar"],
-    "abençoe": ["benza", "louva"],
-    "abençoei": ["benzi", "louvei"],
-    "aberração": ["anomalia", "desvio", "irregularidade", "anormalidade"],
-    "abertamente": ["francamente", "de forma clara", "abertamente"],
-    "abertas": ["descobertas", "expostas", "reveladas"],
-    "aberto": ["descoberto", "exposto", "revelado"],
-    "abiquem": ["abiquem"],
-    "abismo": ["precipício", "poço"],
-    "abissal": ["profundo", "infinito"],
-    "abjeto": ["desprezível", "vil", "ignóbil", "torpe", "indigno"],
-    "ablução": ["purificação", "limpeza", "lavagem"],
-    "abnegação": ["sacrifício", "renúncia", "desapego"],
-    "abnegado": ["dedicado", "devotado", "sacrificado"],
-    "abóbada": ["cúpula", "arco"],
-    "abobreira": ["abóbora", "cabaça"],
-    "abole": ["elimina", "extingue", "anula"],
-    "abolição": ["extinção", "anulação", "revogação"],
-    "abolido": ["extinto", "anulado", "revogado"],
-    "abolir": ["extinguir", "anular", "revogar"],
-    "abominação": ["desprezo", "aversão", "repúdio"],
-    "abominável": ["desprezível", "repulsivo", "detestável"],
-    "abonar": ["aprovar", "justificar", "ratificar", "confirmar", "validar"],
-    "abordada": ["atacada", " abordada", " abordada", " abordada", " abordada"],
-    "abordado": ["tratado", "discutido", "analisado", "abordado", "abordado"],
-    "abordagem": ["aproximação", "técnica", "método", "estratégia", "abordagem"],
-    "abordar": ["tratar", "discutir", "analisar", "enfrentar", "aproximar-se"],
-    "aborígene": ["indígena", "nativo", "aborígine", "autóctone", "primitivo"],
-    "aborrecer": ["desgostar", "enfurecer", "irritar", "aborrecer", "aborrecer"],
-    "aborrecido": ["irritado", "chateado", "desgostoso", "aborrecido", "aborrecido"],
-    "aborto": ["interrupção", "gravidez interrompida", "aborto", "abortamento", "terminação"],
-    "abraço": ["acolhimento", "afago", "carinho", "abraço", "abraço"],
-    "abrandar": ["amolecer", "suavizar", "mitigar", "aliviar", "abrandar"],
-    "abrange": ["inclui", "cobre", "envolve", "abrange", "abrange"],
-    "abrangência": ["extensão", "alcance", "alcance", "abrangência", "abrangência"],
-    "abrangendo": ["inclusão", "envolvimento", "compreendendo", "abrangendo", "abrangendo"],
-    "abrangente": ["amplo", "extenso", "geral", "abrangente", "abrangente"],
-    "abranger": ["incluir", "abrir", "compreender", "abranger", "abranger"],
-    "abrasada": ["quente", "incandescente", "abrasadora", "abrasadora", "abrasadora"],
-    "abrasadora": ["intensa", "quente", "incandescente", "abrasiva", "abrasadora"],
-    "abrasar": ["queimar", "incendiar", "abrasar", "incendiar", "consumir"],
-    "abreviação": ["abreviatura", "sigla", "redução", "abreviação", "abreviação"],
-    "abreviar": ["reduzir", "encurtar", "abreviar", "encurtar", "diminuir"],
-    "abrigo": ["refúgio", "refúgio", "abrigo", "abrigo", "cobertura"],
-    "abrir": ["destrancar", "desbloquear", "iniciar", "abrir", "abrir"],
-    "abriu": ["iniciou", "desbloqueou", "destrancou", "abriu", "abriu"],
-    "abrolho": ["espinho", "armadilha", "perigo", "abrolho", "abrolho"],
-    "abrupta": ["repentina", "inesperada", "imprevisível", "abrupta", "abrupta"],
-    "abruptamente": ["repentinamente", "inesperadamente", "imprevisivelmente", "brusco", "abruptamente"],
-    "abrupto": ["repentino", "inesperado", "imprevisível", "abrupto", "abrupto"],
-    "abscôndito": ["oculto", "escondido", "secreto", "velado", "disfarçado"],
-    "absenteísmo": ["falta", "ausência", "deserção", "abstencionismo", "desistência"],
-    "absolutamente": ["totalmente", "completamente", "plenamente", "absolutamente", "absolutamente"],
-    "absolutismo": ["despotismo", "autocracia", "tirania", "monarquia", "absolutismo"],
-    "absoluto": ["completo", "total", "inteiro", "absoluto", "absoluto"],
-    "absolver": ["isentar", "perdoar", "libertar", "exonerar", "absolver"],
-    "absolvição": ["perdão", "absolvição", "libertação", "exoneração"],
-    "absolvido": ["perdoado", "libertado", "exonerado"],
-    "absorção": ["sugestão", "assimilação", "incorporação", "captura"],
-    "absorto": ["atônito", "pensativo", "impressionado", "maravilhado"],
-    "absorver": ["sugar", "incorporar", "capturar", "assimilar"],
-    "absorver-se": ["mergulhar", "envolver-se", "dedicar-se", "focar-se"],
-    "absorvido": ["absorvido", "capturado", "incorporado"],
-    "absorvimento": ["absorção", "incorporação", "sugestão"],
-    "abstém": ["abster-se", "renunciar", "abster"],
-    "abstêmio": ["abstinente", "modesto", "contido"],
-    "abstenção": ["renúncia", "evitação", "abstenção", "recusa"],
-    "abster": ["renunciar", "desistir", "evitar"],
-    "abstinência": ["renúncia", "abstinência", "contenção"],
-    "abstinente": ["abstêmio", "moderado", "contido"],
-    "abstração": ["distanciamento", "isolamento", "generalização"],
-    "abstrai": ["isolamento", "fuga", "reflexão"],
-    "abstrair": ["desviar", "focar-se", "separar", "distanciar"],
-    "abstrato": ["teórico", "imaginário", "conceitual", "intangible"],
-    "absurda": ["irracional", "ilógica", "sem sentido", "ridícula"],
-    "absurdamente": ["irracionalmente", "ilogicamente", "sem sentido"],
-    "absurdo": ["ilógico", "irracional", "sem sentido", "ridículo"],
-    "abundância": ["riqueza", "profusão", "grande quantidade", "superabundância"],
-    "abundante": ["rico", "copioso", "profuso", "numeroso"],
-    "abundantemente": ["profusamente", "copiosamente", "ricas"],
-    "abusar": ["exceder", "violentar", "explorar", "abusar"],
-    "abusivo": ["excessivo", "violento", "explorador", "injusto"],
-    "abuso": ["violência", "excesso", "exploração", "maltrato"],
-    "acabar": ["terminar", "concluir", "finalizar", "completar"],
-    "acabou-se": ["findou", "terminou", "cessou", "desapareceu"],
-    "academia": ["instituto", "escola", "faculdade", "centro de estudos"],
-    "acadêmico": ["científico", "educacional", "teórico", "intelectual"],
-    "acalanto": ["canto de ninar", "melodia suave", "canção de embalar"],
-    "acalentar": ["embalar", "consolar", "cuidar", "acalmar"],
-    "acalento": ["canto de ninar", "melodia suave", "canto reconfortante"],
-    "acanhado": ["tímido", "reservado", "envergonhado", "modesto"],
-    "ação": ["atividade", "movimento", "gesto", "processo"],
-    "acarretado": ["resultante", "conseqüente", "provocado", "derivado"],
-    "acarretar": ["causar", "provocar", "resultar em", "produzir"],
-    "acasalar": ["juntar", "casar", "reunir", "ajuntar"],
-    "acaso": ["casualidade", "sorte", "acidente", "imprevisibilidade"],
-    "acatar": ["obedecer", "seguir", "respeitar", "aceitar"],
-    "acautelar": ["prevenir", "precaver", "proteger", "cautelar"],
-    "aceder": ["concordar", "permitir", "autorizar", "aceder"],
-    "acéfalo": ["sem cérebro", "ignorante", "sem inteligência"],
-    "aceitação": ["aprovação", "consentimento", "admissão", "aceitação"],
-    "aceitar": ["concordar", "admitir", "assumir", "receber"],
-    "aceleração": ["acréscimo", "aumento", "intensificação", "aceleramento"],
-    "acenar": ["sinalizar", "saudar", "agitar", "mover"],
-    "acender": ["iluminar", "acender", "acender", "dar luz"],
-    "acendido": ["iluminado", "aceso", "acendido", "flamejante"],
-    "acento": ["ênfase", "tônica", "sotaque", "entonação"],
-    "acentuada": ["destacada", "intensa", "forte", "marcada"],
-    "acentuar": ["destacar", "realçar", "salientar", "enfatizar"],
-    "acepção": ["sentido", "significado", "interpretação", "conotação"],
-    "acerca": ["sobre", "relativo a", "a respeito de", "acerca de"],
-    "acerejado": ["decorado", "enfeitado", "ornamentado", "engalanado"],
-    "acertar": ["corrigir", "ajustar", "consertar", "resolver"],
-    "acertarão": ["resolverão", "corrigirão", "ajustarão", "completarão"],
-    "acervo": ["coleção", "conjunto", "inventário", "totalidade"],
-    "acesa": ["iluminada", "acesa", "sacudida", "acendida"],
-    "aceso": ["iluminado", "acendido", "brilhante", "aceso"],
-    "acessar": ["entrar", "acessar", "abrir", "chegar"],
-    "acessibilidade": ["facilidade", "acessibilidade", "acesso", "disponibilidade"],
-    "acessível": ["disponível", "alcançável", "acessível", "fácil de chegar"],
-    "acesso": ["entrada", "acesso", "chegada", "entrada"],
-    "acessório": ["secundário", "complementar", "adicional", "auxiliar"],
-    "acha": ["encontra", "considera", "acredita", "julga"],
-    "achanar": ["encolher", "embolar", "reduzir", "comprimir"],
-    "achar": ["encontrar", "localizar", "descobrir", "perceber"],
-    "acharia": ["consideraria", "pensaria", "julgar-se-ia", "acreditava"],
-    "achem": ["encontrem", "descubram", "percebam", "considerem"],
-    "achicalhe": ["desprezo", "ofensa", "humilhação", "vergonha"],
-    "achincalhamento": ["ridicularização", "humilhação", "desprezo", "rebaixamento"],
-    "achismo": ["opinião", "presunção", "convicção", "crença"],
-    "acidental": ["casual", "fortuito", "imprevisto", "involuntário"],
-    "acidente": ["incidente", "imprevisto", "eventualidade", "siniestro"],
-    "acidez": ["amargor", "azedo", "acidez", "sabor ácido"],
-    "acima": ["superior", "mais alto", "em cima", "sobre"],
-    "acinte": ["desprezo", "desrespeito", "insolência", "desdém"],
-    "acintosamente": ["desrespeitosamente", "desafiadoramente", "arrogantemente"],
-    "acintoso": ["insolente", "desrespeitoso", "desaforado", "desdenhoso"],
-    "acionar": ["ativar", "iniciar", "ligar", "operar"],
-    "acirrado": ["intenso", "fervoroso", "intenso", "extremo"],
-    "acirrante": ["provocante", "instigante", "intensificador", "agitado"],
-    "aclamação": ["aplausos", "elogios", "aclamação", "gritos de aprovação"],
-    "acme": ["pico", "auge", "topo", "culminação"],
-    "acocorar": ["curvar-se", "agachar", "ajoelhar", "dobrar-se"],
-    "ações": ["movimentos", "atividades", "gestos", "ações"],
-    "acoime": ["culpa", "acusação", "fardo", "responsabilidade"],
-    "açoite": ["flagelo", "punição", "surra", "castigo", "bastinado"],
-    "acolá": ["ali", "lá", "aí", "naquele lugar"],
-    "acolher": ["receber", "abraçar", "acolher", "admitir", "aceitar"],
-    "acolhíamos": ["recebíamos", "admitíamos", "abraçávamos", "acolhíamos"],
-    "acolhida": ["recepção", "admissão", "acolhimento", "abertura"],
-    "acolhido": ["recebido", "admitido", "abraçado", "aceito"],
-    "acolhimento": ["recepção", "abrigo", "acolhida", "admissão"],
-    "acometer": ["atingir", "incidir", "afetar", "invadir", "atingir"],
-    "acometermos": ["atingirmos", "sofrermos", "incidirmos", "afetarmos"],
-    "acometida": ["atingida", "afligida", "prejudicada", "contaminada"],
-    "acometido": ["atingido", "afligido", "prejudicado", "contaminado"],
-    "acompanhamento": ["monitoramento", "vigilância", "supervisão", "seguimento"],
-    "acompanhar": ["seguir", "observar", "monitorar", "vigiando"],
-    "acompanharemos": ["seguiremos", "observaremos", "vigilaremos", "monitoraremos"],
-    "acondicionado": ["armazenado", "guardado", "reservado", "tratado"],
-    "acondicionamento": ["armazenamento", "guardar", "tratamento", "organização"],
-    "acondicionar": ["armazenar", "guardar", "reservar", "organizar"],
-    "aconselharmos": ["orientarmos", "sugerirmos", "aconselharmos", "recomendar"],
-    "acontecer": ["ocorrer", "suceder", "surge", "realizar-se"],
-    "acontecimento": ["evento", "ocorrência", "episódio", "ocorrência"],
-    "acontecimentos": ["eventos", "ocorrências", "episódios", "casos"],
-    "aconteço": ["ocorro", "realizo", "surge", "apareço"],
-    "acordado": ["desperto", "acordado", "atento", "acordado"],
-    "acordar": ["despertar", "acordar", "levantar-se", "sair do sono"],
-    "acordo": ["pacto", "entendimento", "contrato", "convenção"],
-    "acreditar": ["crer", "confiar", "achar", "supor"],
-    "acrescentar": ["adicionar", "incluir", "somar", "juntar"],
-    "acrescento": ["adição", "soma", "inclusão", "incremento"],
-    "acrescido": ["aumentado", "adicionado", "somado", "incrementado"],
-    "acréscimo": ["aumento", "soma", "adição", "incremento"],
-    "acrítico": ["não crítico", "não analítico", "não observador"],
-    "acrônimo": ["abreviação", "sigla", "abreviatura", "redução"],
-    "actividade": ["atividade", "ocupação", "trabalho", "função"],
-    "acuado": ["encurralado", "pressionado", "assustado", "aterrorizado"],
-    "açúcar": ["doçura", "sacarose", "glicose", "mel"],
-    "acudas": ["ajuda", "socorro", "assistência", "auxílio"],
-    "açude": ["represa", "reservatório", "barragem", "dique"],
-    "acudir": ["socorrer", "ajudar", "assistir", "auxiliar"],
-    "acuidade": ["precisão", "agudeza", "nitidez", "clareza"],
-    "açulado": ["apontado", "encorajado", "estimulado", "incitado"],
-    "açular": ["incitar", "provocar", "instigar", "despertar"],
-    "acume": ["pico", "ápice", "topo", "culminância"],
-    "acumulando": ["acrescentando", "juntando", "arrecadando", "reunindo"],
-    "acumular": ["arrecadar", "juntar", "reunir", "amontoar"],
-    "acúmulo": ["acréscimo", "acumulação", "reunião", "acréscimo"],
-    "acurácia": ["precisão", "exatidão", "fidelidade", "certeza"],
-    "acuracidade": ["precisão", "exatidão", "acurácia", "perfeição"],
-    "acurado": ["preciso", "exato", "fiel", "certo"],
-    "acusar": ["denunciar", "reprovar", "imputar", "indicar"],
-    "acusava": ["denunciava", "imputava", "reprovava", "relatava"],
-    "ad aeternum": ["para sempre", "eternamente", "perpetuamente", "infinitamente"],
-    "adágio": ["provérbio", "ditado", "sabedoria popular", "máxima"],
-    "adaptação": ["ajuste", "adaptação", "alteração", "modificação"],
-    "adaptar": ["ajustar", "modificar", "adequar", "ajustar-se"],
-    "adaptativo": ["flexível", "modificável", "ajustável", "maleável"],
-    "adaptável": ["flexível", "ajustável", "maleável", "modificável"],
-    "ademais": ["além disso", "também", "igualmente", "adicionalmente"],
-    "adendo": ["acréscimo", "adicional", "nota", "observação"],
-    "adentrar": ["entrar", "adentrar", "penetrar", "entrar em"],
-    "adepto": ["seguidor", "fã", "entusiasta", "partidário"],
-    "adequação": ["ajuste", "adequação", "compatibilidade", "conformidade"],
-    "adequado": ["apto", "apropriado", "conveniente", "compatível"],
-    "adequar": ["ajustar", "adaptar", "arranjar", "conformar"],
-    "adereço": ["acessório", "ornamento", "decoração", "adereço"],
-    "aderência": ["adesão", "atrito", "fixação", "ligação"],
-    "aderido": ["unido", "agarrado", "ligado", "colado"],
-    "aderir": ["unir-se", "juntar-se", "aceitar", "agrupar-se"],
-    "adesão": ["adesão", "inclusão", "aderência", "fidelidade"],
-    "adestrar": ["treinar", "ensinar", "formar", "instruir"],
-    "adeus": ["despedida", "partida", "tchau", "despedir-se"],
-    "adiante": ["à frente", "mais à frente", "posteriormente", "daqui para frente"],
-    "adiante-se": ["antecipe-se", "avance", "antecipadamente", "prossiga"],
-    "adiar": ["postergar", "remarcar", "protelar", "adiar"],
-    "adição": ["acréscimo", "adicional", "soma", "incremento"],
-    "adicionar": ["incluir", "acrescentar", "somar", "adicionar"],
+    "a": ["artigo definido feminino singular", "preposição", "pronome oblíquo átono feminino singular", "interjeição"],
+    "à custa de": ["às expensas de", "às custas de", "por meio de", "utilizando", "em detrimento de", "sacrificando", "com o sacrifício de", "à força de", "à base de", "com o preço de"],
+    "à custa dos outros": ["explorando os outros", "aproveitando-se dos outros", "em detrimento dos outros", "às expensas dos outros", "vivendo às custas dos outros", "usando os outros", "sacrificando os outros", "às custas alheias", "com o esforço dos outros", "sem esforço próprio"],
+    "a despeito de": ["apesar de", "não obstante", "em que pese", "malgrado", "conquanto", "ainda que", "mesmo que", "em face de", "contra", "a revés de"],
+    "à medida que": ["enquanto", "conforme", "à proporção que", "ao passo que", "enquanto decorre", "enquanto se desenvolve", "segundo", "na mesma proporção em que", "ao mesmo tempo que", "em que"],
+    "a partir": ["desde", "começando em", "tendo como ponto de início", "originando-se em", "iniciando-se em", "a contar de", "do ponto de", "tendo por base", "tomando como referência", "desde o momento de"],
+    "a partir de": ["desde", "começando em", "tendo como ponto de início", "originando-se em", "iniciando-se em", "a contar de", "do ponto de", "tendo por base", "tomando como referência", "desde o momento de"],
+    "a posteriori": ["posteriormente", "depois dos fatos", "indutivamente", "empiricamente", "após a experiência", "com base na experiência", "deduzido da experiência", "inferido dos fatos", "após a ocorrência", "depois do acontecido"],
+    "a priori": ["previamente", "antes dos fatos", "dedutivamente", "independentemente da experiência", "antes da experiência", "com base em princípios", "deduzido de princípios", "inferido de premissas", "antes da ocorrência", "antecipadamente"],
+    "a propósito": ["a tal respeito", "sobre isso", "a esse respeito", "por falar nisso", "já que tocamos no assunto", "incidentalmente", "oportunamente", "de passagem", "a contento", "de maneira adequada"],
+    "a respeito de": ["sobre", "acerca de", "quanto a", "no que concerne a", "relativamente a", "com relação a", "em relação a", "no tocante a", "referente a", "no que diz respeito a"],
+    "à vista disso": ["portanto", "assim", "desse modo", "consequentemente", "em vista disso", "diante disso", "sendo assim", "logo", "por conseguinte", "destarte"],
+    "ab-rogar": ["revogar totalmente", "anular", "abolir", "derrogar por completo", "tornar sem efeito", "invalidar totalmente", "cassar integralmente", "eliminar por completo", "suprimir totalmente", "extinguir por completo"],
+    "aba": ["beira", "borda", "orla", "extremidade", "rebordo", "bainha", "franja", "aba de chapéu", "aba de telhado", "parte inferior"],
+    "abacaxi": ["fruta tropical", "problema", "dificuldade", "complicação", "embaraço", "contratempo", "situação delicada", "encrenca", "bronca", "pepino"],
+    "abaixo": ["em baixo", "inferiormente", "em posição inferior", "para baixo", "mais abaixo", "sob", "debaixo de", "a menos", "em nível inferior", "inferior"],
+    "abalar": ["sacudir", "tremer", "vibrar", "comover", "emocionar", "perturbar", "inquietar", "enfraquecer", "minar", "desestabilizar"],
+    "abalroar": ["chocar-se contra", "colidir com", "embater em", "atingir violentamente", "esbarrar em", "trombar com", "dar de encontro com", "acometer", "investir contra", "atingir"],
+    "abandonar": ["deixar", "desistir", "renegar", "desamparar", "largar", "desprezar", "olvidar", "rejeitar", "desterrar", "desabitar"],
+    "abarcar": ["abraçar", "envolver", "compreender", "conter", "incluir", "abranger", "cobrir", "atingir", "totalizar", "circundar"],
+    "abarroado": ["teimoso", "obstinado", "cabeça-dura", "insensível", "grosseiro", "rude", "brusco", "mal-humorado", "intratável", "difícil de lidar"],
+    "abarrotado": ["cheio", "lotado", "repleto", "atestado", "congestionado", "superlotado", "apinhado", "entulhado", "invadido", "tomado"],
+    "abastado": ["rico", "opulento", "próspero", "afortunado", "endinheirado", "acomodado", "bem-sucedido financeiramente", "com posses", "de boa condição financeira", "bem de vida"],
+    "abate": ["queda", "derrota", "diminuição", "redução", "corte", "sacrifício", "matança", "abatimento moral", "desânimo", "depressão"],
+    "abatido": ["desanimado", "deprimido", "triste", "melancólico", "prostrado", "enfraquecido", "cansado", "exaurido", "derrotado", "vencido"],
+    "abaulado": ["convexo", "arredondado", "curvo", "arqueado", "em forma de abóbada", "saliente", "protuberante", "globoso", "esférico", "cilíndrico"],
+    "abdicar": ["renunciar", "demitir-se", "resignar", "deixar o cargo", "abrir mão de", "ceder", "transferir", "desistir de", "rejeitar", "declinar"],
+    "ábdito": ["dedo mínimo", "dedinho", "quinto dedo", "menor dedo da mão ou do pé", "dedo auricular", "dedo mindinho", "dedo pequeno", "dedo menor", "dedo lateral", "dedo extremo"],
+    "abdome": ["barriga", "ventre", "região abdominal", "parte inferior do tronco", "cavidade abdominal", "abdômen", "bandulho", "pança", "bucho", "baixo-ventre"],
+    "abdômen": ["barriga", "ventre", "região abdominal", "parte inferior do tronco", "cavidade abdominal", "abdome", "bandulho", "pança", "bucho", "baixo-ventre"],
+    "abdução": ["afastamento de um membro do plano mediano do corpo", "movimento de afastar", "separação", "divergência", "retirada", "subtração", "desvio", "movimento lateral", "movimento para fora", "movimento de abrir"],
+    "abduzir": ["afastar um membro do plano mediano do corpo", "mover para longe", "separar", "divergir", "retirar", "subtrair", "desviar", "mover lateralmente", "mover para fora", "mover para abrir"],
+    "abelha": ["inseto voador que produz mel", "operária", "zangão", "rainha", "inseto polinizador", "produtora de cera", "ferroadora", "himenóptero", "apídeo", "melífera"],
+    "abelhão": ["zangão", "abelha macho", "inseto grande e barulhento", "indivíduo preguiçoso", "pessoa ociosa", "vagamundo", "vadio", "mandrião", "preguiçoso", "ocioso"],
+    "abençoado": ["bendito", "agraciado", "feliz", "protegido", "favorecido", "bem-aventurado", "sacro", "santo", "consagrado", "iluminado"],
+    "abençoar": ["bendizer", "consagrar", "santificar", "proteger", "favorecer", "iluminar", "louvar", "glorificar", "aspergir água benta", "invocar a bênção divina"],
+    "abençoe": ["bendiga", "consagre", "santifique", "proteja", "favoreça", "ilumine", "louve", "glorifique", "aspersa com água benta", "invoque a bênção divina"],
+    "abençoie": ["bendiga", "consagre", "santifique", "proteja", "favoreça", "ilumine", "louve", "glorifique", "aspersa com água benta", "invoque a bênção divina"],
+    "aberração": ["anormalidade", "deformidade", "monstruosidade", "extravagância", "absurdo", "erro grave", "desvio", "irregularidade", "fenômeno raro", "prodígio"],
+    "abertamente": ["francamente", "claramente", "explicitamente", "sinceramente", "honestamente", "sem rodeios", "às claras", "publicamente", "sem disfarces", "sem segredos"],
+    "abertas": ["francas", "claras", "explícitas", "sinceras", "honestas", "sem rodeios", "às claras", "públicas", "sem disfarces", "sem segredos"],
+    "aberto": ["franco", "claro", "explícito", "sincero", "honesto", "sem rodeios", "às claras", "público", "sem disfarces", "sem segredos"],
+    "abiquem": ["escondam", "ocultem", "ponham em lugar secreto", "guardem em lugar reservado", "encubram", "mascarem", "dissimulem", "cavem", "enterrem", "sepultem"],
+    "abismo": ["precipício", "despenhadeiro", "profundeza", "vão imenso", "lugar profundo e escuro", "abismo moral", "grande diferença", "separação intransponível", "caos", "vazio"],
+    "abissal": ["profundo", "imensurável", "insondável", "profundíssimo", "relativo a abismo", "das profundezas do oceano", "muito grande", "extremo", "ilimitado", "sem fundo"],
+    "abjeto": ["vil", "desprezível", "repugnante", "ignóbil", "infame", "abominável", "execrável", "asqueroso", "hediondo", "indigno"],
+    "ablução": ["purificação ritual com água", "lavagem cerimonial", "banho ritual", "purificação religiosa", "lavagem do corpo", "ato de lavar-se", "higiene pessoal", "purificação espiritual", "rito de purificação", "cerimônia de lavagem"],
+    "abnegação": ["renúncia", "sacrifício", "altruísmo", "desinteresse", "generosidade", "dedicação", "entrega", "abstinência", "autocontrole", "humildade"],
+    "abnegado": ["altruísta", "generoso", "desinteressado", "dedicado", "entregue", "sacrificado", "renunciador", "abstinente", "autocontrolado", "humilde"],
+    "abóbada": ["arco", "cúpula", "teto curvo", "cobertura arqueada", "construção em forma de arco", "estrutura curva de sustentação", "arco ogival", "arco pleno", "arco de volta inteira", "arco rebaixado"],
+    "abobreira": ["planta da abóbora", "videira da abóbora", "pé de abóbora", "trepadeira da abóbora", "planta cucurbitácea", "planta hortícola", "vegetal rastejante", "planta com frutos grandes", "planta de folhas largas", "planta anual"],
+    "abole": ["extingue", "suprime", "anula", "revoga", "cancela", "elimina", "derroga", "invalida", "cessa", "termina"],
+    "abolição": ["extinção", "supressão", "anulação", "revogação", "cancelamento", "eliminação", "derrogação", "invalidação", "cessação", "término"],
+    "abolido": ["extinto", "suprimido", "anulado", "revogado", "cancelado", "eliminado", "derrogado", "invalidado", "cessado", "terminado"],
+    "abolir": ["extinguir", "suprimir", "anular", "revogar", "cancelar", "eliminar", "derrogar", "invalidar", "cessar", "terminar"],
+    "abominação": ["repugnância", "aversão", "ódio", "detestação", "horror", "execração", "náusea", "asco", "repulsa", "antipatía extrema"],
+    "abominável": ["repugnante", "detestável", "horrível", "execrável", "asqueroso", "hediondo", "abjeto", "vil", "indigno", "repulsivo"],
+    "abonar": ["garantir", "afiançar", "endossar", "aprovar", "recomendar", "atestar a idoneidade", "responsabilizar-se por", "credenciar", "validar", "confirmar"],
+    "abordada": ["aproximada", "chegada perto", "interpelada", "dirigida a palavra", "tratada", "enfrentada", "tocada", "mencionada", "iniciada conversa", "chegada"],
+    "abordado": ["aproximado", "chegado perto", "interpelado", "dirigido a palavra", "tratado", "enfrentado", "tocado", "mencionado", "iniciado conversa", "chegado"],
+    "abordagem": ["aproximação", "chegada", "início", "tratamento", "maneira de lidar", "enfoque", "método", "estratégia", "contato inicial", "início de conversa"],
+    "abordar": ["aproximar-se", "chegar perto", "interpelar", "dirigir a palavra", "tratar", "enfrentar", "tocar em", "mencionar", "iniciar conversa", "chegar"],
+    "aborígene": ["nativo", "indígena", "originário", "autóctone", "primitivo", "natural do lugar", "selvagem", "gentio", "habitante original", "primeiro habitante"],
+    "aborrecer": ["chatear", "irritar", "incomodar", "maçar", "enfadar", "desagradar", "molestar", "importunar", "tediar", "enfastiar"],
+    "aborrecido": ["chateado", "irritado", "incomodado", "maçado", "enfadado", "desagradado", "molestado", "importunado", "tediado", "enfastiado"],
+    "aborto": ["interrupção da gravidez", "expulsão prematura do feto", "perda fetal", "malogro da gestação", "interrupção da prenhez", "perda espontânea do feto", "interrupção voluntária da gravidez", "nascimento prematuro sem viabilidade", "feto não viável", "perda gestacional"],
+    "abraço": ["ato de envolver com os braços", "aperto", "afeto", "carinho", "consolo", "acolhimento", "manifestação de afeto", "demonstração de carinho", "ato de abraçar", "enlace"],
+    "abrandar": ["suavizar", "amenizar", "aliviar", "mitigar", "acalmar", "apaziguar", "enfraquecer", "diminuir a intensidade", "tornar menos severo", "tornar mais brando"],
+    "abrange": ["compreende", "inclui", "contém", "envolve", "cobre", "atinge", "circunda", "totaliza", "abarca", "engloba"],
+    "abrangência": ["amplitude", "extensão", "alcance", "esfera", "âmbito", "compreensão", "inclusão", "cobertura", "totalidade", "generalidade"],
+    "abrangendo": ["compreendendo", "incluindo", "contendo", "envolvendo", "cobrindo", "atingindo", "circundando", "totalizando", "abarcando", "englobando"],
+    "abrangente": ["amplo", "extenso", "vasto", "geral", "global", "compreensivo", "inclusivo", "total", "completo", "universal"],
+    "abranger": ["compreender", "incluir", "conter", "envolver", "cobrir", "atingir", "circundar", "totalizar", "abarcar", "englobar"],
+    "abrasada": ["incendiada", "queimada", "em chamas", "ardente", "inflamada", "apaixonada", "excitada", "fervorosa", "intensa", "acalorada"],
+    "abrasadora": ["incendiária", "queimadora", "ardente", "inflamada", "apaixonada", "excitante", "fervorosa", "intensa", "acalorada", "que consome"],
+    "abrasar": ["incendiar", "queimar", "inflamar", "apaixonar", "excitar", "acalorar", "fervorizar", "envolver em chamas", "consumir pelo fogo", "arder"],
+    "abreviação": ["encurtamento", "redução", "resumo", "sinopse", "compêndio", "epítome", "forma abreviada", "sigla", "abreviatura", "contração"],
+    "abreviar": ["encurtar", "reduzir", "resumir", "sintetizar", "condensar", "epilogar", "contrair", "diminuir", "simplificar", "apressar"],
+    "abrigo": ["refúgio", "proteção", "agasalho", "amparo", "porto seguro", "asilo", "guarida", "residência", "casa", "moradia"],
+    "abrir": ["destapar", "descerrar", "desimpedir", "inaugurar", "começar", "iniciar", "dilatar", "expandir", "manifestar", "declarar"],
+    "abriu": ["destapou", "descerrou", "desimpediu", "inaugurou", "começou", "iniciou", "dilatou", "expandiu", "manifestou", "declarou"],
+    "abrolho": ["rochedo submerso", "recife", "obstáculo", "dificuldade", "embaraço", "contratempo", "espinho", "planta espinhosa", "dificuldade inicial", "problema inicial"],
+    "abrupta": ["súbita", "repentina", "inesperada", "imprevista", "brusca", "seca", "áspera", "violenta", "inesperada", "impetuosa"],
+    "abruptamente": ["subitamente", "repentinamente", "inesperadamente", "imprevistamente", "bruscamente", "secamente", "ásperamente", "violentamente", "de repente", "de chofre"],
+    "abrupto": ["súbito", "repentino", "inesperado", "imprevisto", "brusco", "seco", "áspero", "violento", "inesperado", "impetuoso"],
+    "abscôndito": ["escondido", "oculto", "secreto", "encoberto", "dissimulado", "velado", "reservado", "íntimo", "imperceptível", "inexplorado"],
+    "absenteísmo": ["ausência frequente", "falta habitual", "não comparecimento regular", "omissão constante", "falta ao trabalho", "falta à escola", "falta a compromissos", "ausência reiterada", "não presença", "abandono"],
+    "absolutamente": ["totalmente", "completamente", "inteiramente", "de todo", "sem restrição", "incondicionalmente", "definitivamente", "positivamente", "certamente", "indubitavelmente"],
+    "absolutismo": ["autocracia", "despotismo", "tirania", "poder absoluto", "soberania ilimitada", "regime autoritário", "governo absoluto", "concentração de poder", "ausência de limitações ao poder", "totalitarismo"],
+    "absoluto": ["total", "completo", "inteiro", "ilimitado", "incondicional", "definitivo", "positivo", "certo", "indubitável", "soberano"],
+    "absolver": ["perdoar", "inocentar", "exculpar", "remitir", "desculpar", "declarar inocente", "livrar de culpa", "isentar de responsabilidade", "relevar", "justificar"],
+    "absolvição": ["perdão", "inocentação", "exculpação", "remissão", "desculpa", "declaração de inocência", "livramento de culpa", "isenção de responsabilidade", "relevo", "justificação"],
+    "absolvido": ["perdoado", "inocentado", "exculpado", "remitido", "desculpado", "declarado inocente", "livre de culpa", "isento de responsabilidade", "relevado", "justificado"],
+    "absorção": ["incorporação", "assimilação", "retenção", "sucção", "absorvimento", "interesse profundo", "atenção total", "concentração", "engolfamento", "consumo"],
+    "absorto": ["concentrado", "imerso", "envolvido", "entregue", "fascinado", "embevecido", "distraído", "alheio", "pensativo", "contemplativo"],
+    "absorver": ["incorporar", "assimilar", "reter", "sugar", "absorver", "interessar profundamente", "atrair totalmente a atenção", "concentrar", "engolfar", "consumir"],
+    "absorver-se": ["concentrar-se", "immergir-se", "envolver-se", "entregar-se", "fascinar-se", "embevecer-se", "distrair-se", "tornar-se alheio", "pensar profundamente", "contemplar"],
+    "absorvido": ["incorporado", "assimilado", "retido", "sugado", "absorvido", "profundamente interessado", "totalmente atento", "concentrado", "engolfado", "consumido"],
+    "absorvimento": ["incorporação", "assimilação", "retenção", "sucção", "absorção", "interesse profundo", "atenção total", "concentração", "engolfamento", "consumo"],
+    "abstém": ["priva-se", "renega", "recusa", "evita", "afasta-se", "isola-se", "reprime-se", "modera-se", "contém-se", "refreia-se"],
+    "abstêmio": ["que não bebe álcool", "temperante", "moderado", "sóbrio", "que se abstém de bebidas alcoólicas", "que não usa álcool", "que evita bebidas alcoólicas", "que se priva de álcool", "que não consome álcool", "que é contra o consumo de álcool"],
+    "abstenção": ["privação", "renúncia", "recusa", "evitamento", "afastamento", "isolamento", "repressão", "moderação", "contenção", "refreamento"],
+    "abster": ["privar-se", "renegar", "recusar", "evitar", "afastar-se", "isolar-se", "reprimir-se", "moderar-se", "conter-se", "refrear-se"],
+    "abstinência": ["privação", "renúncia", "recusa", "evitamento", "afastamento", "isolamento", "repressão", "moderação", "contenção", "refreamento"],
+    "abstinente": ["privado", "renunciador", "recusador", "evitador", "afastado", "isolado", "reprimido", "moderado", "contido", "refreado"],
+    "abstração": ["generalização", "idealização", "conceituação", "separação mental", "ato de abstrair", "ideia geral", "conceito abstrato", "qualidade abstrata", "pensamento abstrato", "abstraimento"],
+    "abstrai": ["generaliza", "idealiza", "conceitua", "separa mentalmente", "retira", "isola", "desconsidera o particular", "foca no geral", "forma conceitos", "cria abstrações"],
+    "abstrair": ["generalizar", "idealizar", "conceituar", "separar mentalmente", "retirar", "isolar", "desconsiderar o particular", "focar no geral", "formar conceitos", "criar abstrações"],
+    "abstrato": ["genérico", "idealizado", "conceitual", "não concreto", "não material", "intangível", "teórico", "intelectual", "abstrato", "impreciso"],
+    "absurda": ["ilógica", "irracional", "descabida", "disparatada", "incoerente", "ridícula", "extravagante", "inaceitável", "sem sentido", "paradoxal"],
+    "absurdamente": ["ilogicamente", "irracionalmente", "descabidamente", "disparatadamente", "incoerentemente", "ridiculamente", "extravagantemente", "inaceitavelmente", "sem sentido", "paradoxalmente"],
+    "absurdo": ["ilógico", "irracional", "descabido", "disparatado", "incoerente", "ridículo", "extravagante", "inaceitável", "sem sentido", "paradoxal"],
+    "abundância": ["fartura", "copiosidade", "profusão", "riqueza", "excesso", "superabundância", "plenitude", "grande quantidade", "grande número", "riqueza"],
+    "abundante": ["farto", "copioso", "profuso", "rico", "excessivo", "superabundante", "pleno", "em grande quantidade", "em grande número", "rico"],
+    "abundantemente": ["fartamente", "copiosamente", "profusamente", "ricamente", "excessivamente", "superabundantemente", "plenamente", "em grande quantidade", "em grande número", "ricamente"],
+    "abusar": ["usar indevidamente", "explorar", "maltratar", "ofender", "violar", "extrapolar", "exceder", "desrespeitar", "ultrapassar os limites", "fazer uso excessivo"],
+    "abusivo": ["excessivo", "explorador", "maltratador", "ofensivo", "violador", "extrapolador", "excedente", "desrespeitoso", "que ultrapassa os limites", "que faz uso indevido"],
+    "abuso": ["uso indevido", "exploração", "maltrato", "ofensa", "violação", "extrapolação", "excesso", "desrespeito", "ultrapassagem de limites", "uso excessivo"],
+    "acabar": ["terminar", "finalizar", "concluir", "cessar", "extinguir", "findar", "ultimar", "rematar", "dar fim", "exaurir"],
+    "acabou-se": ["terminou", "finalizou", "concluiu", "cessou", "extinguiu-se", "findou", "ultimou-se", "rematou-se", "chegou ao fim", "exauriu-se"],
+    "academia": ["instituição de ensino superior", "sociedade literária ou científica", "ginásio", "centro de treinamento físico", "escola de artes", "instituto", "corporação", "grêmio", "liceu", "colégio"],
+    "acadêmico": ["universitário", "estudioso", "erudito", "relativo à academia", "intelectual", "científico", "escolar", "de ensino superior", "de pesquisa", "teórico"],
+    "acalanto": ["canção de ninar", "embalagem", "nana", "cantiga de embalar", "melodia suave para dormir", "canto para adormecer", "canção suave", "música de embalar", "melodia para acalmar", "canto infantil para dormir"],
+    "acalentar": ["ninar", "embalar", "adormecer com canções", "suavizar", "amenizar", "consolar", "afagar", "acariciar", "mimar", "nutrir esperanças"],
+    "acalento": ["consolo", "alívio", "conforto", "afago", "carinho", "atenção", "cuidado", "proteção", "amparo", "apoio"],
+    "acanhado": ["tímido", "envergonhado", "reservado", "introvertido", "pusilânime", "medroso", "estreito", "pequeno", "limitado", "modesto"],
+    "ação": ["ato", "feito", "atividade", "movimento", "processo", "iniciativa", "influência", "efeito", "demanda judicial", "batalha"],
+    "acarretado": ["causado", "provocado", "originado", "gerado", "produzido", "resultante", "consequente", "determinado", "desencadeado", "trazido"],
+    "acarretar": ["causar", "provocar", "originar", "gerar", "produzir", "resultar em", "consequenciar", "determinar", "desencadear", "trazer"],
+    "acasalar": ["unir para reprodução", "emparelhar", "juntar macho e fêmea", "copular", "cruzar", "reproduzir", "formar casal", "unir sexualmente", "juntar para procriar", "formar par"],
+    "acaso": ["azar", "sorte", "fortuna", "imprevisto", "contingência", "casualidade", "acidente", "coincidência", "eventualidade", "porventura"],
+    "acatar": ["obedecer", "cumprir", "seguir", "respeitar", "observar", "atender", "anuir", "submeter-se", "dar ouvidos", "prestar atenção"],
+    "acautelar": ["prevenir", "precaucionar", "precaver", "proteger", "resguardar", "alertar", "avisar", "tomar cuidado", "prevenir-se", "guardar-se"],
+    "aceder": ["concordar", "consentir", "anuir", "aprovar", "aceitar", "ceder", "permitir", "autorizar", "aderir", "subscrever"],
+    "acéfalo": ["sem cabeça", "descabeçado", "sem líder", "sem direção", "desorganizado", "caótico", "sem autoridade", "sem comando", "sem guia", "sem mentor"],
+    "aceitação": ["aprovação", "concordância", "anuência", "consentimento", "recebimento", "acolhimento", "admissão", "reconhecimento", "conformidade", "aquiescência"],
+    "aceitar": ["aprovar", "concordar", "anuir", "consentir", "receber", "acolher", "admitir", "reconhecer", "conformar-se", "aquiescer"],
+    "aceleração": ["aumento de velocidade", "impulso", "rapidez", "pressa", "ligeireza", "dinamismo", "intensificação", "apressamento", "adiantamento", "avanço rápido"],
+    "acenar": ["fazer sinal com a mão", "indicar com a cabeça", "gesticular", "fazer um aceno", "dar sinal", "mostrar", "indicar", "chamar a atenção", "saudar com um gesto", "comunicar por gestos"],
+    "acender": ["iluminar", "inflamar", "atear fogo", "ligar", "acionar", "despertar", "excitar", "animar", "avivar", "intensificar"],
+    "acendido": ["iluminado", "inflamado", "em chamas", "ligado", "acionado", "despertado", "excitado", "animado", "avivado", "intensificado"],
+    "acento": ["sinal gráfico", "ênfase", "pronúncia", "tom de voz", "destaque", "realce", "importância", "ressalto", "ênfase tônica", "sotaque"],
+    "acentuada": ["pronunciada com ênfase", "marcada", "notável", "forte", "intensa", "ressaltada", "destacada", "saliente", "pronunciada", "enfatizada"],
+    "acentuar": ["enfatizar", "realçar", "destacar", "ressaltar", "marcar", "pronunciar com ênfase", "intensificar", "sublinhar", "frisar", "acentuar graficamente"],
+    "acepção": ["significado", "sentido", "significação", "interpretação", "aceitação", "modo de entender", "maneira de compreender", "sentido da palavra", "significado do termo", "interpretação do vocábulo"],
+    "acerca": ["sobre", "a respeito de", "quanto a", "no que concerne a", "relativamente a", "com relação a", "em relação a", "no tocante a", "referente a", "no que diz respeito a"],
+    "acerejado": ["vermelho como cereja", "cor de cereja", "avermelhado", "rubro", "carmim", "escarlate", "vermelho vivo", "vermelho intenso", "vermelho brilhante", "vermelho forte"],
+    "acertar": ["corrigir", "ajustar", "alinhar", "harmonizar", "resolver", "decifrar", "adivinhar", "atingir o alvo", "ser bem-sucedido", "combinar"],
+    "acertarão": ["corrigirão", "ajustarão", "alinharão", "harmonizarão", "resolverão", "decifrarão", "adivinharão", "atingirão o alvo", "serão bem-sucedidos", "combinarão"],
+    "acervo": ["coleção", "conjunto", "repertório", "patrimônio", "fundo", "estoque", "arquivo", "biblioteca", "pinacoteca", "acúmulo"],
+    "acesa": ["iluminada", "inflamada", "em chamas", "ligada", "acionada", "despertada", "excitada", "animada", "avivada", "intensa"],
+    "aceso": ["iluminado", "inflamado", "em chamas", "ligado", "acionado", "despertado", "excitado", "animado", "avivado", "intenso"],
+    "acessar": ["ter acesso a", "conectar-se a", "entrar em", "utilizar", "consultar", "visualizar", "obter informações de", "ingressar em", "atingir", "chegar a"],
+    "acessibilidade": ["facilidade de acesso", "condição de ser acessível", "possibilidade de alcançar", "disponibilidade", "facilidade de uso", "abertura", "franqueza", "democratização do acesso", "inclusão", "facilidade de obtenção"],
+    "acessível": ["alcançável", "disponível", "fácil de obter", "fácil de usar", "aberto", "franco", "democrático", "inclusivo", "tratável", "abordável"],
+    "acesso": ["entrada", "chegada", "aproximação", "admissão", "ingresso", "conexão", "utilização", "consulta", "disponibilidade", "abertura"],
+    "acessório": ["secundário", "complementar", "adicional", "suplementar", "auxiliar", "dependente", "não essencial", "adjunto", "pertencente", "adereço"],
+    "acha": ["encontra", "descobre", "julga", "opina", "considera", "pensa", "acredita", "supõe", "imagina", "deduz"],
+    "achanar": ["aplanar", "nivelar", "alisar", "tornar plano", "igualar", "rebaixar", "diminuir", "suavizar", "facilitar", "simplificar"],
+    "achar": ["encontrar", "descobrir", "julgar", "opinar", "considerar", "pensar", "acreditar", "supor", "imaginar", "deduzir"],
+    "acharia": ["encontraria", "descobriria", "julgari", "opinaria", "consideraria", "pensaria", "acreditaria", "suporia", "imaginaria", "deduziria"],
+    "achem": ["encontrem", "descubram", "julguem", "opinem", "considerem", "pensem", "acreditem", "suponham", "imaginem", "deduzam"],
+    "achicalhe": ["ridicularize", "zombe", "escarneça", "humilhe", "insulte", "vilipendie", "menospreze", "despreze", "moteje", "satirize"],
+    "achincalhamento": ["ridicularização", "zombaria", "escárnio", "humilhação", "insulto", "vilipêndio", "menosprezo", "desprezo", "motejo", "sátira"],
+    "achismo": ["opinião sem fundamento", "palpite", "suposição vaga", "crença sem base", "conjectura infundada", "ideia sem comprovação", "palpite sem evidências", "crença pessoal sem razão", "suposição sem análise", "opinião superficial"],
+    "acidental": ["casual", "fortuito", "inesperado", "imprevisto", "ocasional", "secundário", "não essencial", "contingente", "aleatório", "adventício"],
+    "acidente": ["imprevisto", "casualidade", "sinistro", "ocorrência inesperada", "evento fortuito", "desastre", "colisão", "queda", "contratempo", "incidente"],
+    "acidez": ["qualidade de ácido", "azedume", "vinagreira", "fermentação", "irritabilidade", "agressividade", "acrimônia", "mordacidade", "sarcasmo", "ferocidade"],
+    "acima": ["em cima", "superiormente", "em posição superior", "para cima", "mais acima", "sobre", "acerca de", "além de", "em nível superior", "superior"],
+    "acinte": ["propósito de ofender", "intenção de injuriar", "desafio", "provocação", "afronta", "insolência", "atrevimento", "desrespeito deliberado", "ofensa intencional", "provocação proposital"],
+    "acintosamente": ["propositadamente para ofender", "intencionalmente para injuriar", "desafiadoramente", "provocadoramente", "afrontosamente", "insolentemente", "atrevidamente", "com desrespeito deliberado", "de forma ofensiva intencional", "de maneira provocadora proposital"],
+    "acintoso": ["propositadamente ofensivo", "intencionalmente injurioso", "desafiador", "provocador", "afrontoso", "insolente", "atrevido", "com desrespeito deliberado", "ofensivo intencionalmente", "provocador propositalmente"],
+    "acionar": ["pôr em funcionamento", "ativar", "ligar", "desencadear", "iniciar", "mover", "impulsionar", "demandar judicialmente", "processar", "recorrer"],
+    "acirrado": ["intensificado", "exacerbado", "agravado", "inflamado", "fervoroso", "violento", "aguerrido", "disputado intensamente", "acentuado", "reforçado"],
+    "acirrante": ["que acirra", "que intensifica", "que exacerba", "que agrava", "que inflama", "que torna fervoroso", "que torna violento", "que aguerrilha", "que intensifica a disputa", "que acentua"],
+    "aclamação": ["viva", "aplauso entusiástico", "saudação ruidosa", "manifestação de apoio", "proclamação festiva", "reconhecimento público", "louvor unânime", "aprovação geral", "homenagem ruidosa", "manifestação de entusiasmo"],
+    "acme": ["ápice", "auge", "píncaro", "cume", "culminância", "ponto mais alto", "grau máximo", "apogeu", "clímax", "auge"],
+    "acocorar": ["agachar", "baixar-se", "curvar-se", "colocar-se de cócoras", "sentar-se sobre os calcanhares", "abaixar o corpo", "ficar de cócoras", "assentar-se no chão com os joelhos dobrados", "baixar-se sobre os joelhos", "ajoelhar-se parcialmente"],
+    "ações": ["atos", "feitos", "atividades", "movimentos", "processos", "iniciativas", "influências", "efeitos", "demandas judiciais", "títulos de empresas"],
+    "acoime": ["multa", "pena pecuniária", "sanção financeira", "imposição de multa", "penalidade em dinheiro", "taxa punitiva", "cobrança de multa", "condenação ao pagamento de multa", "sanção econômica", "encargo financeiro punitivo"],
+    "açoite": ["chicote", "flagelo", "vergasta", "instrumento de punição", "castigo", "punição", "sofrimento", "aflição", "opressão", "tirania"],
+    "acolá": ["lá", "ali", "naquele lugar", "do lado de lá", "mais além", "em outro lugar", "naquela direção", "para lá", "em aquele lugar", "distante"],
+    "acolher": ["receber", "agasalhar", "hospedar", "amparar", "proteger", "dar guarida", "dar abrigo", "aceitar", "admitir", "recepcionar"],
+    "acolhíamos": ["recebíamos", "agasalhávamos", "hospedávamos", "amparávamos", "protegíamos", "dávamos guarida", "dávamos abrigo", "aceitávamos", "admitíamos", "recepcionávamos"],
+    "acolhida": ["recepção", "agasalho", "hospedagem", "amparo", "proteção", "guarida", "abrigo", "aceitação", "admissão", "recebimento"],
+    "acolhido": ["recebido", "agasalhado", "hospedado", "amparado", "protegido", "que recebeu guarida", "que recebeu abrigo", "aceito", "admitido", "recepcionado"],
+    "acolhimento": ["recepção", "agasalho", "hospedagem", "amparo", "proteção", "guarida", "abrigo", "aceitação", "admissão", "recebimento"],
+    "acometer": ["atacar", "investir contra", "assaltar", "agravar", "atingir", "incidir sobre", "sobrevir", "ocorrer repentinamente", "assaltar", "impugnar"],
+    "acometermos": ["atacarmos", "investirmos contra", "assaltarmos", "agravarmo-nos", "atingirmos", "incidirmos sobre", "sobreviermos", "ocorrermos repentinamente", "assaltarmos", "impugnarmos"],
+    "acometida": ["ataque", "investida", "assalto", "incidência", "ocorrência repentina", "surto", "impulso", "acesso", "ofensiva", "agressão"],
+    "acometido": ["atacado", "investido contra", "assaltado", "agravado", "atingido", "incidido sobre", "sobrevindo", "ocorrido repentinamente", "assaltado", "impugnado"],
+    "acompanhamento": ["seguimento", "assistência", "supervisão", "orientação", "apoio", "escolta", "séquito", "cortejo", "guia", "auxílio"],
+    "acompanhar": ["seguir", "escoltar", "guiar", "assistir", "supervisionar", "orientar", "apoiar", "estar junto", "ir junto", "seguir o ritmo"],
+    "acompanharemos": ["seguiremos", "escoltaremos", "guiaremos", "assistiremos", "supervisionaremos", "orientaremos", "apoiaremos", "estaremos juntos", "iremos juntos", "seguiremos o ritmo"],
+    "acondicionado": ["embalado", "guardado", "armazenado", "disposto", "organizado", "preservado", "conservado", "temperado", "climatizado", "posto em condição adequada"],
+    "acondicionamento": ["embalagem", "guarda", "armazenamento", "disposição", "organização", "preservação", "conservação", "temperatura controlada", "climatização", "ato de acondicionar"],
+    "acondicionar": ["embalar", "guardar", "armazenar", "dispor", "organizar", "preservar", "conservar", "temperar", "climatizar", "pôr em condição adequada"],
+    "aconselharmos": ["sugerirmos", "recomendarmos", "orientarmos", "guiarmos", "instruirmos", "dissuadirmos", "alertarmos", "avisarmos", "propormos", "sermonearmos"],
+    "acontecer": ["ocorrer", "suceder", "passar", "realizar-se", "dar-se", "sobrevir", "advir", "resultar", "ocorrer", "verificar-se"],
+    "acontecimento": ["ocorrência", "fato", "evento", "sucesso", "passagem", "incidente", "episódio", "caso", "acontecido", "realização"],
+    "acontecimentos": ["ocorrências", "fatos", "eventos", "sucessos", "passagens", "incidentes", "episódios", "casos", "acontecidos", "realizações"],
+    "aconteço": ["ocorro", "sucedo", "passo", "realizo-me", "dou-me", "sobrevenho", "advenho", "resulto", "aconteço", "verifico-me"],
+    "acordado": ["desperto", "consciente", "ciente", "combinado", "ajustado", "convencionado", "estabelecido", "resolvido", "determinado", "firmado"],
+    "acordar": ["despertar", "sair do sono", "tomar consciência", "combinar", "ajustar", "convencionar", "estabelecer", "resolver", "determinar", "firmar"],
+    "acordo": ["combinação", "ajuste", "convênio", "tratado", "pacto", "contrato", "entendimento", "harmonia", "concordância", "resolução"],
+    "acreditar": ["crer", "confiar", "ter fé", "achar", "supor", "imaginar", "pensar", "considerar verdadeiro", "dar crédito", "confiar em"],
+    "acrescentar": ["adicionar", "aumentar", "aditar", "juntar", "incluir", "somar", "ampliar", "alongar", "acrescer", "adensar"],
+    "acrescento": ["adição", "aumento", "aditamento", "junção", "inclusão", "soma", "ampliação", "alongamento", "acréscimo", "adensamento"],
+    "acrescido": ["adicionado", "aumentado", "aditado", "juntado", "incluído", "somado", "ampliado", "alongado", "acrescido", "adensado"],
+    "acréscimo": ["adição", "aumento", "aditamento", "junção", "inclusão", "soma", "ampliação", "alongamento", "acrescento", "adensamento"],
+    "acrítico": ["que não critica", "ingênuo", "inocente", "que aceita sem questionar", "que não tem senso crítico", "que não analisa", "que não avalia", "que não julga", "que não examina", "que recebe passivamente"],
+    "acrônimo": ["sigla formada pelas letras iniciais de um nome", "abreviação formada por letras iniciais", "palavra formada por iniciais", "abreviatura alfabética", "sigla pronunciável como palavra", "redução vocabular por iniciais", "palavra-sigla", "vocábulo formado por letras iniciais", "abreviação com pronúncia própria", "palavra criada com primeiras letras"],
+    "actividade": ["atividade", "ação", "feito", "trabalho", "tarefa", "ocupação", "movimento", "dinamismo", "energia", "vivacidade"],
+    "acuado": ["encurralado", "enclausurado", "apertado", "pressionado", "ameaçado", "intimidado", "acorralado", "sem saída", "em situação difícil", "sob pressão"],
+    "açúcar": ["carboidrato doce", "sacarose", "adoçante natural", "produto da cana-de-açúcar", "cristais doces", "substância para adoçar", "doce", "ingrediente de alimentos", "produto alimentício", "hidrato de carbono"],
+    "acudas": ["socorra", "ajude", "auxilie", "assista", "amparare", "proteja", "livre", "defenda", "interceda", "favoreça"],
+    "açude": ["barragem", "represa", "dique", "barreira de água", "reservatório de água", "tanque", "lago artificial", "obra hidráulica", "armazenamento de água", "barragem pequena"],
+    "acudir": ["socorrer", "ajudar", "auxiliar", "assistir", "amparar", "proteger", "livrar", "defender", "interceder", "favorecer"],
+    "acuidade": ["nitidez", "clareza", "precisão", "exatidão", "perspicácia", "agudeza", "discernimento", "sensibilidade", "finesse", "vivacidade"],
+    "açulado": ["incitado", "estimulado", "provocado", "instigado", "aguçado", "excitado", "irritado", "enfurecido", "desafinado", "afiado"],
+    "açular": ["incitar", "estimular", "provocar", "instigar", "aguçar", "excitar", "irritar", "enfurecer", "desafinar", "afiar"],
+    "acume": ["ponto mais alto", "ápice", "auge", "cume", "píncaro", "culminância", "grau máximo", "extremo", "intensidade máxima", "ponto crítico"],
+    "acumulando": ["juntando", "amontoando", "reunindo", "armazenando", "guardando", "colecionando", "concentrando", "aglomerando", "empilhando", "totalizando"],
+    "acumular": ["juntar", "amontoar", "reunir", "armazenar", "guardar", "colecionar", "concentrar", "aglomerar", "empilhar", "totalizar"],
+    "acúmulo": ["junção", "amontoamento", "reunião", "armazenamento", "guarda", "coleção", "concentração", "aglomeração", "empilhamento", "total"],
+    "acurácia": ["precisão", "exatidão", "rigor", "correção", "fidelidade", "minúcia", "esmero", "cuidado", "perfeição", "exatidão"],
+    "acuracidade": ["precisão", "exatidão", "rigor", "correção", "fidelidade", "minúcia", "esmero", "cuidado", "perfeição", "exatidão"],
+    "apurado": ["refinado", "esmerado", "cuidado", "preciso", "exato", "rigoroso", "investigado", "averiguado", "apurado financeiramente", "elegante"],
+    "acusar": ["imputar", "denunciar", "incriminar", "culpar", "inculpar", "responsabilizar", "delatar", "queixar-se de", "atribuir culpa", "apontar como culpado"],
+    "acusava": ["imputava", "denunciava", "incriminava", "culpava", "inculpava", "responsabilizava", "delatava", "queixava-se de", "atribuía culpa", "apontava como culpado"],
+    "ad aeternum": ["para sempre", "eternamente", "para a eternidade", "sem fim", "perpetuamente", "indefinidamente", "para todo o sempre", "eternamente", "sem cessar", "para o futuro"],
+    "adágio": ["provérbio", "ditado popular", "máxima", "sentença", "aforismo", "brocardo", "dito", "expressão popular", "sabedoria popular", "ensinamento popular"],
+    "adaptação": ["ajuste", "adequação", "acomodação", "transformação", "modificação", "ajustamento", "aclimatação", "familiarização", "conversão", "ajuste ao meio"],
+    "adaptar": ["ajustar", "adequar", "acomodar", "transformar", "modificar", "ajustar-se", "aclimatar-se", "familiarizar-se", "converter", "moldar"],
+    "adaptativo": ["adaptável", "flexível", "ajustável", "acomodatício", "que se adapta", "que tem capacidade de adaptação", "que se ajusta às mudanças", "que se molda às circunstâncias", "que se adequa", "que se ajusta ao ambiente"],
+    "adaptável": ["ajustável", "flexível", "maleável", "moldável", "acomodatício", "que pode ser adaptado", "que tem capacidade de adaptação", "que se ajusta às mudanças", "que se molda às circunstâncias", "que se adequa"],
+    "ademais": ["além disso", "outrossim", "demais", "de mais a mais", "além do mais", "ainda mais", "outra vez", "por outro lado", "também", "igualmente"],
+    "adendo": ["acréscimo", "apêndice", "suplemento", "aditamento", "nota adicional", "observação complementar", "anexo", "posfácio", "complemento", "adição"],
+    "adentrar": ["entrar", "penetrar", "ingressar", "introduzir-se", "infiltrar-se", "embrenhar-se", "imergir", "aprofundar-se", "invadir", "transpassar"],
+    "adepto": ["seguidor", "partidário", "fã", "simpatizante", "defensor", "adepto de uma ideia", "aderente", "proselito", "discípulo", "seguinte"],
+    "adequação": ["apropriação", "pertinência", "conformidade", "ajuste", "adaptação", "conveniência", "idoneidade", "aptidão", "propriedade", "justeza"],
+    "adequado": ["apropriado", "pertinente", "conforme", "ajustado", "adaptado", "conveniente", "idôneo", "apto", "próprio", "justo"],
+    "adequar": ["apropriar", "tornar adequado", "ajustar", "adaptar", "conformar", "harmonizar", "proporcionar", "acomodar", "regular", "arranjar"],
+    "adereço": ["ornamento", "enfeite", "adorno", "aplique", "complemento", "acessório", "ornato", "paramento", "atavismo", "detalhe decorativo"],
+    "aderência": ["ligação", "união", "fixação", "apego", "fidelidade", "seguimento", "apoio", "concordância", "aprovação", "vinculação"],
+    "aderido": ["ligado", "unido", "fixado", "apegado", "fiel", "seguidor", "apoiador", "concordante", "aprovado", "vinculado"],
+    "aderir": ["ligar-se", "unir-se", "fixar-se", "apegar-se", "ser fiel a", "seguir", "apoiar", "concordar", "aprovar", "vincular-se"],
+    "adesão": ["ligação", "união", "fixação", "apego", "fidelidade", "seguimento", "apoio", "concordância", "aprovação", "vinculação"],
+    "adestrar": ["treinar", "instruir", "ensinar", "capacitar", "habilitar", "educar", "preparar", "exercitar", "domar", "disciplinar"],
+    "adeus": ["despedida", "até logo", "vá com Deus", "fica com Deus", "até a vista", "tchau", "arrivederci", "sayonara", "goodbye", "au revoir"],
+    "adiante": ["à frente", "mais adiante", "depois", "no futuro", "em seguida", "adiante", "para frente", "ulteriormente", "posteriormente", "daqui em diante"],
+    "adiante-se": ["avance", "vá à frente", "prossiga", "siga em frente", "antecipe-se", "adiante", "adiante-se", "vá primeiro", "tome a dianteira", "movimente-se para a frente"],
+    "adiar": ["postergar", "prorrogar", "retardar", "transferir para depois", "remeter", "delongar", "diferir", "pospor", "procrastinar", "suspender temporariamente"],
+    "adição": ["soma", "junção", "acréscimo", "aditamento", "inclusão", "acrescentamento", "total", "cálculo de adição", "operação matemática de somar", "aumento"],
+    "adicionar": ["somar", "juntar", "acrescentar", "aditar", "incluir", "acrescer", "aumentar", "apensar", "incorporar", "agregar"],
+    "adimplir": ["cumprir obrigação", "satisfazer débito", "pagar dívida", "liquidar compromisso", "honrar contrato", "efetuar pagamento", "cumprir o devido", "solver", "quitar", "dar cumprimento"],
+    "aditamento": ["acréscimo", "suplemento", "adenda", "complemento", "nota adicional", "observação complementar", "anexo", "apêndice", "adição", "inclusão"],
+    "aditar": ["acrescentar", "adicionar", "suplementar", "complementar", "anexar", "apensar", "incluir", "juntar", "acrescer", "adensar"],
+    "adivinha": ["predição", "prognóstico", "presságio", "vaticínio", "profecia", "previsão", "palpite", "conjectura", "suposição", "intuição"],
+    "adjacente": ["vizinho", "contíguo", "próximo", "confinante", "lindeiro", "pegado", "contato", "ao lado de", "perto de", "vizinhança"],
+    "adjetivo": ["palavra que qualifica o substantivo", "termo que expressa qualidade", "palavra modificadora do substantivo", "qualificador", "modificador nominal", "atributo", "característica", "qualidade gramatical", "termo qualificativo", "palavra que acompanha o nome"],
+    "adjudicação": ["ato judicial de atribuir a posse de um bem", "atribuição judicial", "concessão judicial", "transferência judicial de propriedade", "entrega judicial de um bem", "ato de adjudicar", "decisão judicial de atribuição", "concessão por sentença", "atribuição por ordem judicial", "transferência legal de posse"],
+    "adjudicar": ["atribuir judicialmente a posse de um bem", "conceder judicialmente", "transferir judicialmente a propriedade", "entregar judicialmente um bem", "decidir pela atribuição", "conceder por sentença", "atribuir por ordem judicial", "transferir legalmente a posse", "dar a posse por decisão judicial", "conceder a propriedade por via judicial"],
+    "adjunto": ["auxiliar", "assistente", "adjunto", "suplente", "coadjutor", "auxiliador", "colaborador", "assistente", "secundário", "suplementar"],
+    "administração": ["gerenciamento", "gestão", "direção", "governo", "comando", "organização", "planejamento", "controle", "supervisão", "coordenação"],
+    "admiração": ["apreço", "estima", "respeito", "encanto", "fascínio", "maravilhamento", "deleite", "contentamento", "aprovação", "louvor"],
+    "admirar": ["apreciar", "estimar", "respeitar", "encantar-se", "fascinar-se", "maravilhar-se", "deleitar-se", "aprovar", "louvar", "contemplar com apreço"],
+    "admirável": ["apreciável", "estimável", "respeitável", "encantador", "fascinante", "maravilhoso", "deleitoso", "aprovável", "louvável", "notável"],
+    "admissão": ["aceitação", "ingresso", "entrada", "permissão", "reconhecimento", "aprovação", "contratação", "inscrição", "matrícula", "acolhimento"],
+    "admissibilidade": ["condição de ser admissível", "possibilidade de ser aceito", "qualidade do que pode ser admitido", "aceitabilidade", "pertinência", "relevância", "validade formal", "conformidade legal para ser aceito", "possibilidade de ingresso", "condição para aceitação"],
+
     "adimplir": ["cumprir", "executar", "realizar", "atender"],
     "aditamento": ["acréscimo", "anexo", "suplemento", "adicional"],
     "aditar": ["adicionar", "acrescentar", "suplementar", "incluir"],
@@ -3623,31 +3645,1070 @@ const bancoDeSinonimos = {
     "decorar": ["ornamentar", "enfeitar", "adornar", "embelezar", "memorizar", "aprender de cor", "fixar na memória", "gravar na lembrança", "lembrar-se", "reter na mente"],
     "decoro": ["decência", "pudor", "recato", "moralidade", "honestidade", "respeito", "dignidade", "comportamento adequado", "modéstia", "propriedade"],
     "decorre": ["resulta", "deriva", "procede", "origina-se", "advém", "segue-se", "consequência", "emanar", "fluir", "nascer de"],
+    "decorrência": ["consequência", "resultado", "efeito", "sequela", "decorrente", "derivação", "origem", "procedência", "emanção", "consecução"],
+    "decorrente": ["resultante", "derivado", "procedente", "originário", "consequente", "que decorre", "que se segue", "que provém", "que emana", "que resulta de"],
+    "decorrentes": ["resultantes", "derivados", "procedentes", "originários", "consequentes", "que decorrem", "que se seguem", "que provêm", "que emanam", "que resultam de"],
+    "decorrer": ["transcorrer", "passar", "suceder-se", "acontecer", "realizar-se", "desenrolar-se", "seguir", "fluir", "processar-se", "ocorrer"],
+    "decorreremos": ["transcorreremos", "passaremos", "suceder-nos-emos", "aconteceremos", "realizar-nos-emos", "desenrolar-nos-emos", "seguiremos", "fluiremos", "processar-nos-emos", "ocorreremos"],
+    "decorrido": ["transcorrido", "passado", "sucedido", "acontecido", "realizado", "desenrolado", "seguido", "fluído", "processado", "ocorrido"],
+    "decorro": ["transcorro", "passo", "sucedo-me", "aconteço", "realizo-me", "desenrolo-me", "sigo", "fluo", "processo-me", "ocorrer"],
+    "decrépita": ["velha e arruinada", "antiga e deteriorada", "em estado de decadência", "gasta pelo tempo", "em ruínas", "envelhecida e frágil", "em processo de deterioração avançado", "caduca", "senil", "obsoleta"],
+    "decrépito": ["velho e arruinado", "antigo e deteriorado", "em estado de decadência", "gasto pelo tempo", "em ruínas", "envelhecido e frágil", "em processo de deterioração avançado", "caduco", "senil", "obsoleto"],
+    "decrepitude": ["velhice avançada", "estado de decadência", "ruína", "deterioração", "envelhecimento extremo", "fragilidade senil", "estado de desgaste avançado", "caducidade", "senilidade", "obsolescência"],
+    "decrescente": ["que diminui", "em diminuição", "em declínio", "regressivo", "em redução", "que perde intensidade", "que se torna menor", "que vai diminuindo", "em progressão decrescente", "que decai"],
+    "decretar": ["ordenar", "determinar", "estabelecer por decreto", "promulgar", "estatuir", "dispor", "legislar", "fixar", "instituir", "resolver"],
+    "decreto": ["ordem", "determinação", "ato normativo", "proclamação oficial", "disposição legal", "estatuto", "lei", "resolução", "mandado", "édito"],
+    "decurso": ["transcurso", "passagem", "decôrrer do tempo", "fluxo", "andamento", "processo", "evolução", "sucessão", "sequência", "desenvolvimento"],
+    "dedicação": ["empenho", "esforço", "aplicação", "interesse", "zelo", "devotamento", "afinco", "perseverança", "assiduidade", "consagração"],
+    "dedicado": ["empenhado", "esforçado", "aplicado", "interessado", "zeloso", "devotado", "afeito", "assíduo", "perseverante", "consagrado"],
+    "dedicar": ["empenhar", "esforçar-se", "aplicar-se", "interessar-se", "zelar", "devotar", "afeiçoar-se", "consagrar", "destinar", "oferecer"],
+    "dedicar-se": ["entregar-se", "aplicar-se", "consagrar-se", "devotar-se", "empenhar-se", "esforçar-se", "interessar-se", "ocupar-se com", "voltar-se para", "entregar-se a"],
+    "dedo": ["extremidade dos membros", "falange", "dígito", "indicador", "polegar", "médio", "anelar", "mínimo", "ponta", "extremidade"],
+    "dedução": ["inferência", "conclusão", "raciocínio", "subtração", "desconto", "abatimento", "diminuição", "redução", "derivação", "extração"],
+    "deduzido": ["inferido", "concluído", "raciocinado", "subtraído", "descontado", "abatido", "diminuído", "reduzido", "derivado", "extraído"],
+    "deduzir": ["inferir", "concluir", "raciocinar", "subtrair", "descontar", "abater", "diminuir", "reduzir", "derivar", "extrair"],
+    "defasado": ["atrasado", "obsoleto", "desatualizado", "ultrapassado", "fora de época", "descompassado", "deficiente em tempo", "com diferença temporal", "com atraso cronológico", "em descompasso com o tempo"],
+    "defasagem": ["atraso", "obsolescência", "desatualização", "ultrapassagem", "diferença temporal", "descompasso", "deficiência de tempo", "atraso cronológico", "desalinhamento temporal", "intervalo de tempo"],
+    "defecção": ["abandono", "deserção", "traição", "apostasia", "desistência", "retirada", "separação", "cisão", "ruptura", "afastamento"],
+    "defeito": ["imperfeição", "falha", "vício", "mancha", "deformidade", "irregularidade", "senão", "culpa", "erro", "carência"],
+    "defende": ["protege", "ampara", "resguarda", "justifica", "sustenta", "alega", "advoga", "patrocina", "escuda", "salvaguarda"],
+    "defender": ["proteger", "amparar", "resguardar", "justificar", "sustentar", "alegar", "advogar", "patrocinar", "escudar", "salvaguardar"],
+    "defenestrar": ["jogar pela janela", "atirar pela janela", "expulsar violentamente", "demitir sumariamente", "remover do cargo de forma abrupta", "livrar-se de alguém rapidamente", "lançar para fora", "expulsar com violência", "retirar do poder de forma inesperada", "despedir sem cerimônia"],
+    "defensiva": ["atitude de defesa", "posição de defesa", "em defesa", "para defesa", "que se destina a defender", "que evita o ataque", "que se protege", "que se resguarda", "que se defende", "que se coloca em posição de defesa"],
+    "deferência": ["respeito", "consideração", "reverência", "acatamento", "atenção", "cortesia", "urbanidade", "gentileza", "deferimento", "aprovação"],
+    "deferente": ["respeitoso", "considerado", "reverente", "acatador", "atencioso", "cortês", "urbano", "gentil", "deferidor", "aprovador"],
+    "deferida": ["concedida", "aprovada", "atendida", "autorizada", "outorgada", "consignada", "favorecida", "anuída", "permitida", "ratificada"],
+    "deferido": ["concedido", "aprovado", "atendido", "autorizado", "outorgado", "consignado", "favorecido", "anuído", "permitido", "ratificado"],
+    "deferimento": ["concessão", "aprovação", "atendimento", "autorização", "outorga", "consignação", "favorecimento", "anuência", "permissão", "ratificação"],
+    "deferir": ["conceder", "aprovar", "atender", "autorizar", "outorgar", "consignar", "favorecer", "anuir", "permitir", "ratificar"],
+    "defesa": ["proteção", "amparo", "resguardo", "justificativa", "alegação", "advocacia", "patrocínio", "escudo", "salvaguarda", "argumentação"],
+    "defeso": ["proibido", "vedado", "interdito", "ilícito", "irregular", "não permitido por lei", "que não se pode fazer", "que é proibido por norma", "que infringe a lei", "que é contrário às regras"],
+    "défice": ["falta", "carência", "escassez", "insuficiência", "rombo", "prejuízo", "perda", "resultado negativo", "saldo negativo", "déficit"],
+    "deficiência": ["falta", "carência", "imperfeição", "incapacidade", "limitação", "defeito", "anormalidade", "insuficiência", "privação", "minusvalia"],
+    "deficiente": ["falho", "imperfeito", "incapaz", "limitado", "defeituoso", "anormal", "insuficiente", "privado de algo", "com minusvalia", "com necessidades especiais"],
+    "déficit": ["falta", "carência", "escassez", "insuficiência", "rombo", "prejuízo", "perda", "resultado negativo", "saldo negativo", "défice"],
+    "deficitário": ["com déficit", "com saldo negativo", "com insuficiência", "com rombo financeiro", "em crise financeira", "com perdas", "com resultado negativo", "em situação de débito", "com falta de recursos", "em desequilíbrio financeiro"],
+    "defina": ["determine", "estabeleça", "precise", "circunscreva", "delimite", "especifique", "caracterize", "conceitue", "interprete", "explique"],
+    "definhados": ["emaciados", "magros", "enfraquecidos", "murchos", "desvitalizados", "desnutridos", "esqueléticos", "mirrados", "flácidos", "debilitados"],
+    "definhar": ["emagrecer", "enfraquecer", "murchar", "desvitalizar-se", "desnutrir-se", "esgotar-se", "minguar", "secar", "perder vigor", "decaír"],
+    "definição": ["determinação", "estabelecimento", "precisão", "circunscrição", "delimitação", "especificação", "caracterização", "conceito", "interpretação", "explicação"],
+    "definida": ["determinada", "estabelecida", "precisa", "circunscrita", "delimitada", "especificada", "caracterizada", "conceituada", "interpretada", "explicada"],
+    "definido": ["determinado", "estabelecido", "preciso", "circunscrito", "delimitado", "especificado", "caracterizado", "conceituado", "interpretado", "explicado"],
+    "definir": ["determinar", "estabelecer", "precisar", "circunscrever", "delimitar", "especificar", "caracterizar", "conceituar", "interpretar", "explicar"],
+    "definitivamente": ["de modo definitivo", "para sempre", "eternamente", "irrevogavelmente", "terminantemente", "conclusivamente", "finalmente", "de vez", "sem volta", "de forma decisiva"],
+    "definitivo": ["final", "conclusivo", "terminante", "irrevogável", "eterno", "permanente", "decisivo", "fixo", "estável", "inexorável"],
+    "deflagra": ["irrompe", "começa violentamente", "inicia-se com força", "desencadeia-se", "eclode", "explode", "manifesta-se subitamente", "irradia-se", "propaga-se rapidamente", "desenvolve-se com intensidade"],
+    "deflagração": ["irrupção", "início violento", "início com força", "desencadeamento", "eclosão", "explosão", "manifestação súbita", "irradiação", "propagação rápida", "desenvolvimento intenso"],
+    "deflagrado": ["irrompido", "iniciado violentamente", "começado com força", "desencadeado", "eclodido", "explodido", "manifestado subitamente", "irradiado", "propagado rapidamente", "desenvolvido com intensidade"],
+    "deflagrar": ["irromper", "começar violentamente", "iniciar com força", "desencadear", "eclodir", "explodir", "manifestar-se subitamente", "irradiar", "propagar rapidamente", "desenvolver-se com intensidade"],
+    "deflexão": ["desvio", "flexão", "curvatura", "mudança de direção", "inclinação", "refração", "reflexão", "torção", "dobra", "sinuosidade"],
+    "defraudar": ["enganar", "fraudar", "lesar", "burlar", "trapacear", "lograr", "desfalcar", "privar injustamente", "abusar da confiança", "cometer fraude contra"],
+    "defrontar": ["encarar", "confrontar", "opor-se", "estar de frente para", "limitar-se com", "estar em frente a", "afrontar", "desafiar", "medir forças com", "estar frente a frente"],
+    "defronte": ["em frente", "diante de", "ante", "na frente de", "fronteiro a", "oposto a", "em contrapartida", "em face de", "em presença de", "em oposição"],
+    "defunto": ["morto", "falecido", "finado", "extinto", "sem vida", "corpo sem vida", "cadáver", "alma penada", "espírito", "fantasma"],
+    "degelar": ["derreter", "dissolver pelo calor", "fundir", "descongelar", "tornar líquido", "desfazer o gelo", "cessar o congelamento", "liquefazer", "desgelar", "descongelar-se"],
+    "degeneração": ["deterioração", "degradação", "corrupção", "perversão", "depravação", "declínio moral", "deterioração física", "alteração genética prejudicial", "processo de degenerar", "estado de degenerescência"],
+    "degenerado": ["deteriorado", "degradado", "corrupto", "pervertido", "depravado", "em declínio moral", "fisicamente deteriorado", "geneticamente alterado de forma prejudicial", "que sofreu degeneração", "em estado de degenerescência"],
+    "degenerar": ["deteriorar-se", "degradar-se", "corromper-se", "perverter-se", "depravar-se", "entrar em declínio moral", "sofrer deterioração física", "alterar-se geneticamente de forma prejudicial", "entrar em processo de degeneração", "tornar-se degenerado"],
+    "degenerativo": ["que causa degeneração", "que deteriora", "que degrada", "que corrompe", "que perverte", "que deprava", "que leva ao declínio moral", "que causa deterioração física", "que provoca alteração genética prejudicial", "que induz a degeneração"],
+    "deglutir": ["engolir", "tragar", "ingerir", "absorver", "consumir", "engolir com dificuldade", "fazer passar pela garganta", "alimentar-se", "comer", "sorver"],
+    "degradação": ["deterioração", "aviltamento", "rebaixamento", "humilhação", "desonra", "infâmia", "corrupção", "depravação", "declínio", "envilecimento"],
+    "degradado": ["deteriorado", "aviltado", "rebaixado", "humilhado", "desonrado", "infame", "corrupto", "depravado", "em declínio", "envilecido"],
+    "degradante": ["que degrada", "que avilta", "que rebaixa", "que humilha", "que desonra", "que infama", "que corrompe", "que deprava", "que causa declínio", "que envilece"],
+    "degradantes": ["que degradam", "que aviltam", "que rebaixam", "que humilham", "que desonram", "que infamam", "que corrompem", "que depravam", "que causam declínio", "que envilecem"],
+    "degradar": ["deteriorar", "aviltar", "rebaixar", "humilhar", "desonrar", "infamar", "corromper", "depravar", "declinar", "envilecer"],
+    "degrau": ["lance de escada", "patamar", "nível", "etapa", "fase", "grau", "estágio", "passo", "elevação", "degrauzinho"],
+    "degredado": ["exilado", "banido", "proscrito", "afastado da pátria", "expulso", "desterrado", "relegado", "banido da sociedade", "condenado ao exílio", "afastado compulsoriamente"],
+    "degredo": ["exílio", "banimento", "proscrição", "afastamento da pátria", "expulsão", "desterro", "relegação", "banimento da sociedade", "pena de exílio", "afastamento compulsório"],
+    "degringolar": ["deteriorar-se rapidamente", "entrar em declínio acentuado", "desmoronar", "ir à ruína", "desandar", "piorar drasticamente", "desorganizar-se", "desmoronar moralmente", "ir de mal a pior", "desabar"],
+    "degustação": ["ato de degustar", "prova de alimentos ou bebidas", "experimentação", "apreciação", "prova para avaliar o sabor", "prova para análise sensorial", "prova gourmet", "prova de vinhos", "prova de queijos", "prova de azeites"],
+    "degustar": ["provar com atenção", "experimentar o sabor", "apreciar o paladar", "saborear", "provar delicadamente", "analisar o sabor", "provar para avaliar", "provar com requinte", "provar com prazer", "provar lentamente"],
+    "deidade": ["divindade", "deus", "ser supremo", "ente divino", "força sobrenatural", "potência divina", "objeto de culto", "ser celestial", "ente sagrado", "divo"],
+    "deísmo": ["crença em um Deus criador", "crença em Deus pela razão", "religião natural", "crença em um ser supremo não intervencionista", "crença em Deus sem religião revelada", "filosofia religiosa que admite Deus pela razão", "teologia natural", "crença em um Deus transcendente", "crença em Deus como causa primeira", "crença em um Deus impessoal"],
+    "deitar": ["colocar na horizontal", "estender", "reclinar", "tombar", "baixar", "abater", "prostrar", "derramar", "verter", "inclinar"],
+    "deitar-se": ["colocar-se na horizontal", "estender-se", "reclinar-se", "tombar", "ir para a cama", "ir dormir", "repousar", "prostrar-se", "deitar", "estirar-se"],
+    "deixa": ["licença", "permissão", "consentimento", "autorização", "anuência", "legado", "herança", "doação", "rastros", "vestígios"],
+    "deixado": ["abandonado", "largado", "esquecido", "omitido", "permitido", "consentido", "autorizado", "legado", "herdado", "doado"],
+    "deixando": ["abandonando", "largando", "esquecendo", "omitindo", "permitindo", "consentindo", "autorizando", "legando", "herdando", "doando"],
+    "deixar": ["abandonar", "largar", "esquecer", "omitir", "permitir", "consentir", "autorizar", "legar", "herdar", "doar"],
+    "deixar a desejar": ["ser insatisfatório", "ser aquém do esperado", "não corresponder às expectativas", "ser medíocre", "ser ruim", "ser deficiente", "ser insuficiente", "ser fraco", "ser decepcionante", "não agradar"],
+    "deixarão": ["abandonarão", "largarão", "esquecerão", "omitirão", "permitirão", "consentirão", "autorizarão", "legarão", "herdarão", "doarão"],
+    "dejetos": ["excrementos", "fezes", "detritos", "resíduos", "lixo", "imundície", "matéria fecal", "sobras", "restos", "impurezas"],
+    "dela": ["de ela", "pertencente a ela", "referente a ela", "originário dela", "próximo a ela", "sobre ela", "a respeito dela", "por causa dela", "em relação a ela", "para ela"],
+    "delação": ["ato de delatar", "denúncia", "revelação de crime", "entrega de cúmplices", "ato de dedurar", "ato de entregar", "revelação de informações confidenciais", "testemunho incriminatório", "denúncia formal", "ato de acusar"],
+    "delatar": ["denunciar", "revelar crime", "entregar cúmplices", "dedurar", "entregar", "revelar informações confidenciais", "testemunhar contra", "acusar formalmente", "entregar à polícia", "confessar crime de outrem"],
+    "dele": ["de ele", "pertencente a ele", "referente a ele", "originário dele", "próximo a ele", "sobre ele", "a respeito dele", "por causa dele", "em relação a ele", "para ele"],
+    "delegação": ["ato de delegar", "transferência de poder", "atribuição de função", "envio de representante", "missão", "representação", "comissão", "encargo", "poder delegado", "autoridade transferida"],
+    "delegado": ["representante", "encarregado", "comissário", "enviado", "procurador", "autoridade policial", "representante sindical", "representante de classe", "representante de governo", "representante de empresa"],
+    "delegar": ["transferir poder", "atribuir função", "encarregar", "designar representante", "comissionar", "incumbir", "outorgar poderes", "transferir autoridade", "constituir procurador", "enviar em missão"],
+    "deleitar": ["agradar intensamente", "dar prazer", "satisfazer", "encantar", "extasiar", "regozijar", "deliciar", "aprazer", "contentar", "maravilhar"],
+    "deleite": ["prazer intenso", "satisfação", "encanto", "êxtase", "regozijo", "delícia", "aprazimento", "contentamento", "maravilha", "volúpia"],
+    "deleitoso": ["agradável", "prazeroso", "satisfatório", "encantador", "extasiante", "regozijante", "delicioso", "aprazível", "contentador", "maravilhoso"],
+    "deletar": ["apagar", "remover", "eliminar", "excluir", "suprimir", "riscar", "cancelar", "destruir", "desfazer", "obliterar"],
+    "deletério": ["nocivo", "prejudicial", "danoso", "maléfico", "tóxico", "mortal", "pestilento", "corrosivo", "destrutivo", "ruinoso"],
+    "delgado": ["fino", "magro", "esguio", "leve", "tênue", "sutil", "fraco", "delicado", "estreito", "raro"],
+    "deliberação": ["ato de deliberar", "discussão", "debate", "reflexão", "consideração", "decisão", "resolução", "votação", "conselho", "consulta"],
+    "deliberada": ["intencional", "propositada", "premeditada", "pensada", "refletida", "consciente", "voluntária", "planejada", "determinada", "resolvida"],
+    "deliberadamente": ["intencionalmente", "propositadamente", "premeditadamente", "pensadamente", "refletidamente", "conscientemente", "voluntariamente", "planejadamente", "determinadamente", "resolvidamente"],
+    "deliberado": ["intencional", "propositado", "premeditado", "pensado", "refletido", "consciente", "voluntário", "planejado", "determinado", "resolvido"],
+    "deliberar": ["discutir", "debater", "refletir", "considerar", "decidir", "resolver", "votar", "consultar", "aconselhar", "ponderar"],
+    "deliberativo": ["que delibera", "que tem poder de decisão", "consultivo", "que aconselha", "que discute para decidir", "que vota", "que opina para resolução", "que pondera para decidir", "que examina para decidir", "que reflete para decidir"],
+    "delicadamente": ["suavemente", "ternamente", "cuidadosamente", "gentilmente", "afetuosamente", "com requinte", "com sutileza", "com primor", "com esmero", "com atenção"],
+    "delicadeza": ["suavidade", "ternura", "cuidado", "gentileza", "afeto", "requinte", "sutileza", "primor", "esmero", "atenção"],
+    "delicado": ["suave", "terno", "cuidadoso", "gentil", "afetuoso", "requintado", "sutil", "primoroso", "esmerado", "atencioso"],
+    "delicatéssen": ["loja de iguarias", "casa de especialidades gastronômicas", "empório", "rotisseria", "loja de produtos finos", "mercearia fina", "loja de alimentos gourmet", "casa de queijos e vinhos", "loja de conservas e patês", "loja de produtos importados"],
+    "delicioso": ["saboroso", "gostoso", "apetitoso", "palatável", "agradável ao paladar", "exquisito", "divino", "maravilhoso", "encantador", "deleitoso"],
+    "delimitação": ["ato de delimitar", "fixação de limites", "demarcação", "definição de fronteiras", "circunscrição", "balizamento", "demarcação territorial", "estabelecimento de limites", "determinação de áreas", "fixação de divisas"],
+    "delimitado": ["com limites definidos", "demarcado", "circunscrito", "balizado", "determinado", "fixado", "estabelecido", "definido territorialmente", "com fronteiras estabelecidas", "com áreas determinadas"],
+    "delimitar": ["fixar limites", "demarcar", "definir fronteiras", "circunscrever", "balizar", "determinar", "fixar", "estabelecer limites", "definir áreas", "fixar divisas"],
+    "delimit": ["fixe limites", "demarque", "defina fronteiras", "circunscreva", "balize", "determine", "fixe", "estabeleça limites", "defina áreas", "fixe divisas"],
+    "delineado": ["traçado", "desenhado", "esboçado", "contornado", "definido em linhas", "esculpido", "moldado", "caracterizado", "descrito", "apresentado"],
+    "delinear": ["traçar", "desenhar", "esboçar", "contornar", "definir em linhas", "esculpir", "moldar", "caracterizar", "descrever", "apresentar"],
+    "delinquente": ["criminoso", "infrator", "transgressor da lei", "marginal", "fora da lei", "que comete delito", "que infringe a norma penal", "que pratica crime", "que desrespeita a lei", "que vive à margem da sociedade"],
+    "delirar": ["ter delírios", "desvariar", "extraviar-se mentalmente", "imaginar coisas irreais", "falar incoerentemente", "ter alucinações", "fantasiar", "sonhar acordado", "extasiar-se", "entusiasmar-se excessivamente"],
+    "delírio": ["desvario", "extravio mental", "imaginação irreal", "fala incoerente", "alucinação", "fantasia", "sonho acordado", "êxtase", "entusiasmo excessivo", "ilusão"],
+    "delito": ["crime", "infração penal", "ato ilícito", "transgressão da lei", "ofensa à lei", "ação criminosa", "ato punível", "violação da norma penal", "atentado", "pecado (figurado)"],
+    "delivery": ["entrega em domicílio", "serviço de entrega", "entrega a domicílio", "entrega", "serviço de levar", "serviço de transporte", "serviço de encomenda", "serviço de distribuição", "serviço de remessa", "serviço de levar e trazer"],
+    "delonga": ["demora", "tardança", "atraso", "procrastinação", "lentidão", "morosidade", "detença", "retenção", "suspensão", "interrupção"],
+    "delta": ["quarta letra do alfabeto grego (Δ, δ)", "formação sedimentar na foz de um rio", "variação", "diferença", "incremento", "mudança", "sinal de variação (Δ)", "região de foz de rio", "letra grega", "formação triangular"],
+    "demagogia": ["manipulação da opinião pública", "arte de agradar ao povo", "retórica enganosa", "exploração de sentimentos populares", "populismo", "lisonja ao povo", "discurso enganoso para obter apoio", "política baseada em promessas falsas", "arte de iludir o povo", "apelo às emoções do povo"],
+    "demagogo": ["manipulador da opinião pública", "aquele que agrada ao povo com falsas promessas", "retórico enganoso", "explorador de sentimentos populares", "populista", "lisonjeador do povo", "orador enganoso para obter apoio", "político baseado em promessas falsas", "ilusionista do povo", "aquele que apela às emoções do povo"],
+    "demais": ["os outros", "os restantes", "o resto", "além disso", "ademais", "em excesso", "demasiadamente", "muito", "além do limite", "em grande quantidade"],
+    "demanda": ["procura", "solicitação", "requisição", "pedido", "necessidade", "exigência", "ação judicial", "processo", "litígio", "questão"],
+    "demandante": ["requerente", "solicitante", "autor (em processo judicial)", "pedinte", "aquele que demanda", "que exige", "que necessita", "que busca", "que pleiteia", "que intenta ação"],
+    "demandar": ["requerer", "solicitar", "pedir", "necessitar", "exigir", "acionar judicialmente", "processar", "litigar", "pleitear", "buscar"],
+    "demande": ["requeira", "solicite", "peça", "necessite", "exija", "acione judicialmente", "processe", "litigue", "pleiteie", "busque"],
+    "demão": ["camada de tinta", "camada de verniz", "aplicação de tinta", "aplicação de verniz", "passada de tinta", "passada de verniz", "mão de tinta", "mão de verniz", "cobertura de tinta", "cobertura de verniz"],
+    "demarcação": ["ato de demarcar", "fixação de limites", "delimitação", "balizamento", "assinalamento", "marcação", "definição de fronteiras", "estabelecimento de divisas", "determinação de áreas", "fixação de limites territoriais"],
+    "demarcar": ["fixar limites", "delimitar", "balizar", "assinalar", "marcar", "definir fronteiras", "estabelecer divisas", "determinar áreas", "fixar limites territoriais", "sinalizar"],
+    "demarque": ["fixe limites", "delimite", "balize", "assinale", "marque", "defina fronteiras", "estabeleça divisas", "determine áreas", "fixe limites territoriais", "sinalize"],
+    "demasia": ["excesso", "sobra", "superabundância", "demasiado", "em demasia", "além do necessário", "além do limite", "superávit", "extravagância", "descomedimento"],
+    "demasiadamente": ["excessivamente", "demais", "em demasia", "muito", "além do necessário", "além do limite", "superabundantemente", "extravagantemente", "descomedidamente", "em grau extremo"],
+    "demasiado": ["excessivo", "demais", "em demasia", "muito", "além do necessário", "além do limite", "superabundante", "extravagante", "descomedido", "extremo"],
+    "demência": ["perturbação mental grave", "alienação mental", "loucura", "insanidade", "transtorno mental degenerativo", "perda progressiva das funções cognitivas", "deterioração intelectual", "enfraquecimento das faculdades mentais", "estado de insanidade mental", "perturbação psíquica grave"],
+    "demente": ["louco", "insano", "alienado mental", "perturbado mentalmente", "com transtorno mental grave", "com demência", "desequilibrado mentalmente", "com perda das funções cognitivas", "com deterioração intelectual", "com faculdades mentais enfraquecidas"],
+    "demérito": ["falta de mérito", "desvantagem", "culpa", "erro", "deficiência", "imperfeição", "nota desfavorável", "ponto negativo", "aspecto desfavorável", "qualidade inferior"],
+    "demiurgo": ["artesão divino", "criador do universo (em algumas filosofias)", "força motriz do universo", "inteligência ordenadora do cosmos", "ser supremo criador", "arquiteto do mundo", "divindade criadora", "princípio ordenador do universo", "entidade cósmica criadora", "força criativa do cosmos"],
+    "democracia": ["governo do povo", "regime político em que o poder emana do povo", "sistema político com eleições livres e justas", "soberania popular", "participação cidadã no governo", "igualdade de direitos políticos", "liberdade de expressão e organização", "respeito aos direitos humanos", "Estado de direito", "regime político com pluralismo e alternância de poder"],
+    "democrata": ["partidário da democracia", "defensor da democracia", "que apoia a democracia", "que acredita na democracia", "que pratica a democracia", "relativo à democracia", "membro de partido democrata", "cidadão que valoriza a democracia", "que luta pela democracia", "que promove a democracia"],
+    "democrático": ["relativo à democracia", "que segue os princípios da democracia", "que favorece a participação popular", "que respeita os direitos humanos", "que promove a igualdade", "que é acessível a todos", "que é aberto à participação", "que é justo e igualitário", "que é tolerante e pluralista", "que se baseia na vontade do povo"],
+    "democratização": ["ato de democratizar", "processo de tornar democrático", "extensão dos princípios democráticos", "ampliação da participação popular", "instauração da democracia", "fortalecimento da democracia", "abertura política", "transição para a democracia", "tornar acessível a todos", "popularização"],
+    "democratizar": ["tornar democrático", "estender os princípios democráticos", "ampliar a participação popular", "instaurar a democracia", "fortalecer a democracia", "abrir politicamente", "promover a democracia", "tornar acessível a todos", "popularizar", "socializar"],
+    "demografia": ["estudo das populações humanas", "análise estatística das populações", "ciência que estuda a dinâmica populacional", "estudo do tamanho", "estrutura e distribuição das populações", "análise de nascimentos", "mortes", "migrações e crescimento populacional", "estudo das características das populações", "estudo das mudanças populacionais", "estatística populacional"],
+    "demográfico": ["relativo à demografia", "populacional", "estatístico da população", "que se refere ao estudo das populações", "que diz respeito ao tamanho", "estrutura e distribuição das populações", "que analisa nascimentos", "mortes e migrações", "que estuda as características das populações", "que se relaciona com as mudanças populacionais", "estatisticamente populacional"],
+    "demolir": ["derrubar", "destruir", "arruinar", "desmantelar", "derribar", "pôr abaixo", "desfazer", "desconstruir", "desmoronar", "aniquilar"],
+    "demônio": ["espírito maligno", "diabo", "satanás", "força do mal", "ser infernal", "gênio mau", "tentador", "espírito das trevas", "figura do mal", "ser demoníaco"],
+    "demonstração": ["ato de demonstrar", "prova", "evidência", "manifestação", "exibição", "apresentação", "mostra", "exemplo", "ilustração", "prova matemática"],
+    "demonstrando": ["mostrando", "evidenciando", "apresentando", "exibindo", "ilustrando", "provando", "manifestando", "revelando", "explicando", "comprovando"],
+    "demonstrar": ["mostrar", "evidenciar", "apresentar", "exibir", "ilustrar", "provar", "manifestar", "revelar", "explicar", "comprovar"],
+    "demonstraremos": ["mostraremos", "evidenciaremos", "apresentaremos", "exibiremos", "ilustraremos", "provaremos", "manifestaremos", "revelaremos", "explicaremos", "comprovaremos"],
+    "demora": ["tardança", "atraso", "procrastinação", "lentidão", "morosidade", "detença", "retenção", "suspensão", "interrupção", "delonga"],
+    "demover": ["dissuadir", "despersuadir", "fazer mudar de ideia", "desviar", "afastar", "desencorajar", "impedir", "mover de lugar", "remover", "tirar"],
+    "denegar": ["negar", "indeferir", "recusar", "vetar", "proibir", "impedir", "obstar", "contestar", "impugnar", "rejeitar"],
+    "denegrir": ["difamar", "caluniar", "infamar", "macular", "manchar", "sujar", "desonrar", "enxovalhar", "injuriar", "vilipendiar"],
+    "dengo": ["manha", "carinho", "afeição", "mimo", "chamego", "melindre", "manha dengosa", "afeto dengoso", "carícia dengosa", "jeito dengoso"],
+    "dengosa": ["manha", "carinhosa", "afetuosa", "mimosa", "cheia de dengo", "melindrosa", "com afeto dengoso", "com carinho dengoso", "com jeito dengoso", "que faz dengo"],
+    "dengoso": ["manhoso", "carinhoso", "afetuoso", "mimoso", "cheio de dengo", "melindroso", "com afeto dengoso", "com carinho dengoso", "com jeito dengoso", "que faz dengo"],
+    "denigre": ["difama", "calunia", "infama", "macula", "mancha", "suja", "desonra", "enxovalha", "injuria", "vilipendia"],
+    "denodo": ["bravura", "valentia", "coragem", "intrepidez", "ousadia", "determinação", "audácia", "arrojo", "vigor", "energia"],
+    "denominação": ["nome", "designação", "título", "apelido", "cognome", "nomenclatura", "designativo", "batismo", "intitulação", "qualificação"],
+    "denominado": ["nomeado", "designado", "intitulado", "chamado", "apelidado", "conhecido por", "qualificado como", "designativo de", "que tem o nome de", "que se chama"],
+    "denominar": ["nomear", "designar", "intitular", "chamar", "apelidar", "qualificar", "designar por nome", "dar nome a", "batizar", "cognominar"],
+    "denotação": ["significado literal", "sentido primário", "significado objetivo", "definição explícita", "significado dicionarizado", "sentido denotativo", "significação direta", "sentido básico", "significado comum", "sentido literal da palavra"],
+    "denotar": ["significar literalmente", "indicar diretamente", "mostrar claramente", "evidenciar objetivamente", "expressar explicitamente", "designar", "referir-se a", "querer dizer", "ter como significado primário", "ter como sentido literal"],
+    "denotativo": ["que denota", "literal", "objetivo", "explícito", "direto", "referencial", "que indica claramente", "que expressa literalmente", "que tem significado primário", "que se refere ao significado literal"],
+    "densa": ["compacta", "espessa", "cerrada", "concentrada", "intensa", "opaca", "turva", "pesada", "forte", "numerosa"],
+    "densidade": ["compacidade", "espessura", "concentração", "intensidade", "opacidade", "peso específico", "número por unidade de volume", "quantidade por área", "grau de concentração", "intensidade de algo"],
+    "denso": ["compacto", "espesso", "cerrado", "concentrado", "intenso", "opaco", "turvo", "pesado", "forte", "numeroso"],
+    "dente": ["órgão da mastigação", "peça dentária", "presa", "ponta", "saliente", "ângulo", "engrenagem", "serra", "ferramenta", "afiado"],
+    "dentelo": ["renda", "guarnição de renda", "bico de renda", "aplicação de renda", "ornamento de renda", "detalhe de renda", "barra de renda", "acabamento de renda", "tira de renda", "franja de renda"],
+    "dentre": ["entre", "no meio de", "em meio a", "de entre", "do meio de", "do meio a", "de dentro de", "de entre os", "de entre as", "em meio aos"],
+    "dentro": ["no interior", "na parte interna", "em", "no meio", "no íntimo", "no seio de", "embutido", "contido", "incluso", "interiormente"],
+    "denunciar": ["acusar", "delatar", "revelar crime", "informar às autoridades", "notificar", "declarar publicamente", "impugnar", "contestar", "reclamar", "protestar"],
+    "deontologia": ["estudo dos deveres e obrigações", "ética profissional", "teoria do dever moral", "conjunto de normas éticas de uma profissão", "filosofia moral focada no dever", "ética normativa", "ciência dos deveres", "doutrina do dever", "estudo das obrigações morais", "princípios éticos de conduta"],
+    "deparar": ["encontrar inesperadamente", "achar", "topar com", "dar de encontro com", "avistar", "mostrar-se", "apresentar-se", "ocorrer", "suceder", "acontecer"],
+    "departamento": ["divisão administrativa", "setor", "seção", "repartição", "serviço", "unidade", "área", "divisão de uma empresa", "divisão de uma universidade", "divisão de um governo"],
+    "depauperado": ["empobrecido", "arruinado", "esgotado", "enfraquecido", "debilitado", "miserável", "indigente", "falido", "exaurido", "desprovido de recursos"],
+    "dependência": ["subordinação", "sujeição", "necessidade", "vício", "apego", "ligação", "relação de dependência", "estado de dependente", "estar dependente de algo ou alguém", "vínculo de dependência"],
+    "dependente": ["subordinado", "sujeito", "necessitado", "viciado", "apegado", "ligado", "que depende de algo ou alguém", "que necessita de apoio", "que não é autônomo", "que está sob a influência de algo"],
+    "depender": ["estar sujeito a", "estar subordinado a", "necessitar de", "estar condicionado a", "estar ligado a", "estar na dependência de", "precisar de", "contar com", "ser influenciado por", "ter como base"],
+    "dependíamos": ["estávamos sujeitos a", "estávamos subordinados a", "necessitávamos de", "estávamos condicionados a", "estávamos ligados a", "estávamos na dependência de", "precisávamos de", "contávamos com", "éramos influenciados por", "tínhamos como base"],
+    "depleção": ["esgotamento", "exaustão", "diminuição drástica", "redução acentuada", "consumo total", "vazio", "carência extrema", "falta completa", "desabastecimento", "perda total"],
+    "deplorável": ["lamentável", "lastimável", "triste", "miserável", "vergonhoso", "indigno", "repugnante", "detestável", "horrível", "terrível"],
+    "depoimento": ["testemunho", "declaração", "relato", "narração", "asserção", "afirmação", "confissão", "exposição de fatos", "prestação de contas", "informação"],
+    "depois": ["posteriormente", "em seguida", "após", "logo após", "mais tarde", "a seguir", "em tempo futuro", "ulteriormente", "daí em diante", "doravante"],
+    "depois disso": ["em seguida", "após isso", "a partir daí", "daí em diante", "posteriormente", "logo após", "consequentemente", "em resultado disso", "em sequência", "após tal acontecimento"],
+    "depor": ["testemunhar", "declarar", "relatar", "narrar", "asserir", "afirmar", "confessar", "expor fatos", "prestar contas", "remover do cargo", "destituir"],
+    "deposição": ["ato de depor", "testemunho", "declaração", "relato", "narração", "asserção", "afirmação", "confissão", "remoção do cargo", "destituição"],
+    "depósito": ["ato de depositar", "lugar para guardar", "armazenamento", "reservatório", "armazém", "pagamento", "sinal", "caução", "entrega", "confiança"],
+    "deposto": ["removido do cargo", "destituído", "derrubado", "afastado do poder", "demitido", "exonerado", "despedido", "substituído", "retirado do posto", "desautorizado"],
+    "depravação": ["corrupção moral", "perversão", "vício", "devassidão", "libertinagem", "imoralidade", "obscenidade", "desonestidade", "infâmia", "torpeza"],
+    "depravado": ["corrupto moralmente", "perverso", "vicioso", "devasso", "libertino", "imoral", "obsceno", "desonesto", "infame", "torpe"],
+    "deprecação": ["súplica", "rogo", "imploro", "prece", "oração", "pedido humilde", "solicitação fervorosa", "invocação", "apelo", "exortação"],
+    "depreciação": ["desvalorização", "desmerecimento", "desestima", "redução de valor", "perda de valor", "deterioração", "desgaste", "obsolescência", "descrédito", "desaprovação"],
+    "depreciado": ["desvalorizado", "desmerecido", "desestimado", "com valor reduzido", "que perdeu valor", "deteriorado", "desgastado", "obsoleto", "desacreditado", "desaprovado"],
+    "depreciar": ["desvalorizar", "desmerecer", "desestimar", "reduzir o valor de", "fazer perder valor", "deteriorar", "desgastar", "tornar obsoleto", "desacreditar", "desaprovar"],
+    "depreciativo": ["que deprecia", "desvalorizador", "desmerecedor", "desestimulante", "pejorativo", "desfavorável", "crítico", "irônico", "sarcástico", "que diminui o valor"],
+    "depredação": ["destruição", "devastação", "vandalismo", "saque", "pilhagem", "arrasamento", "danificação", "estrago", "avaria", "deterioração intencional"],
+    "depreender": ["inferir", "deduzir", "concluir", "subentender", "perceber", "compreender", "entender", "captar", "apreender", "extrair significado"],
+    "depressa": ["rapidamente", "velozmente", "ligeiramente", "apressadamente", "celeremente", "com rapidez", "com velocidade", "com ligeireza", "com pressa", "a toque de caixa"],
+    "depressão": ["tristeza profunda", "melancolia", "abatimento", "desânimo", "prostração", "doença mental", "crise econômica", "recessão", "área baixa", "rebaixamento"],
+    "deprimente": ["triste", "melancólico", "abatimento", "desanimador", "prostrador", "que causa depressão", "que entristece", "que abate", "que desanima", "que causa prostração"],
+    "deprimido": ["triste", "melancólico", "abatido", "desanimado", "prostrado", "em depressão", "desalentado", "desconsolado", "infeliz", "sombrio"],
+    "depuração": ["purificação", "limpeza", "expurgo", "purga", "refinação", "assainamento", "correção", "melhora", "escrutínio", "investigação"],
+    "depurar": ["purificar", "limpar", "expurgar", "refinar", "assainar", "corrigir", "melhorar", "escrutinar", "investigar", "eliminar impurezas"],
+    "deram": ["concederam", "entregaram", "ofertaram", "forneceram", "doaram", "presentearam", "golpearam", "bateram", "atingiram", "produziram"],
+    "deriva": ["movimento causado pela corrente", "desvio", "origem", "procedência", "ramificação", "variação", "deslocamento", "curso", "fluxo", "desenvolvimento"],
+    "derivado": ["originário", "procedente", "resultante", "consequente", "proveniente", "que deriva de", "que se origina de", "que resulta de", "que provém de", "que se segue a"],
+    "derivar": ["originar-se", "proceder", "resultar", "consequir", "provir", "brotar", "emanar", "descender", "vir de", "ser causado por"],
+    "derivo": ["origino-me", "procedo", "resulto", "consequo", "provinho", "broto", "emano", "descendo", "venho de", "sou causado por"],
+    "derradeira": ["última", "final", "extrema", "definitiva", "conclusiva", "terminal", "finalíssima", "a derradeira", "a última de todas", "a derradeira vez"],
+    "derradeiro": ["último", "final", "extremo", "definitivo", "conclusivo", "terminal", "finalíssimo", "o derradeiro", "o último de todos", "a derradeira vez"],
+    "derramar": ["verter", "entornar", "transbordar", "espalhar", "jorrar", "fluir", "despejar", "verter abundantemente", "fazer correr líquido", "difundir"],
+    "derredor": ["ao redor", "em volta", "circundante", "em torno", "à roda", "em derredor de", "ao redor de", "em torno de", "circunvizinho", "vizinho"],
+    "derrocada": ["queda", "ruína", "desmoronamento", "colapso", "declínio acentuado", "fracasso total", "destruição", "desagregação", "dissolução", "abatimento"],
+    "derrogação": ["revogação", "anulação", "ab-rogação", "cassação", "invalidação", "supressão", "abolição", "extinção", "cessação de vigência", "tornar sem efeito"],
+    "derrogar": ["revogar", "anular", "ab-rogar", "cassar", "invalidar", "suprimir", "abolir", "extinguir", "tornar sem efeito", "cancelar"],
+    "derrotável": ["que pode ser derrotado", "vencível", "subjulgável", "superável", "dominável", "conquistável", "batível", "que pode ser vencido", "que se pode superar", "que se pode dominar"],
+    "derrubar": ["fazer cair", "deitar abaixo", "abater", "tombar", "vencer", "derrotar", "depor", "destituir", "demolir", "arruinar"],
+    "dês": ["contração da preposição 'de' com o pronome 'os'", "desde os", "de entre os", "de mais os", "de após os", "de todos os", "de sobre os", "de sob os", "de ante os", "de perante os"],
+    "desabafar": ["aliviar-se", "desoprimir-se", "confiar seus sentimentos", "expressar livremente", "abrir o coração", "contar seus problemas", "desembuchar", "descarregar emoções", "desopressar", "exteriorizar sentimentos"],
+    "desabafo": ["alívio", "desopressão", "confidência", "expressão livre", "abertura do coração", "relato de problemas", "desembuchamento", "descarga de emoções", "exteriorização de sentimentos", "confissão"],
+    "desabar": ["cair repentinamente", "desmoronar", "ruir", "desfazer-se", "desmantelar-se", "abater-se", "desanimar-se", "deprimir-se", "desoprimir-se (fig.)", "aliviar-se (fig.)"],
+    "desabonador": ["que desabona", "que prejudica a reputação", "difamatório", "calunioso", "infamante", "desfavorável", "negativo", "que causa má impressão", "que depõe contra", "que tira o crédito"],
+    "desabonadores": ["que desabonam", "que prejudicam a reputação", "difamatórios", "caluniosos", "infamantes", "desfavoráveis", "negativos", "que causam má impressão", "que depõem contra", "que tiram o crédito"],
+    "desabotoado": ["sem botões fechados", "aberto", "solto", "desprendido", "não fechado", "com os botões abertos", "sem estar abotoado", "que teve os botões abertos", "que não está preso por botões", "com a abotoadura solta"],
+    "desabotoar": ["abrir os botões de", "soltar os botões de", "desprender os botões de", "desfazer a abotoadura de", "tornar aberto", "desprender", "soltar", "abrir", "desfazer o fecho de botões", "desligar os botões"],
+    "desabrochar": ["abrir-se (flor)", "florescer", "brotar", "germinar", "começar a desenvolver-se", "manifestar-se", "revelar-se", "mostrar suas qualidades", "tornar-se belo", "atingir o auge"],
+    "desacatar": ["desrespeitar", "afrontar", "insultar", "ofender", "ultrajar", "desonrar", "vilipendiar", "menoscabar", "desprezar", "faltar com o respeito"],
+    "desafeto": ["inimigo", "adversário", "rival", "antagonista", "oponente", "pessoa que não se gosta", "pessoa com quem se tem inimizade", "pessoa que se evita", "pessoa que se detesta", "pessoa que se aborrece"],
+    "desafiador": ["que desafia", "provocador", "estimulante", "instigante", "que põe à prova", "que exige esforço", "que incita a competição", "que estimula a superação", "que representa um desafio", "que testa habilidades"],
+    "desafiar": ["provocar", "instigar", "incitar à competição", "pôr à prova", "exigir esforço", "estimular a superação", "confrontar", "afrontar", "opor-se", "medir forças com"],
+    "desafio": ["provocação", "instigação", "competição", "prova", "dificuldade", "obstáculo", "estímulo", "incitamento", "confronto", "afronta"],
+    "desafogadamente": ["livremente", "abertamente", "sem restrições", "sem reservas", "à vontade", "com desafogo", "sem apertos", "sem sufoco", "sem constrangimento", "sem cerimônia"],
+    "desaforado": ["insolente", "atrevido", "abusado", "indecente", "desrespeitoso", "arrogante", "petulante", "mal-educado", "grosseiro", "impertinente"],
+    "desaforo": ["insolência", "atrevimento", "abuso", "indecência", "desrespeito", "arrogância", "petulância", "grosseria", "impertinência", "afronta"],
+    "deságio": ["diferença negativa entre o valor nominal e o valor de venda", "desconto", "abatimento", "perda de valor", "depreciação", "diferença desfavorável", "taxa negativa", "ágio negativo", "redução de preço", "diferença a menor"],
+    "desagradáveis": ["que não agradam", "descontentes", "aborrecidos", "irritantes", "desconfortáveis", "antipáticos", "indispostos", "mal-humorados", "desprazerosos", "aversivos"],
+    "desagradável": ["que não agrada", "descontente", "aborrecido", "irritante", "desconfortável", "antipático", "indisposto", "mal-humorado", "desprazeroso", "aversivo"],
+    "desagravo": ["reparação de ofensa", "compensação por dano moral", "retratação pública", "pedido de desculpas público", "satisfação", "vindicação", "reabilitação", "restauração da honra", "ato de desagraviar", "desculpas públicas"],
+    "desagregação": ["separação", "dissolução", "desmembramento", "fragmentação", "divisão", "cisão", "ruptura", "desunião", "desintegração", "desmembramento"],
+    "desagrupado": ["separado", "desunido", "desmembrado", "fragmentado", "isolado", "disperso", "desorganizado", "desintegrado", "individualizado", "desconjuntado"],
+    "desalento": ["desânimo", "abatimento", "desespero", "prostração", "tristeza", "melancolia", "desconsolo", "depressão", "frustração", "desencorajamento"],
+    "desamor": ["ódio", "aversão", "antipatia", "indiferença", "frieza", "desafeição", "repulsa", "nojo", "desinteresse", "aridez"],
+    "desamparado": ["abandonado", "desprotegido", "órfão", "desvalido", "indefeso", "solitário", "desassistido", "desajudado", "desguarnecido", "largado"],
+    "desamparar": ["abandonar", "desproteger", "desvalidar", "desassistir", "desajudar", "desguarnecer", "largar", "desterrar", "desabrigar", "deixar só"],
+    "desanimado": ["abatido", "desalentado", "desmotivado", "apático", "indiferente", "triste", "melancólico", "descoroçoado", "deprimido", "prostrado"],
+    "desanimador": ["deprimente", "desalentador", "desmotivador", "frustrante", "descoroçoante", "que abate", "que entristece", "que desestimula", "que desesperança", "que prostra"],
+    "desânimo": ["abatimento", "desalento", "desmotivação", "apatia", "indiferença", "tristeza", "melancolia", "descoroçoamento", "depressão", "prostração"],
+    "desanuviar": ["clarear", "limpar", "abrir", "esclarecer", "aliviar", "acalmar", "serenar", "dissipar", "espalhar", "remover"],
+    "desaparecer": ["sumir", "evanescer", "esvair-se", "ocultar-se", "extinguir-se", "dissolver-se", "desvanecer", "descontinuar", "findar", "cessar"],
+    "desaparecerão": ["sumirão", "evanescerão", "esvair-se-ão", "ocultar-se-ão", "extinguir-se-ão", "dissolver-se-ão", "desvanecerão", "descontinuarão", "findarão", "cessarão"],
+    "desapego": ["indiferença", "desinteresse", "liberação", "desprendimento", "imparcialidade", "neutralidade", "distanciamento", "resignação", "abnegação", "renúncia"],
+    "desapercebido": ["ignorado", "inoservado", "omitido", "desconhecido", "não notado", "sem ser visto", "sem ser percebido", "sem chamar atenção", "discreto", "sutil"],
+    "desapontado": ["frustrado", "decepcionado", "desiludido", "contrariado", "amargurado", "descontente", "desgostoso", "pesaroso", "desenganado", "desencantado"],
+    "desapossar": ["privar", "expropriar", "despojar", "tirar a posse de", "confiscar", "tomar", "remover", "desalojar", "destituir", "usurpar"],
+    "desapreço": ["desdém", "desprezo", "indiferença", "desconsideração", "menosprezo", "aversão", "antipatia", "desestima", "desvalorização", "reprovação"],
+    "desarmônico": ["discordante", "disonante", "desentoado", "descompassado", "desproporcional", "irregular", "desequilibrado", "conflituoso", "incompatível", "desordenado"],
+    "desarraigado": ["desenraizado", "desligado", "desvinculado", "estrangeiro", "forasteiro", "desterrado", "expatriado", "solto", "errante", "desambientado"],
+    "desarraigamento": ["desenraizamento", "desligamento", "desvinculação", "estrangeirismo", "desterro", "expatriação", "isolamento", "alienação", "desconexão", "uprooting"],
+    "desarraigar": ["desenraizar", "desligar", "desvincular", "extirpar", "arrancar", "remover", "desterrar", "expatriar", "deslocar", "desambientar"],
+    "desarrazoado": ["ilógico", "irracional", "absurdo", "insensato", "injustificável", "infundado", "sem razão", "sem lógica", "despropositado", "extravagante"],
+    "desarrimar": ["desamparar", "desproteger", "desabrigar", "desamparar-se", "desproteger-se", "desabrigar-se", "desguarnecer", "desajudar", "desestabilizar", "desestruturar"],
+    "desassossego": ["inquietação", "perturbação", "ansiedade", "aflição", "agitação", "nervosismo", "intranquilidade", "tormento", "sofrimento", "desconforto"],
+    "desastrado": ["inepto", "inábil", "maljeitoso", "trapalhão", "descuidado", "imperito", "desajeitado", "atrapalhado", "incompetente", "desmancha-prazeres"],
+    "desastre": ["catástrofe", "calamidade", "tragédia", "sinistro", "acidente grave", "revés", "infortúnio", "golpe", "ruína", "naufrágio"],
+    "desatenção": ["distração", "descuido", "negligência", "omissão", "desinteresse", "inobservância", "desconcentração", "despreocupação", "desleixo", "desmemória"],
+    "desatino": ["insensatez", "loucura", "absurdo", "extravagância", "erro crasso", "disparate", "besteira", "tolice", "sandice", "despropósito"],
+    "desativado": ["inativo", "paralisado", "interrompido", "desligado", "inoperante", "obsoleto", "fora de uso", "descontinuado", "desabilitado", "inutilizado"],
+    "desavença": ["discórdia", "desentendimento", "divergência", "atrito", "conflito", "rixa", "desarmonia", "disputa", "desconformidade", "inimizade"],
+    "desazo": ["azar", "contratempo", "revés", "infortúnio", "má sorte", "infelicidade", "desventura", "desgraça", "insucesso", "frustração"],
+    "desbocado": ["mal-educado", "grosseiro", "indecente", "chulo", "obsceno", "palavrão", "boca suja", "insolente", "atrevido", "desrespeitoso"],
+    "desbravador": ["pioneiro", "explorador", "colonizador", "abridor de caminhos", "aventureiro", "inovador", "criador", "fundador", "iniciador", "precursor"],
+    "desbravar": ["explorar", "navegar", "descobrir", "colonizar", "abrir caminho", "inovar", "criar", "fundar", "iniciar", "precursar"],
+    "descabelado": ["cabelos desgrenhados", "cabelos em desalinho", "despenteado", "arrepiado", "em desalinho", "com os cabelos soltos", "com os cabelos ao vento", "com os cabelos em desordem", "com os cabelos revoltos", "com os cabelos bagunçados"],
+    "descabido": ["inadequado", "impertinente", "inoportuno", "descendente", "absurdo", "extravagante", "despropositado", "inconsequente", "inconveniente", "incompatível"],
+    "descalabro": ["ruína", "catástrofe", "desastre", "caos", "desordem", "confusão", "desgoverno", "desorganização", "derrocada", "colapso"],
+    "descalço": ["pés desprotegidos", "sem sapatos", "sem calçados", "a pé", "de pés nus", "com os pés no chão", "sem nada nos pés", "com os pés desvendados", "com os pés livres", "sem peúgas"],
+    "descampar": ["ir embora", "retirar-se", "fugir", "evadir-se", "escapar", "sumir", "desaparecer", "pôr-se a salvo", "dar no pé", "bater em retirada"],
+    "descansar": ["repousar", "relaxar", "aliviar", "distender", "recrear", "folgar", "interromper o trabalho", "fazer uma pausa", "recuperar as energias", "despreocupar-se"],
+    "descansava": ["repousava", "relaxava", "aliviava", "distendia", "recreava", "folgava", "interrompia o trabalho", "fazia uma pausa", "recuperava as energias", "despreocupava-se"],
+    "descansilho": ["pequeno descanso", "breve repouso", "pausa curta", "intervalo breve", "momento de descanso", "pequena folga", "descanso ligeiro", "descanso rápido", "descanso momentâneo", "descanso fugaz"],
+    "descanso": ["repouso", "relaxamento", "alívio", "distensão", "recreio", "folga", "pausa", "interrupção", "ócio", "sossego"],
+    "descaracterizar": ["alterar a natureza de", "modificar as características de", "desfigurar", "desnaturar", "desvirtuar", "transformar", "mudar a essência de", "tornar irreconhecível", "despojar dos traços distintivos", "adulterar"],
+    "descarado": ["insolente", "atrevido", "abusado", "impudente", "sem vergonha", "audacioso", "petulante", "desavergonhado", "sem pudor", "cinicco"],
+    "descartar": ["rejeitar", "eliminar", "livrar-se de", "jogar fora", "refugar", "dispensar", "remover", "excluir", "preterir", "ignorar"],
+    "descartável": ["de uso único", "que se joga fora após o uso", "não reutilizável", "efêmero", "transitório", "de consumo imediato", "para ser descartado", "de vida curta", "não duradouro", "perecível"],
+    "descarte": ["ato de descartar", "rejeição", "eliminação", "refugo", "dispensa", "remoção", "exclusão", "preterição", "ato de jogar fora", "ato de livrar-se de"],
+    "descaso": ["negligência", "desatenção", "desinteresse", "indiferença", "desleixo", "omissão", "desprezo", "descuidado", "falta de zelo", "inação"],
+    "descendência": ["origem", "procedência", "linhagem", "genealogia", "filiação", "ascendência", "hereditariedade", "sucessão", "geração", "parentesco"],
+    "descendente": ["proveniente", "originário", "filho", "herdeiro", "sucessor", "que descende de", "que tem origem em", "que sucede", "que provém de", "que deriva de"],
+    "descendentes": ["filhos", "herdeiros", "sucessores", "prole", "geração futura", "os que descendem de", "os que têm origem em", "os que sucedem", "os que provêm de", "os que derivam de"],
+    "descenso": ["descida", "declínio", "baixamento", "diminuição", "redução", "rebaixamento", "queda", "depressão", "retrocesso", "declinação"],
+    "descente": ["que desce", "em declive", "inclinado", "pendente", "ladeirento", "que baixa", "que diminui", "que se rebaixa", "que decai", "que se move para baixo"],
+    "descentralizar": ["desconcentrar", "deslocar o poder", "distribuir funções", "transferir responsabilidades", "delegar autoridade", "regionalizar", "municipalizar", "dividir o controle", "espalhar o poder", "tornar menos centralizado"],
+    "descer": ["baixar", "declinar", "abaixar", "diminuir", "cair", "ir para baixo", "descair", "rebaixar-se", "apear", "depor"],
+    "desceria": ["baixaria", "declinaria", "abaixaria", "diminuiria", "cairia", "iria para baixo", "descairia", "rebaixar-se-ia", "apearia", "deporia"],
+    "descida": ["declive", "baixada", "ladeira", "rampa", "declínio", "queda", "baixamento", "rebaixamento", "depressão", "descenso"],
+    "descoberta": ["achado", "invenção", "revelação", "constatação", "averiguação", "reconhecimento", "identificação", "desvendamento", "exploração", "notícia"],
+    "descobrir": ["achar", "inventar", "revelar", "constatar", "averiguar", "reconhecer", "identificar", "desvendar", "explorar", "noticiar"],
+    "descomissionamento": ["desativação", "desligamento", "retirada de serviço", "paralisação", "suspensão de operação", "encerramento", "desmontagem", "remoção", "inutilização", "desinstalação"],
+    "descompasso": ["desarmonia", "desequilíbrio", "desritmo", "descoordenação", "desalinhamento", "discordância", "desordem", "irregularidade", "desarticulação", "desentrosamento"],
+    "descomunal": ["enorme", "gigantesco", "imensurável", "vasto", "colossal", "monumental", "extraordinário", "exagerado", "desmedido", "desproporcional"],
+    "desconexo": ["desligado", "separado", "incoerente", "sem ligação", "fragmentado", "desarticulado", "desordenado", "confuso", "vago", "indefinido"],
+    "desconfiança": ["suspeita", "dúvida", "incerteza", "ressalva", "ceticismo", "insegurança", "temor", "receio", "preocupação", "reservas"],
+    "desconformidade": ["divergência", "discordância", "irregularidade", "não conformidade", "discrepância", "desvio", "inadequação", "dissonância", "dessemelhança", "oposição"],
+    "desconhecido": ["ignorado", "incógnito", "desfamiliarizado", "novo", "inedito", "obscuro", "ignoto", "não sabido", "não reconhecido", "estranho"],
+    "desconhecível": ["irreconhecível", "difícil de reconhecer", "que não se pode conhecer", "obscuro", "ignoto", "não identificável", "que não se consegue distinguir", "que não se pode discernir", "que não se pode identificar", "que não se pode familiarizar"],
+    "desconjuro": ["exorcismo", "conjuração", "afastamento de mau agouro", "livramento de malefício", "quebra de feitiço", "anulação de magia", "ato de desfazer encantamento", "proteção contra forças malignas", "rito de expulsão de demônios", "remoção de influência nefasta"],
+    "desconsidera": ["ignora", "despreza", "não leva em conta", "não presta atenção", "desvaloriza", "rejeita", "olvida", "pospõe", "desatende", "preterir"],
+    "desconsiderar": ["ignorar", "desprezar", "não levar em conta", "não prestar atenção", "desvalorizar", "rejeitar", "olvidar", "pospor", "desatender", "preterir"],
+    "descontentamento": ["insatisfação", "desagrado", "aborrecimento", "irritação", "desprazer", "mágoa", "ressentimento", "frustração", "decepção", "desconforto"],
+    "descontinuado": ["interrompido", "paralisado", "suspenso", "cessado", "acabado", "finalizado", "desativado", "obsoleto", "fora de produção", "não sequencial"],
+    "descontinuidade": ["interrupção", "paralisação", "suspensão", "cessação", "lacuna", "intervalo", "quebra", "desconexão", "irregularidade", "falta de sequência"],
+    "desconto": ["abatimento", "dedução", "redução", "baixa de preço", "bonificação", "margem", "depreciação", "deságio", "diminuição", "liquidação"],
+    "descontração": ["relaxamento", "alívio", "despreocupação", "sossego", "leveza", "informalidade", "espontaneidade", "naturalidade", "à vontade", "desopressão"],
+    "descontraído": ["relaxado", "aliviado", "despreocupado", "sossegado", "leve", "informal", "espontâneo", "natural", "à vontade", "desoprimido"],
+    "descontrair": ["relaxar", "aliviar", "despreocupar-se", "acalmar-se", "divertir-se", "recrear-se", "distrair-se", "desoprimir-se", "soltar-se", "afrouxar"],
+    "descortês": ["rude", "grosseiro", "mal-educado", "indelicado", "desrespeitoso", "insolente", "impertinente", "malcriado", "seco", "brusco"],
+    "descortiçar": ["tirar a casca de", "esfolar", "pelar", "remover a cortiça de", "descascar", "despir", "revelar o interior de", "expor", "desvendar", "manifestar"],
+    "descortinar": ["revelar", "mostrar", "exibir", "apresentar", "desvendar", "manifestar", "expor", "patentear", "evidenciar", "elucidar"],
+    "descrença": ["incredulidade", "ceticismo", "dúvida", "irreligião", "ateísmo", "agnosticismo", "falta de fé", "inconfiança", "negação", "pirronismo"],
+    "descrente": ["incrédulo", "cético", "duvidoso", "irreligioso", "ateu", "agnóstico", "sem fé", "inconfiante", "negador", "pirrônico"],
+    "descrever": ["relatar", "narrar", "expor", "detalhar", "pormenorizar", "pintar com palavras", "caracterizar", "ilustrar", "apresentar", "esboçar"],
+    "descrição": ["relato", "narração", "exposição", "detalhe", "pormenor", "caracterização", "ilustração", "apresentação", "esboço", "retrato verbal"],
+    "descrição da vida": ["biografia", "história de vida", "relato biográfico", "memórias", "autobiografia (se escrita pela própria pessoa)", "vida e obra", "trajetória de vida", "perfil biográfico", "narrativa da existência", "registro da vivência"],
+    "descriminação": ["preconceito", "discriminação racial", "discriminação sexual", "segregação", "distinção injusta", "tratamento desigual", "exclusão", "marginalização", "apartheid", "intolerância"],
+    "descriminado": ["discriminado racialmente", "discriminado sexualmente", "segregado", "tratado desigualmente", "excluído", "marginalizado", "vítima de preconceito", "alvo de discriminação", "separado injustamente", "preterido"],
+    "descriminalização": ["retirada da criminalização", "legalização parcial", "não criminalização", "despenalização", "remoção de sanção penal", "cessação da proibição penal", "tornar não crime", "retirar do âmbito penal", "transferir para outra esfera legal", "suprimir a punição criminal"],
+    "descriminar": ["inocentar", "absolver", "exculpar", "justificar", "legalizar parcialmente", "despenalizar", "tornar não crime", "retirar do âmbito penal", "suprimir a punição criminal", "distinguir"],
+    "descritivo": ["detalhado", "pormenorizado", "narrativo", "expositivo", "ilustrativo", "caracterizador", "que descreve", "que relata", "que expõe", "que detalha"],
+    "descrito": ["relatado", "narrado", "exposto", "detalhado", "pormenorizado", "caracterizado", "ilustrado", "apresentado", "esboçado", "pintado com palavras"],
+    "descuidar-se": ["negligenciar-se", "desatentar-se", "desleixar-se", "relaxar-se excessivamente", "ser displicente", "ser omisso", "não se importar", "não prestar atenção", "afrouxar os cuidados", "baixar a guarda"],
+    "desculpa": ["justificativa", "explicação", "razão", "pretexto", "alegação", "perdão", "remissão", "absolvição", "escusa", "relevo"],
+    "desculpar": ["perdoar", "justificar", "relevar", "absolver", "escusar", "compreender", "atenuar a culpa", "passar por cima", "tolerar", "amenizar"],
+    "descumprimento": ["inação", "omissão", "violação", "infração", "transgressão", "inobservância", "desobediência", "falta de cumprimento", "quebra de acordo", "negligência"],
+    "descurar": ["negligenciar", "desleixar", "omitir", "descuidar", "abandonar", "preterir", "não dar atenção", "não se importar", "ser displicente", "relaxar os cuidados"],
+    "desde": ["a partir de", "de", "em", "desde que", "a contar de", "do tempo de", "da época de", "em diante", "a datar de", "a começar por"],
+    "desde então": ["a partir daquele momento", "desde aquele tempo", "daí em diante", "de lá para cá", "a seguir", "posteriormente", "doravante", "de então em diante", "depois disso", "em consequência"],
+    "desde sempre": ["desde o princípio", "desde a origem", "desde toda a eternidade", "sempre", "eternamente", "constantemente", "ininterruptamente", "desde que o mundo é mundo", "desde os primórdios", "desde tempos imemoriais"],
+    "desdém": ["menosprezo", "desprezo", "arrogância", "soberba", "altivez", "olhar de cima", "indiferença", "desconsideração", "escárnio", "ironia"],
+    "desdenhar": ["menosprezar", "desprezar", "ignorar", "fazer pouco de", "olhar com desdém", "ridicularizar", "zombar", "escarnecer", "rejeitar com desdém", "não dar importância"],
+    "desdenho": ["menosprezo", "desprezo", "arrogância", "soberba", "altivez", "olhar de cima", "indiferença", "desconsideração", "escárnio", "ironia"],
+    "desdenhosamente": ["com desdém", "com menosprezo", "com desprezo", "arrogantemente", "soberbamente", "altivamente", "com olhar de cima", "indiferentemente", "com escárnio", "ironicamente"],
+    "desdita": ["infortúnio", "azar", "revés", "calamidade", "tragédia", "infelicidade", "desgraça", "má sorte", "adversidade", "tribulação"],
+    "desditoso": ["infeliz", "azarado", "desventurado", "miserável", "trágico", "calamitoso", "desgraçado", "malfadado", "infortunado", "tribulado"],
+    "desdobramento": ["extensão", "prolongamento", "continuação", "desenvolvimento", "sequência", "consequência", "ramificação", "divisão", "multiplicação", "abertura"],
+    "desdobrar": ["estender", "abrir", "desenrolar", "ampliar", "aumentar", "multiplicar", "dividir", "ramificar", "revelar", "manifestar"],
+    "desejada": ["almejada", "querida", "cobiçada", "pretendida", "anseiada", "sonhada", "apetecida", "estimada", "bem-vinda", "idealizada"],
+    "desejar": ["querer", "almejar", "aspirar", "pretender", "ansear", "sonhar", "apetecer", "estimar", "cobiçar", "vogar"],
+    "desejável": ["apetecível", "conveniente", "interessante", "agradável", "atraente", "sedutor", "cobiçável", "almejado", "querido", "vantajoso"],
+    "desejo": ["vontade", "anseio", "aspiração", "pretensão", "almejo", "sonho", "apetite", "cobiça", "ânsia", "paixão"],
+    "desembestado": ["descontrolado", "furioso", "enfurecido", "irritado", "indomável", "selvagem", "violento", "impetuoso", "desenfreado", "incontrolável"],
+    "desembocadura": ["foz", "barra", "confluência", "onde o rio encontra o mar", "onde o rio se junta a outro", "estuário", "abertura", "saída", "escoadouro", "embocadura"],
+    "desembocar": ["terminar", "findar", "concluir", "ir ter a", "dar em", "afluir", "convergir", "jorrar", "escoar", "verter"],
+    "desemparedar": ["libertar", "soltar", "livrar de prisão", "tirar de confinamento", "remover barreiras", "abrir espaço", "desimpedir", "desobstruir", "remover paredes", "retirar de clausura"],
+    "desempenhado": ["executado", "realizado", "cumprido", "efetuado", "exercido", "atuado", "feito", "praticado", "representado", "desobrigado"],
+    "desempenhar": ["executar", "realizar", "cumprir", "efetuar", "exercer", "atuar", "fazer", "praticar", "representar", "desobrigar-se"],
+    "desempenhem": ["executem", "realizem", "cumpram", "efetuem", "exerçam", "atuem", "façam", "pratiquem", "representem", "desobriguem-se"],
+    "desempenho": ["atuação", "execução", "realização", "rendimento", "produtividade", "eficácia", "eficiência", "comportamento", "desempenho", "performance"],
+    "desencadear": ["provocar", "originar", "iniciar", "começar", "despertar", "suscitar", "gerar", "motivar", "impulsionar", "desimpedir"],
+    "desencanto": ["desilusão", "frustração", "decepção", "desapontamento", "desengano", "desencorajamento", "perda da ilusão", "perda do encanto", "perda da magia", "desinteresse"],
+    "desencrencar": ["resolver problema", "solucionar dificuldade", "livrar de complicação", "simplificar situação", "desembaraçar", "desimpedir", "facilitar", "remover obstáculos", "pôr em ordem", "acertar"],
+    "desenfreado": ["descontrolado", "imoderado", "excessivo", "intenso", "violento", "impetuoso", "desregrado", "libertino", "incontido", "extravagante"],
+    "desenho": ["traçado", "esboço", "risco", "projeto", "plano", "figura", "ilustração", "gravura", "arte de desenhar", "design"],
+    "desenlace": ["final", "conclusão", "término", "fim", "epílogo", "solução", "resolução", "desfecho", "acabamento", "encerramento"],
+    "desenrodilhar": ["desenrolar", "desfazer o rolo", "esticar", "aplanar", "desembrulhar", "desdobrar", "abrir", "desimpedir", "desembaraçar", "desatar"],
+    "desenrolar": ["desfazer", "esticar", "aplanar", "desembrulhar", "desdobrar", "abrir", "desimpedir", "desembaraçar", "desatar", "desenvolver-se"],
+    "desenvolto": ["ágil", "solto", "espontâneo", "natural", "desembaraçado", "flexível", "vivo", "esperto", "inteligente", "habilidoso"],
+    "desenvoltura": ["agilidade", "soltura", "espontaneidade", "naturalidade", "desembaraço", "flexibilidade", "vivacidade", "esperteza", "inteligência", "habilidade"],
+    "desenvolva": ["cresça", "progrida", "evolua", "expanda", "aperfeiçoe", "melhore", "cultive", "fomente", "elabore", "crie"],
+    "desenvolvemos": ["crescemos", "progredimos", "evoluímos", "expandimos", "aperfeiçoamos", "melhoramos", "cultivamos", "fomentamos", "elaboramos", "criamos"],
+    "desenvolver": ["crescer", "progredir", "evoluir", "expandir", "aperfeiçoar", "melhorar", "cultivar", "fomentar", "elaborar", "criar"],
+    "desenvolver-se": ["crescer", "progredir", "evoluir", "expandir-se", "aperfeiçoar-se", "melhorar", "florescer", "amadurecer", "prosperar", "adiantar"],
+    "desenvolverão": ["crescerão", "progredirão", "evoluirão", "expandirão", "aperfeiçoarão", "melhorarão", "cultivarão", "fomentarão", "elaborarão", "criarão"],
+    "desenvolvida": ["crescida", "progredida", "evoluída", "expandida", "aperfeiçoada", "melhorada", "cultivada", "fomentada", "elaborada", "criada"],
+    "desenvolvido": ["crescido", "progredido", "evoluído", "expandido", "aperfeiçoado", "melhorado", "cultivado", "fomentado", "elaborado", "criado"],
+    "desenvolvimento": ["crescimento", "progresso", "evolução", "expansão", "aperfeiçoamento", "melhora", "cultivo", "fomento", "elaboração", "criação"],
+    "desequilíbrio": ["instabilidade", "desarmonia", "desproporção", "perturbação", "desarranjo", "desordem", "inconstância", "oscilação", "desnivelamento", "desajuste"],
+    "deserção": ["abandono", "fuga", "abandono de posto", "abandono de fileiras", "ausência não autorizada", "deixada de serviço", "retirada ilegal", "abandono de compromisso", "apostasia", "defecção"],
+    "desertar": ["abandonar", "fugir", "abandonar o posto", "abandonar as fileiras", "ausentar-se sem autorização", "deixar o serviço", "retirar-se ilegalmente", "abandonar o compromisso", "renegar", "trair"],
+    "deserto": ["ermo", "vazio", "desabitado", "solitário", "árido", "seco", "baldio", "inculto", "isolado", "despovoado"],
+    "desesperado": ["aflito", "angustiado", "desolado", "desesperançoso", "exasperado", "impaciente", "louco", "furioso", "extremo", "irrefreável"],
+    "desespero": ["aflição", "angústia", "desolação", "desesperança", "exasperação", "impaciência", "loucura", "fúria", "extremo sofrimento", "perda da esperança"],
+    "desestabilizar": ["perturbar", "abalroar", "desordenar", "desequilibrar", "fragilizar", "minar", "comprometer", "ameaçar", "subverter", "desarranjar"],
+    "desestatização": ["privatização", "transferência para o setor privado", "venda de empresas estatais", "alienação de bens públicos", "liberalização", "desregulamentação", "abertura de mercado", "redução do papel do estado", "transferência de controle estatal", "venda de patrimônio público"],
+    "desestressar": ["relaxar", "acalmar", "aliviar a tensão", "desoprimir", "distensionar", "tranquilizar", "suavizar", "amenizar o estresse", "liberar a tensão", "descontrair"],
+    "desfaçatez": ["insolência", "atrevimento", "impudência", "cinismo", "descaramento", "arrogância", "petulância", "desvergonha", "audácia", "irreverência"],
+    "desfalecer": ["enfraquecer", "debilitar-se", "esmorecer", "languidecer", "perder as forças", "exaurir-se", "desmaiar", "sucumbir", "amortecer", "minguar"],
+    "desfalecido": ["enfraquecido", "debilitado", "esmorecido", "lânguido", "sem forças", "exaurido", "desmaiado", "prostrado", "amortecido", "mínguado"],
+    "desfalque": ["roubo", "furto", "fraude", "malversação", "peculato", "apropriação indébita", "desvio de fundos", "dano financeiro", "prejuízo", "rombo"],
+    "desfavoraveis": ["contrários", "adversos", "negativos", "prejudiciais", "nocivos", "desvantajosos", "inconvenientes", "desfavoráveis", "opostos", "contrariantes"],
+    "desfavorável": ["contrário", "adverso", "negativo", "prejudicial", "nocivo", "desvantajoso", "inconveniente", "desfavorável", "oposto", "contrariante"],
+    "desfazer": ["desmanchar", "desconstruir", "anular", "invalidar", "eliminar", "apagar", "dissolver", "desorganizar", "desarranjar", "desfazer-se"],
+    "desfazimento": ["desmancho", "desconstrução", "anulação", "invalidação", "eliminação", "apagamento", "dissolução", "desorganização", "desarranjo", "desagregação"],
+    "desfecho": ["final", "conclusão", "término", "fim", "epílogo", "resultado", "solução", "desenlace", "acabamento", "encerramento"],
+    "desfeita": ["ofensa", "afronta", "insulto", "ultraje", "desrespeito", "humilhação", "vexame", "agressão verbal", "palavra grosseira", "ato ofensivo"],
+    "desfeito": ["desmanchado", "desconstruído", "anulado", "invalidado", "eliminado", "apagado", "dissolvido", "desorganizado", "desarranjado", "desfeito-se"],
+    "desferir": ["lançar", "atirar", "golpear", "aplicar", "assestar", "desencadear", "emitir", "proferir", "dirigir", "descarregar"],
+    "desfile": ["parada", "procissão", "cortejo", "mostra", "exibição", "apresentação", "revista", "passarela", "sequência", "fila"],
+    "desflorar": ["tirar a virgindade", "deflorescer", "romper o hímen", "iniciar na vida sexual", "desvirginar", "desabrochar (fig.)", "revelar (fig.)", "manifestar (fig.)", "inaugurar (fig.)", "estrear (fig.)"],
+    "desfocado": ["embaçado", "turvo", "impreciso", "vago", "indefinido", "sem nitidez", "sem foco", "borrado", "difuso", "nublado"],
+    "desforra": ["vingança", "revanche", "retaliação", "represália", "vindita", "resposta a ofensa", "ato de vingar-se", "ajuste de contas", "compensação", "reparação"],
+    "desfruir": ["gozar", "aproveitar", "desfrutar", "usufruir", "deliciar-se", "recrear-se", "fruir", "ter prazer em", "experimentar com satisfação", "saborear"],
+    "desfrutar": ["gozar", "aproveitar", "desfruir", "usufruir", "deliciar-se", "recrear-se", "fruir", "ter prazer em", "experimentar com satisfação", "saborear"],
+    "desfrutem": ["gozem", "aproveitem", "desfruam", "usufruam", "deliciem-se", "recreiem-se", "fruam", "tenham prazer em", "experimentem com satisfação", "saboreiem"],
+    "desgosto": ["pesar", "tristeza", "mágoa", "contrariedade", "aborrecimento", "irritação", "desprazer", "decepção", "frustração", "melancolia"],
+    "desgraça": ["infortúnio", "azar", "revés", "calamidade", "tragédia", "infelicidade", "desdita", "má sorte", "adversidade", "tribulação"],
+    "desgraçada": ["infeliz", "azarada", "desventurada", "miserável", "trágica", "calamitosa", "desditosa", "malfadada", "infortunada", "tribulada"],
+    "desgraçado": ["infeliz", "azarado", "desventurado", "miserável", "trágico", "calamitoso", "desditoso", "malfadado", "infortunado", "tribulado"],
+    "desgrenhado": ["descabelado", "em desalinho", "despenteado", "arrepiado", "com os cabelos soltos", "com os cabelos em desordem", "com os cabelos revoltos", "com os cabelos bagunçados", "espalhado", "emaranhado"],
+    "desiderato": ["desejo", "aspiração", "alvo", "objetivo", "meta", "intenção", "propósito", "finalidade", "intento", "anseio"],
+    "desídia": ["preguiça", "negligência", "omissão", "inatividade", "indolência", "desleixo", "inércia", "inação", "apatia", "moleza"],
+    "desidiosa": ["preguiçosa", "negligente", "omissa", "inativa", "indolente", "desleixada", "inérte", "apática", "mole", "preguiçosa"],
+    "desidioso": ["preguiçoso", "negligente", "omisso", "inativo", "indolente", "desleixado", "inérte", "apático", "mole", "preguiçoso"],
+    "design": ["projeto", "plano", "concepção", "criação", "formato", "aparência", "estilo", "modelo", "desenho", "arquitetura"],
+    "designação": ["nomeação", "indicação", "denominação", "título", "designativo", "nomenclatura", "apelido", "qualificação", "atribuição", "incumbência"],
+    "designado": ["nomeado", "indicado", "denominado", "intitulado", "chamado", "apelidado", "qualificado", "atribuído", "incumbido", "escolhido"],
+    "designar": ["nomear", "indicar", "denominar", "intitular", "chamar", "apelidar", "qualificar", "atribuir", "incumbir", "escolher"],
+    "designer": ["projetista", "criador", "desenhista", "estilista", "arquiteto de produtos", "concepcionista", "formatador", "modelador", "elaborador de projetos", "arquiteto visual"],
+    "desígnio": ["propósito", "intenção", "plano", "objetivo", "meta", "fim", "vontade", "desejo", "projeto", "intento"],
+    "desigualdade": ["disparidade", "diferença", "discriminação", "injustiça", "assimetria", "desproporção", "falta de equidade", "privilégio", "parcialidade", "desequilíbrio"],
+    "desigualdade social": ["disparidade social", "assimetria social", "injustiça social", "discriminação social", "falta de equidade social", "diferença de classes", "exclusão social", "marginalização", "privilégio social", "desequilíbrio social"],
+    "desiludido": ["decepcionado", "frustrado", "desapontado", "desencantado", "desenganado", "amargurado", "contrariado", "descontente", "pesaroso", "desesperançoso"],
+    "desilusão": ["decepção", "frustração", "desapontamento", "desencanto", "desengano", "amargura", "contrariedade", "descontentamento", "pesar", "perda da ilusão"],
+    "desincumbir": ["desobrigar", "livrar de encargo", "eximir de responsabilidade", "dispensar", "isentar", "remover obrigação", "liberar", "desonerar", "desvincular", "desimpedir"],
+    "desinfetar": ["esterilizar", "sanitizar", "higienizar", "limpar", "assear", "depurar", "purificar", "livrar de germes", "remover microrganismos", "tornar salubre"],
+    "desinformado": ["ignorante", "desavisado", "mal informado", "desconhecedor", "alheio", "inciente", "desatualizado", "desorientado", "despistado", "iludido"],
+    "desinibido": ["solto", "espontâneo", "natural", "desembaraçado", "à vontade", "livre", "sem reservas", "franco", "aberto", "com desenvoltura"],
+    "desinquieto": ["agitado", "nervoso", "intranquilo", "ansioso", "perturbado", "imquieto", "afobado", "excitado", "irrequieto", "turbulento"],
+    "desintegração": ["separação", "dissolução", "desmembramento", "fragmentação", "decomposição", "deterioração", "ruína", "colapso", "cisão", "desagregação"],
+    "desintegrar": ["separar", "dissolver", "desmembrar", "fragmentar", "decompor", "deteriorar", "arruinar", "colapsar", "cindir", "desagregar"],
+    "desinteligência": ["discórdia", "desentendimento", "divergência", "conflito", "atrito", "desarmonia", "inimizade", "desavença", "má vontade", "desavença"],
+    "desinteressado": ["indiferente", "apático", "neutro", "imparcial", "objetivo", "indiferente", "sem interesse", "alheio", "desapegado", "isento"],
+    "desinteresse": ["indiferença", "apatia", "neutralidade", "imparcialidade", "objetividade", "desapego", "frieza", "inação", "desânimo", "descaso"],
+    "desistência": ["renúncia", "abandono", "retirada", "cessação", "interrupção", "abdicação", "demissão", "rejeição", "recusa", "abstenção"],
+    "desistir": ["renunciar", "abandonar", "retirar-se", "cessar", "interromper", "abdicar", "demitir-se", "rejeitar", "recusar", "abster-se"],
+    "desjejum": ["café da manhã", "primeira refeição", "matinal", "alimentação inicial", "quebra do jejum", "comer pela manhã", "primeiro alimento do dia", "refeição matutina", "primeira nutrição do dia", "manhã"],
+    "deslavado": ["pálido", "branco", "desbotado", "apagado", "sem cor", "límpido", "claro", "puro", "evidente", "notório"],
+    "desleal": ["traiçoeiro", "infiel", "pérfido", "falso", "enganador", "dissimulado", "indigno de confiança", "quebrador de promessas", "vilão", "subreptício"],
+    "deslealdade": ["traição", "infidelidade", "perfídia", "falsidade", "engano", "dissimulação", "falta de confiança", "quebra de promessa", "vilania", "subterfúgio"],
+    "desleixado": ["negligente", "descuidado", "omisso", "relaxado", "indolente", "preguiçoso", "desatento", "desmazelado", "sujo", "malfeito"],
+    "desleixo": ["negligência", "descuido", "omissão", "relaxamento", "indolência", "preguiça", "desatenção", "desmazelo", "sujeira", "imperícia"],
+    "deslindar": ["esclarecer", "elucidar", "resolver", "desvendar", "interpretar", "descobrir", "averiguar", "apurar", "dilucidar", "explicar"],
+    "deslinde": ["esclarecimento", "elucidação", "resolução", "desvendamento", "interpretação", "descobrimento", "averiguação", "apuração", "dilucidação", "explicação"],
+    "deslizar": ["escorregar", "patinar", "glissar", "planar", "correr suavemente", "mover-se levemente", "resvalar", "fluir", "ser escorregadio", "escapulir"],
+    "deslize": ["escorregão", "erro", "falha", "engano", "lapso", "gafe", "indiscrição", "pequeno erro", "ato falho", "desvio"],
+    "deslocar": ["mover", "remover", "transferir", "afastar", "desviar", "mudar de lugar", "realocar", "transladar", "desacomodar", "desorganizar"],
+    "deslumbrado": ["fascinado", "encantado", "maravilhado", "extasiado", "admirado", "impressionado", "embriagado de beleza", "cegado pela luz", "obnubilado", "enlevado"],
+    "deslumbrante": ["fascinante", "encantador", "maravilhoso", "extasiante", "admirável", "impressionante", "esplêndido", "radiante", "brilhante", "magnífico"],
+    "deslumbrar": ["fascinar", "encantar", "maravilhar", "extasiar", "admirar", "impressionar", "ofuscar", "cegar", "obnubilar", "enlevar"],
+    "deslumbre": ["fascínio", "encanto", "maravilha", "êxtase", "admiração", "impressão", "ofuscamento", "cegueira", "obnubilação", "enlevo"],
+    "desmaio": ["sincope", "apagamento", "perda de consciência", "lipotimia", "colapso", "vertigem", "ataque", "síncope vasovagal", "perda momentânea dos sentidos", "desfalecimento"],
+    "desmanchar": ["desfazer", "desconstruir", "desagregar", "desmontar", "desfazer-se", "deteriorar-se", "arruinar-se", "dissolver-se", "derreter", "desorganizar"],
+    "desmando": ["arbitrariedade", "abuso de poder", "autoritarismo", "tirania", "ilegalidade", "despotismo", "excessos", "violência", "injustiça", "desgoverno"],
+    "desmantelamento": ["desmonte", "desestruturação", "desorganização", "desarticulação", "demolição", "destruição", "desfacelamento", "desagregação", "dissolução", "ruína"],
+    "desmantelar": ["desmontar", "desestruturar", "desorganizar", "desarticular", "demolir", "destruir", "desfazer", "desagregar", "dissolver", "arruinar"],
+    "desmantelo": ["desordem", "confusão", "bagunça", "desorganização", "caos", "desarranjo", "desestruturação", "desagregação", "dissolução", "ruína"],
+    "desmatamento": ["devastação florestal", "derrubada de árvores", "destruição da mata", "supressão vegetal", "desflorestação", "corte raso", "limpeza de terreno", "perda de cobertura vegetal", "degradação florestal", "extinção de florestas"],
+    "desmatar": ["derrubar árvores", "destruir a mata", "suprimir a vegetação", "desflorestar", "cortar árvores", "limpar o terreno", "remover a cobertura vegetal", "degradar a floresta", "extinguir florestas", "fazer desmatamento"],
+    "desmazelo": ["negligência", "desleixo", "descuido", "falta de cuidado", "inação", "omissão", "desatenção", "imprudência", "desídia", "relaxamento"],
+    "desmembramento": ["separação", "divisão", "fragmentação", "desagregação", "cisão", "desarticulação", "despedaçamento", "esfacelamento", "desunião", "partição"],
+    "desmentir": ["negar", "contradizer", "refutar", "impugnar", "invalidar", "desaprovar", "retificar", "corrigir", "desautorizar", "desconfirmar"],
+    "desmerecer": ["desvalorizar", "depreciar", "rebaixar", "diminuir o valor de", "desestimar", "desconsiderar", "ofuscar", "tirar o mérito de", "rebaixar a reputação de", "diminuir a importância de"],
+    "desmesurado": ["excessivo", "exagerado", "desproporcional", "imensurável", "vasto", "colossal", "extravagante", "descomedido", "desenfreado", "ilimitado"],
+    "desmistificar": ["revelar a verdade sobre", "tirar o caráter de mito", "mostrar a realidade de", "desfazer ilusões sobre", "explicar racionalmente", "tornar compreensível", "desvendar o mistério de", "desmascarar", "esclarecer", "racionalizar"],
+    "desmistificar": ["revelar a verdade sobre", "tirar o caráter de mito", "mostrar a realidade de", "desfazer ilusões sobre", "explicar racionalmente", "tornar compreensível", "desvendar o mistério de", "desmascarar", "esclarecer", "racionalizar"],
+    "desmoronar": ["cair", "ruir", "desabar", "desfazer-se", "deteriorar-se", "declinar", "fracassar", "desintegrar-se", "desestruturar-se", "desmantelar-se"],
+    "desnaturado": ["artificial", "falso", "adulterado", "modificado", "corrompido", "degenerado", "pervertido", "sem naturalidade", "afetado", "dissimulado"],
+    "desnecessário": ["supérfluo", "inútil", "dispensável", "despiciendo", "ocioso", "gratuito", "vão", "inconveniente", "despropositado", "desnecessário"],
+    "desnecessários": ["supérfluos", "inúteis", "dispensáveis", "despiciendos", "ociosos", "gratuitos", "vãos", "inconvenientes", "despropositados", "desnecessários"],
+    "desnivelado": ["irregular", "desigual", "íngreme", "oblico", "pendente", "assimétrico", "desbalanceado", "desproporcional", "desajustado", "desemparelhado"],
+    "desnorteado": ["perdido", "confuso", "desorientado", "atordoado", "perplexo", "extraviado", "desorientado", "descontrolado", "abalado", "desorientado"],
+    "desnortear": ["perder a direção", "confundir", "desorientar", "atordoar", "perplexar", "extraviar", "desorientar", "descontrolar", "abalroar", "desorientar"],
+    "desnudar": ["despir", "tirar a roupa de", "revelar", "expor", "mostrar", "manifestar", "desvelar", "descobrir", "tornar evidente", "deixar nu"],
+    "desnudo": ["nu", "despido", "sem roupa", "ao natural", "pelado", "descoberto", "revelado", "exposto", "manifesto", "evidente"],
+    "desobediência": ["insubordinação", "indisciplina", "infração", "violação", "transgressão", "rebeldia", "resistência", "insurgência", "contravenção", "desacato"],
+    "desobediente": ["insubordinado", "indisciplinado", "infrator", "rebelde", "resistente", "insurgente", "contravencional", "desacatador", "teimoso", "recalcitrante"],
+    "desobrigar": ["isentar", "dispensar", "eximir", "liberar", "desvincular", "desonerar", "remover obrigação", "absolver", "perdoar", "desatar"],
+    "desobstruir": ["desimpedir", "desbloquear", "liberar", "abrir", "desentupir", "desembaraçar", "facilitar a passagem", "remover obstáculos", "descongestionar", "limpar"],
+    "desocupado": ["vazio", "livre", "ocioso", "disponível", "sem afazeres", "inativo", "desempregado", "vago", "solitário", "desabitado"],
+    "desolação": ["tristeza profunda", "aflição extrema", "desespero", "abatimento", "consternação", "luto", "amargura", "desalento", "prostração", "infelicidade"],
+    "desolado": ["triste", "aflito", "desesperado", "abatido", "consternado", "em luto", "amargurado", "desalentado", "prostrado", "infeliz"],
+    "desolador": ["triste", "aflitivo", "desesperançoso", "abatimento", "consternador", "lutuoso", "amargurante", "desalentador", "prostrador", "infeliz"],
+    "desoneração": ["isenção", "exoneração", "alívio fiscal", "redução de encargos", "dispensa de tributos", "liberação de impostos", "diminuição de custos", "alívio tributário", "desgravamento", "desobrigação tributária"],
+    "desonerar": ["isentar", "exonerar", "aliviar fiscalmente", "reduzir encargos", "dispensar de tributos", "liberar de impostos", "diminuir custos", "aliviar tributariamente", "desgravar", "desobrigar tributariamente"],
+    "desonestidade": ["corrupção", "fraude", "engano", "trapaça", "imoralidade", "falsidade", "ilegalidade", "vício", "deslealdade", "má fé"],
+    "desonesto": ["corrupto", "fraudulento", "enganador", "trapaceiro", "imoral", "falso", "ilegal", "viciado", "desleal", "de má fé"],
+    "desonra": ["infâmia", "vergonha", "ignomínia", "opróbrio", "mancha", "mácula", "descrédito", "depravação", "vilania", "ultraje"],
+    "desonrado": ["infame", "envergonhado", "ignominioso", "maculado", "desacreditado", "depravado", "vil", "ultrajado", "manchado", "desprestigiado"],
+    "desopilar": ["desimpedir", "desobstruir", "desentupir", "desembaraçar", "liberar", "facilitar", "remover obstáculos", "descongestionar", "abrir", "limpar"],
+    "desordem": ["confusão", "bagunça", "caos", "tumulto", "anarquia", "desarranjo", "perturbação", "desorganização", "irregularidade", "descontrole"],
+    "desordenado": ["confuso", "bagunçado", "caótico", "tumultuado", "anárquico", "desarranjado", "perturbado", "desorganizado", "irregular", "descontrolado"],
+    "desovar": ["liberar ovos", "pôr ovos", "depositar ovos", "reproduzir-se (peixes)", "multiplicar-se (peixes)", "criar (peixes)", "gerar (peixes)", "produzir (peixes)", "soltar (fig.)", "livrar-se de (fig.)"],
+    "despachar": ["enviar", "remeter", "expedir", "mandar", "liberar", "resolver", "concluir", "atender", "desimpedir", "acelerar"],
+    "despache": ["envie", "remeta", "expida", "mande", "libere", "resolva", "conclua", "atenda", "desimpeça", "acelere"],
+    "despacho": ["envio", "remessa", "expedição", "ordem", "decisão", "solução", "conclusão", "atendimento", "liberação", "aceleração"],
+    "despautério": ["absurdo", "disparate", "tolice", "besteira", "sandice", "extravagância", "erro crasso", "insensatez", "desatino", "despropósito"],
+    "despeço": ["demito", "exonero", "afasto", "licencio", "retiro", "desligo", "libero", "dispenco", "arremesso", "lanço"],
+    "despectivo": ["depreciativo", "pejorativo", "desdenhoso", "menosprezativo", "irônico", "sarcástico", "crítico", "desfavorável", "que diminui o valor", "que expressa desprezo"],
+    "despedir": ["demitir", "exonera", "afastar", "licenciar", "retirar", "desligar", "liberar", "dispensar", "mandar embora", "dar adeus"],
+    "despeitado": ["ressentido", "magoado", "melindrado", "invejoso", "ciumento", "amargurado", "contrariado", "irritado", "ressentido", "rancoroso"],
+    "despeito": ["ressentimento", "mágoa", "melindre", "inveja", "ciúme", "amargura", "contrariedade", "irritação", "rancor", "ódio"],
+    "despejado": ["vazio", "desocupado", "livre", "desimpedido", "desalojado", "expulso", "removido", "retirado", "despojado", "sem inquilino"],
+    "despender": ["gastar", "empregar", "utilizar", "consumir", "dispensar", "investir", "sacrificar", "dar", "distribuir", "dissipar"],
+    "despendido": ["gasto", "empregado", "utilizado", "consumido", "dispensado", "investido", "sacrificado", "dado", "distribuído", "dissipado"],
+    "despensa": ["reservatório", "armazém", "depósito", "celeiro", "paiol", "local de provisões", "lugar para guardar alimentos", "almoxarifado", "estoque", "casa de mantimentos"],
+    "despenseiro": ["encarregado da despensa", "responsável pelo armazém", "almoxarife", "aquele que guarda provisões", "administrador de mantimentos", "guardião de alimentos", "zelador da despensa", "depositário de víveres", "ecônomo", "provedor"],
+    "despercebido": ["inoservado", "ignorado", "omitido", "desconhecido", "não notado", "sem ser visto", "sem ser percebido", "discreto", "sutil", "inadvertido"],
+    "desperdiçador": ["extravagante", "esbanjador", "dissipador", "gastador", "prodígo", "imprevidente", "ruim administrador", "negligente com recursos", "que joga fora", "que malgasta"],
+    "desperdiçamento": ["extravagância", "esbanjamento", "dissipação", "gasto excessivo", "prodigalidade", "imprevidência", "má administração", "negligência com recursos", "ato de jogar fora", "malgasto"],
+    "desperdiçar": ["extravagar", "esbanjar", "dissipar", "gastar em vão", "malgastar", "jogar fora", "perder", "deixar de aproveitar", "ser perdulário", "ser pródigo"],
+    "desperdício": ["extravagância", "esbanjamento", "dissipação", "gasto inútil", "malgasto", "perda", "desaproveitamento", "prodigalidade", "desmazelo", "ruína"],
+    "despertar": ["acordar", "ressuscitar", "reanimar", "avivar", "estimular", "incitar", "despertar interesse", "tornar consciente", "alertar", "desencadear"],
+    "desperto": ["acordado", "vivo", "alerta", "atento", "vigilante", "esperto", "inteligente", "consciente", "animado", "desvelado"],
+    "despesa": ["gasto", "custo", "dispêndio", "pagamento", "saída de dinheiro", "gastoamento", "desembolso", "encargo", "oneração", "consumo"],
+    "despiciendo": ["desprezível", "insignificante", "trivial", "fútil", "irrisório", "pequeno", "sem importância", "nulo", "vano", "inferior"],
+    "despido": ["nu", "desnudo", "sem roupa", "ao natural", "pelado", "descoberto", "revelado", "exposto", "manifesto", "evidente"],
+    "despir": ["tirar a roupa de", "desnudar", "revelar", "expor", "mostrar", "manifestar", "desvelar", "descobrir", "tornar evidente", "deixar nu"],
+    "despojado": ["simples", "modesto", "humilde", "sem adornos", "sem luxo", "privado", "expropriado", "desprovido", "espoliado", "sem posses"],
+    "despojamento": ["simplicidade", "modéstia", "humildade", "abnegação", "renúncia", "privação", "expropriação", "desprendimento", "ascetismo", "austeridade"],
+    "despojar": ["privar", "expropriar", "tirar", "roubar", "espoliar", "desvestir", "desnudar", "remover", "destituir", "desapossar"],
+    "despojo": ["resto", "sobra", "resíduo", "detrito", "vestígio", "ruína", "presa", "botim", "espólio", "cadáver"],
+    "despoluir": ["limpar", "purificar", "sanear", "depurar", "remover a poluição de", "tornar limpo", "higienizar", "purificar o ar/água/solo", "remover contaminantes", "tornar saudável"],
+    "despontar": ["surgir", "aparecer", "começar a mostrar-se", "brotar", "germinar", "nascer", "iniciar", "começar", "manifestar-se", "mostrar a ponta"],
+    "desportista": ["atleta", "esportista", "competidor", "jogador", "praticante de esportes", "amante do esporte", "profissional do esporte", "amador do esporte", "participante de competições", "dedicado ao esporte"],
+    "desportivo": ["esportivo", "atlético", "relativo a esportes", "de competição", "de jogos", "de atividades físicas", "de lazer esportivo", "de torneios", "de campeonatos", "de modalidades esportivas"],
+    "desporto": ["esporte", "atividade física", "jogo", "competição", "lazer esportivo", "modalidade esportiva", "prática esportiva", "exercício físico", "atividade atlética", "jogo competitivo"],
+    "desposada": ["casada", "esposa", "maridada", "unida em matrimônio", "consorte", "mulher casada", "ligada pelo matrimônio", "em matrimônio", "com laços conjugais", "unida legalmente"],
+    "desposado": ["casado", "esposo", "maridado", "unido em matrimônio", "consorte", "homem casado", "ligado pelo matrimônio", "em matrimônio", "com laços conjugais", "unido legalmente"],
+    "desposar": ["casar", "matrimoniar", "contrair matrimônio", "unir-se em casamento", "tomar por esposo/esposa", "celebrar o casamento", "realizar o matrimônio", "contrair núpcias", "unir legalmente", "formar um lar"],
+    "déspota": ["tirano", "autoritário", "opressor", "mandão", "ditador", "soberano absoluto", "governante cruel", "senhor absoluto", "dominador", "autocrata"],
+    "despótico": ["tirânico", "autoritário", "opressivo", "mandão", "ditatorial", "absolutista", "cruel", "dominador", "autocrático", "arbitrário"],
+    "despotismo": ["tirania", "autoritarismo", "opressão", "mandonismo", "ditadura", "absolutismo", "crueldade", "dominação", "autocracia", "arbitrariedade"],
+    "desprender": ["soltar", "libertar", "desatar", "desligar", "separar", "desamarrar", "descolar", "desfixar", "desenganchar", "desvincular"],
+    "desprendido": ["solto", "livre", "desatado", "desligado", "separado", "desamarrado", "desapegado", "generoso", "altruísta", "liberal"],
+    "desprendimento": ["liberdade", "soltura", "desapego", "generosidade", "altruísmo", "liberalidade", "abnegação", "desinteresse", "isenção", "imparcialidade"],
+    "despretensiosamente": ["simplesmente", "naturalmente", "modestamente", "sem afetação", "sem ostentação", "humildemente", "sem segundas intenções", "com simplicidade", "com naturalidade", "com modéstia"],
+    "despretensioso": ["simples", "natural", "modesto", "sem afetação", "sem ostentação", "humilde", "sem segundas intenções", "singelo", "puro", "ingênuo"],
+    "desprezar": ["ignorar", "menosprezar", "desdenhar", "rejeitar", "desconsiderar", "subestimar", "depreciar", "trivializar", "fazer pouco de", "olvidar"],
+    "desprezível": ["insignificante", "trivial", "fútil", "irrisório", "pequeno", "sem importância", "nulo", "vano", "inferior", "vil"],
+    "desprezo": ["menosprezo", "desdém", "arrogância", "indiferença", "desconsideração", "olhar de cima", "aversão", "antipatia", "rejeição", "escárnio"],
+    "desproporção": ["desequilíbrio", "desarmonia", "assimetria", "irregularidade", "desajuste", "desnivelamento", "exagero", "demasia", "extravagância", "descomedimento"],
+    "desproporcional": ["desequilibrado", "desarmônico", "assimétrico", "irregular", "desajustado", "desnivelado", "exagerado", "desmedido", "extravagante", "descomunal"],
+    "despropósito": ["absurdo", "disparate", "tolice", "besteira", "sandice", "extravagância", "erro crasso", "insensatez", "desatino", "inconveniência"],
+    "desproteção": ["abandono", "desamparo", "indefeso", "vulnerabilidade", "insegurança", "desabrigo", "desguarnecimento", "desassistência", "exposição", "fragilidade"],
+    "desprover": ["privar", "despojar", "tirar", "desabastecer", "desguarnecer", "desaparelhar", "desarmar", "desmuniciar", "desequipar", "desornar"],
+    "desprovido": ["privado", "despojado", "sem", "carente", "falto", "desabastecido", "desguarnecido", "desaparelhado", "desarmado", "desequipado"],
+    "despudorada": ["impudente", "sem pudor", "descarada", "insolente", "atrevida", "abusada", "indecente", "sem vergonha", "libertina", "devassa"],
+    "desregrado": ["desordenado", "descontrolado", "imoderado", "excessivo", "intemperante", "libertino", "devasso", "dissoluto", "extravagante", "desenfreado"],
+    "desrespeitar": ["desacatar", "afrontar", "insultar", "ofender", "ultrajar", "desonrar", "vilipendiar", "menosprezar", "desprezar", "faltar com o respeito"],
+    "desrespeito": ["desacato", "afronta", "insulto", "ofensa", "ultraje", "desonra", "vilipêndio", "menosprezo", "desprezo", "falta de respeito"],
+    "desrespeitoso": ["descortês", "rude", "grosseiro", "mal-educado", "indelicado", "insolente", "impertinente", "malcriado", "seco", "brusco"],
+    "dessa": ["de essa", "referente a essa", "pertencente a essa", "originário dessa", "próximo a essa", "sobre essa", "a respeito dessa", "por causa dessa", "em relação a essa", "para essa"],
+    "dessa forma": ["assim", "deste modo", "desta maneira", "desse jeito", "desse modo", "destarte", "assim sendo", "consequentemente", "portanto", "logo"],
+    "dessacralização": ["secularização", "laicização", "profanação", "retirada do caráter sagrado", "perda do significado religioso", "mundanização", "banalização", "desconsagração", "dessantificação", "perda da aura sagrada"],
+    "dessarte": ["assim", "dessa forma", "deste modo", "desta maneira", "desse jeito", "desse modo", "portanto", "logo", "consequentemente", "destarte"],
+    "desse": ["de esse", "referente a esse", "pertencente a esse", "originário desse", "próximo a esse", "sobre esse", "a respeito desse", "por causa desse", "em relação a esse", "para esse"],
+    "desserviço": ["prejuízo", "dano", "mal", "detrimento", "inconveniente", "complicação", "transtorno", "efeito negativo", "ação prejudicial", "resultado desfavorável"],
+    "desta": ["de esta", "referente a esta", "pertencente a esta", "originário desta", "próximo a esta", "sobre esta", "a respeito desta", "por causa desta", "em relação a esta", "para esta"],
+    "destaca-se": ["ressalta", "sobressai", "evidencia-se", "distingue-se", "notabiliza-se", "realça-se", "salienta-se", "torna-se notável", "ganha relevo", "chama a atenção"],
+    "destacado": ["ressaltado", "sobressaído", "evidenciado", "distinto", "notável", "realçado", "salientado", "importante", "proeminente", "ilustre"],
+    "destacar": ["ressaltar", "sobressair", "evidenciar", "distinguir", "notabilizar", "realçar", "salientar", "enfatizar", "frisar", "sublinhar"],
+    "destaque": ["ressalto", "sobressalto", "evidência", "distinção", "notabilidade", "realce", "salienta", "ênfase", "friso", "sublinhado"],
+    "destarte": ["assim", "dessa forma", "deste modo", "desta maneira", "desse jeito", "desse modo", "portanto", "logo", "consequentemente", "dessarte"],
+    "deste": ["de este", "referente a este", "pertencente a este", "originário deste", "próximo a este", "sobre este", "a respeito deste", "por causa deste", "em relação a este", "para este"],
+    "destemido": ["corajoso", "valente", "bravio", "intrépido", "audacioso", "ousado", "impávido", "aguerrido", "heróico", "forte"],
+    "desterrado": ["exilado", "banido", "proscrito", "afastado da pátria", "expulso", "relegado", "deportado", "banido da sociedade", "condenado ao exílio", "expatriado"],
+    "desterro": ["exílio", "banimento", "proscrição", "afastamento da pátria", "expulsão", "relegação", "deportação", "banimento da sociedade", "pena de exílio", "expatriação"],
+    "destilação": ["purificação", "refinação", "extração", "separação", "condensação", "evaporação e condensação", "processo de destilar", "obtenção por destilação", "purificação por aquecimento", "separação de líquidos"],
+    "destilar": ["purificar", "refinar", "extrair", "separar", "condensar", "segregar", "verter gota a gota", "emanar", "exalar", "produzir por destilação"],
+    "destinado": ["designado", "reservado", "direcionado", "voltado para", "propício", "adequado", "próprio", "fadado", "predestinado", "consignado"],
+    "destinar": ["designar", "reservar", "direcionar", "voltar para", "propiciar", "adequar", "apropriar", "fadar", "predestinar", "consignar"],
+    "destinatário": ["receptor", "remetido", "endereçado", "aquele a quem se destina", "quem recebe", "beneficiário", "interessado", "alvo", "receptor da mensagem", "quem é o destino"],
+    "destino": ["fado", "sorte", "ventura", "fatalidade", "sina", "fim", "objetivo", "meta", "direção", "rumo"],
+    "destituição": ["demissão", "exoneração", "afastamento", "remoção", "deposição", "derrocada", "perda do cargo", "privação de função", "cessação de poder", "substituição"],
+    "destituído": ["demitido", "exonerado", "afastado", "removido", "deposto", "derrubado", "sem cargo", "privado de função", "sem poder", "substituído"],
+    "destituir": ["demitir", "exonerar", "afastar", "remover", "depor", "derrubar", "privar do cargo", "retirar a função", "cessar o poder de", "substituir"],
+    "destoante": ["discordante", "disonante", "desarmônico", "descompassado", "desalinhado", "incompatível", "diferente", "divergente", "contrastante", "excêntrico"],
+    "destoar": ["discordar", "dissonar", "desarmonizar", "descompassar", "desalinhar", "incompatibilizar", "diferir", "divergir", "contrastar", "ser excêntrico"],
+    "destorroar": ["esfarelar", "pulverizar", "desfazer em torrões", "triturar", "moer", "fragmentar", "desagregar", "descompactar", "tornar pó", "reduzir a grãos"],
+    "destra": ["mão direita", "habilidade manual", "destreza", "agilidade", "presteza", "facilidade", "arte", "jeito", "manha", "domínio"],
+    "destratar": ["maltratar", "insultar", "ofender", "humilhar", "agredir verbalmente", "injuriar", "vilipendiar", "ser grosseiro com", "tratar mal", "ser descortês com"],
+    "destreza": ["habilidade", "agilidade", "presteza", "facilidade", "arte", "jeito", "manha", "domínio", "perícia", "aptidão"],
+    "destrinçado": ["desfeito", "desmembrado", "separado", "desligado", "desatado", "desvendado", "esclarecido", "elucidado", "analisado detalhadamente", "fragmentado"],
+    "destrinchar": ["desfazer", "desmembrar", "separar", "desligar", "desatar", "desvendar", "esclarecer", "elucidar", "analisar detalhadamente", "fragmentar"],
+    "destro": ["habilidoso", "ágil", "preste", "facilmente", "manhoso", "perito", "apto", "talentoso", "competente", "experiente"],
+    "destruição": ["devastação", "arrasamento", "demolição", "aniquilação", "ruína", "estrago", "deterioração", "desintegração", "desmantelamento", "extermínio"],
+    "destruir": ["devastar", "arrasar", "demolir", "aniquilar", "arruinar", "estragar", "deteriorar", "desintegrar", "desmantelar", "exterminar"],
+    "destrutível": ["perecível", "frágil", "vulnerável", "que pode ser destruído", "que se pode danificar", "que se pode arruinar", "que se pode demolir", "que se pode aniquilar", "que se pode deteriorar", "que se pode desintegrar"],
+    "desumano": ["cruel", "desalmado", "insensível", "impiedoso", "bárbaro", "feroz", "atroz", "malvado", "sádico", "brutal"],
+    "desumilde": ["arrogante", "soberbo", "altivo", "presunçoso", "orgulhoso", "jactancioso", "petulante", "vanglorioso", "pedante", "afetado"],
+    "desuso": ["obsolescência", "caduquice", "antiquado", "fora de moda", "não utilizado", "em desuso", "ultrapassado", "arcaico", "obsoleto", "preterido"],
+    "desvairado": ["louco", "insano", "delirante", "extravagante", "absurdo", "disparate", "descontrolado", "furioso", "exaltado", "fanático"],
+    "desvalido": ["desamparado", "desprotegido", "indefeso", "fraco", "vulnerável", "necessitado", "pobre", "indigente", "miserável", "desassistido"],
+    "desvalorizar-se": ["depreciar-se", "perder valor", "desmerecer-se", "cair de preço", "tornar-se obsoleto", "deteriorar-se", "descreditar-se", "desestimar-se", "baixar de cotação", "reduzir sua importância"],
+    "desvanecer": ["esvanecer-se", "dissipar-se", "sumir", "desaparecer", "enfraquecer", "diminuir", "apagar-se", "desbotar", "perder a intensidade", "tornar-se vago"],
+    "desvanecida": ["esvanecida", "dissipada", "sumida", "desaparecida", "enfraquecida", "diminuída", "apagada", "desbotada", "sem intensidade", "vaga"],
+    "desvaneio": ["ilusão", "fantasia", "quimera", "utopia", "sonho", "devaneio", "imaginação fértil", "miragem", "engano", "erro"],
+    "desvantagem": ["inconveniente", "óbice", "empecilho", "dificuldade", "inferioridade", "prejuízo", "desfavor", "contratempo", "senão", "limitação"],
+    "desvario": ["loucura", "insanidade", "delírio", "extravagância", "absurdo", "disparate", "descontrole", "fúria", "exaltação", "fanatismo"],
+    "desvelar": ["revelar", "mostrar", "exibir", "apresentar", "descobrir", "manifestar", "patentear", "evidenciar", "elucidar", "cuidar com zelo"],
+    "desvelo": ["cuidado", "atenção", "zelo", "dedicação", "esmero", "diligência", "interesse", "solicitude", "afinco", "esforço"],
+    "desvencilhar": ["libertar-se", "soltar-se", "desembaraçar-se", "desligar-se", "separar-se", "desprender-se", "livrar-se", "afastar-se", "desimpedir-se", "desenvencilhar-se"],
+    "desvendar": ["revelar", "descobrir", "esclarecer", "elucidar", "deslindar", "interpretar", "averiguar", "apurar", "manifestar", "explicar"],
+    "desventura": ["infortúnio", "azar", "revés", "calamidade", "tragédia", "infelicidade", "desdita", "má sorte", "adversidade", "tribulação"],
+    "desviante": ["anormal", "irregular", "excêntrico", "atípico", "diferente", "divergente", "extravagante", "desregrado", "transgressor", "fora do comum"],
+    "desviar": ["afastar", "mover", "remover", "deslocar", "divergir", "mudar de direção", "extraviar", "roubar", "fraudar", "enganar"],
+    "desvincular": ["separar", "desligar", "dissociar", "desunir", "desatar", "desprender", "liberar", "isolar", "remover a ligação", "desmembrar"],
+    "desvirtuar": ["corromper", "perverter", "adulterar", "depravar", "deturpar", "viciar", "degenerar", "desnaturalizar", "falsear", "sofismar"],
+    "detalhe": ["pormenor", "minúcia", "particularidade", "especificação", "circunstância", "miudeza", "item", "elemento", "aspecto", "minudência"],
+    "detectar": ["descobrir", "identificar", "localizar", "achar", "constatar", "averiguar", "perceber", "notar", "flagrar", "surpreender"],
+    "detenção": ["prisão", "encarceramento", "reclusão", "aprisionamento", "custódia", "confinamento", "retenção", "captura", "segregação", "cerceamento da liberdade"],
+    "detenho": ["paro", "suspendo", "interrompo", "retenho", "conservo", "guardo", "aprisiono", "prendo", "restringo", "impeço"],
+    "detentor": ["possuidor", "titular", "proprietário", "portador", "depositário", "guardião", "conservador", "mantenedor", "usufrutuário", "investido"],
+    "deter": ["impedir", "obstar", "restringir", "suspender", "paralisar", "dissuadir", "desencorajar", "afastar", "amedrontar", "intimidar"],
+    "deterioração": ["degradação", "estragamento", "corrosão", "desgaste", "danificação", "avaria", "apodrecimento", "envelhecimento", "declínio", "deterioro"],
+    "deteriorado": ["degradado", "estragado", "corroído", "desgastado", "danificado", "avariado", "apodrecido", "envelhecido", "em declínio", "deterioro"],
+    "deteriorar": ["degradar", "estragar", "corroer", "desgastar", "danificar", "avariar", "apodrecer", "envelhecer", "declinar", "deteriorar-se"],
+    "determinação": ["decisão", "firmeza", "resolução", "persistência", "obstinação", "teimosia", "fixação", "definição", "estipulação", "especificação"],
+    "determinada": ["decidida", "firme", "resoluta", "persistente", "obstinada", "teimosa", "fixa", "definida", "estipulada", "especificada"],
+    "determinadas": ["decididas", "firmes", "resolutas", "persistentes", "obstinadas", "teimosas", "fixas", "definidas", "estipuladas", "especificadas"],
+    "determinado": ["decidido", "firme", "resoluto", "persistente", "obstinado", "teimoso", "fixo", "definido", "estipulado", "especificado"],
+    "determinante": ["crucial", "fundamental", "essencial", "decisivo", "relevante", "importante", "básico", "primordial", "marcante", "influente"],
+    "determinar": ["decidir", "fixar", "estabelecer", "definir", "estipular", "precisar", "averiguar", "apurar", "resolver", "delimitar"],
+    "determinismo": ["fatalismo", "predestinação", "inevitabilidade", "necessidade", "causalidade", "mecanicismo", "lei natural", "encadeamento causal", "ação e reação", "inexorabilidade"],
+    "detetive": ["investigador", "agente secreto", "espião", "fiscal", "inspetor", "averiguador", "buscador de pistas", "solucionador de crimes", "pesquisador", "inquiridor"],
+    "detinha": ["parava", "segurava", "retinha", "conservava", "guardava", "possuía", "dominava", "controlava", "ocupava", "mantinha"],
+    "detração": ["difamação", "calúnia", "maledicência", "difamação", "injúria", "detrimento da reputação", "fala maliciosa", "crítica maledicente", "ataque à honra", "difamação"],
+    "detrator": ["crítico", "opositor", "acusador", "difamador", "caluniador", "maledicente", "impugnador", "adversário", "inimigo", "contestador"],
+    "detrimento": ["prejuízo", "dano", "mal", "prejuízo", "agravo", "lesão", "desvantagem", "inconveniente", "complicação", "efeito negativo"],
+    "detrito": ["resto", "sobra", "resíduo", "lixo", "entulho", "imundície", "escória", "refugo", "borra", "sedimento"],
+    "deturpação": ["alteração", "falsificação", "distorção", "adulteração", "desfiguração", "corrupção", "viciação", "sofisma", "tergiversação", "desvirtuamento"],
+    "deturpado": ["alterado", "falsificado", "distorcido", "adulterado", "desfigurado", "corrompido", "viciado", "sofismático", "tergiversado", "desvirtuado"],
+    "deturpar": ["alterar", "falsificar", "distorcer", "adulterar", "desfigurar", "corromper", "viciar", "sofismar", "tergiversar", "desvirtuar"],
+    "deu": ["concedeu", "entregou", "ofereceu", "forneceu", "doou", "presenteou", "golpeou", "bateu", "atingiu", "produziu"],
+    "deus": ["divindade", "ser supremo", "criador", "onipotente", "onisciente", "onipresente", "ente divino", "força superior", "providência", "altíssimo"],
+    "devagar": ["lentamente", "vagarosamente", "calmamente", "mansamente", "pausadamente", "suavemente", "com lentidão", "sem pressa", "com moderação", "gradualmente"],
+    "devagarinho": ["bem devagar", "muito lentamente", "com muita calma", "bem mansamente", "bem pausadamente", "bem suavemente", "com lentidão extrema", "sem nenhuma pressa", "com muita moderação", "gradualmente"],
+    "devanear": ["fantasiar", "imaginar", "sonhar acordado", "divagar", "desvariar", "fantasiar", "perder-se em pensamentos", "voar na imaginação", "ter quimeras", "entregar-se à fantasia"],
+    "devaneio": ["fantasia", "imaginação", "sonho acordado", "divagação", "desvario", "quimera", "ilusão", "miragem", "utopia", "fantasmagoria"],
+    "devaneios": ["fantasias", "imaginações", "sonhos acordados", "divagações", "desvarios", "quimeras", "ilusões", "miragens", "utopias", "fantasmagorias"],
+    "devassa": ["investigação minuciosa", "exame detalhado", "averiguação profunda", "inquirição rigorosa", "libertinagem", "devassidão", "obscenidade", "imoralidade", "corrupção", "licenciosidade"],
+    "devassar": ["investigar minuciosamente", "examinar detalhadamente", "averiguar profundamente", "inquirir rigorosamente", "libertinar", "corromper", "violar", "profanar", "desonrar", "escrutinar"],
+    "devassidão": ["libertinagem", "obscenidade", "imoralidade", "corrupção", "licenciosidade", "depravação", "vício", "desregramento", "descomedimento", "desenfreado"],
+    "devasso": ["libertino", "obsceno", "imoral", "corrupto", "licencioso", "depravado", "vicioso", "desregrado", "descomedido", "desenfreado"],
+    "devastado": ["arrasado", "destruído", "arruinado", "desolado", "aniquilado", "despovoado", "desolado", "em ruínas", "destroçado", "esvaziado"],
+    "devastador": ["arrasador", "destruidor", "ruinoso", "desolador", "aniquilador", "catastrófico", "terrível", "nefasto", "funesto", "mortal"],
+    "deve": ["tem obrigação de", "precisa", "há de", "compete a", "incumbe a", "é necessário", "é preciso", "tem que", "está obrigado a", "carece de"],
+    "dever": ["obrigação", "responsabilidade", "encargo", "tarefa", "compromisso", "função", "incumbência", "necessidade", "precisão", "ética"],
+    "deveras": ["realmente", "verdadeiramente", "efetivamente", "de fato", "sem dúvida", "certamente", "indubitavelmente", "seguramente", "a sério", "autenticamente"],
+    "devida": ["justa", "legítima", "merecida", "apropriada", "adequada", "pertinente", "devida", "certa", "correta", "própria"],
+    "devidamente": ["justamente", "legitimamente", "merecidamente", "apropriadamente", "adequadamente", "pertinentemente", "devidamente", "certamente", "corretamente", "apropriadamente"],
+    "devido": ["justo", "legítimo", "merecido", "apropriado", "adequado", "pertinente", "devido a", "por causa de", "em virtude de", "consequente de"],
+    "devir": ["vir a ser", "tornar-se", "transformar-se", "evoluir", "desenvolver-se", "acontecer", "suceder", "ocorrer", "transcorrer", "realizar-se"],
+    "devoção": ["fé", "piedade", "religiosidade", "veneração", "adoração", "reverência", "afeição", "dedicação", "zelo", "fervor"],
+    "devocional": ["religioso", "pío", "sacro", "litúrgico", "eclesiástico", "espiritual", "de culto", "de oração", "de devoção", "de piedade"],
+    "devolução": ["restituição", "retorno", "entrega de volta", "ressarcimento", "reembolso", "reversão", "reintegração", "restituição", "ato de devolver", "ato de retornar"],
+    "devolver": ["restituir", "retornar", "entregar de volta", "ressarcir", "reembolsar", "reverter", "reintegrar", "restituir", "tornar a dar", "tornar a entregar"],
+    "devotado": ["dedicado", "afetuoso", "zeloso", "fervoroso", "piedoso", "religioso", "consagrado", "entregue", "leal", "fiel"],
+    "devotamente": ["dedicadamente", "afetuosamente", "zelosamente", "fervorosamente", "piedosamente", "religiosamente", "consagradamente", "entreguemente", "lealmente", "fielmente"],
+    "devoto": ["dedicado", "afetuoso", "zeloso", "fervoroso", "piedoso", "religioso", "consagrado", "entregue", "leal", "fiel"],
+    "dextro": ["direito", "da mão direita", "hábil com a mão direita", "destro", "que usa preferencialmente a mão direita", "com predominância da mão direita", "que tem destreza com a mão direita", "relativo à direita", "situado à direita", "orientado para a direita"],
+    "dezesseis": ["16", "XVI", "uma dezena e seis unidades", "o sucessor de quinze", "o antecessor de dezessete", "o número que segue o quinz", "o número que precede o dezesete", "a soma de dez mais seis", "o dobro de oito", "a metade de trinta e dois"],
+    "dezessete": ["17", "XVII", "uma dezena e sete unidades", "o sucessor de dezesseis", "o antecessor de dezoito", "o número que segue o dezes", "o número que precede o dezoito", "a soma de dez mais sete", "a soma de nove mais oito", "um a mais que dezesseis"],
+    "dia": ["período de 24 horas", "espaço de tempo entre o nascer e o pôr do sol", "manhã", "tarde", "dia útil", "data", "ocasião", "época", "tempo", "jornada"],
+    "dia a dia": ["cotidianamente", "diariamente", "cada dia", "dia após dia", "dia por dia", "no cotidiano", "na rotina", "a cada dia que passa", "em cada dia", "de maneira contínua"],
+    "diabo": ["satanás", "lúcifer", "maligno", "demônio", "capiroto", "tinhoso", "belzebu", "exu", "força do mal", "adversário"],
+    "diabólico": ["satânico", "maligno", "demoníaco", "infernal", "perverso", "cruel", "maléfico", "nefasto", "diabólico", "endemoninhado"],
+    "diacho": ["diabo", "expressão de surpresa/irritação", "droga", "caramba", "puxa vida", "que coisa", "valha-me deus", "inferno", "diabólico", "satanás"],
+    "diacrítico": ["sinal gráfico auxiliar", "acento", "trema", "cedilha", "til", "apóstrofo", "sinal de pontuação", "marca distintiva", "elemento gráfico", "notação ortográfica"],
+    "diacronia": ["evolução histórica da língua", "estudo da língua através do tempo", "perspectiva histórica da linguagem", "desenvolvimento linguístico", "história da língua", "linguística histórica", "análise temporal da linguagem", "transformações linguísticas", "mudança linguística", "estudo da evolução das palavras"],
+    "diacrônico": ["histórico", "evolutivo", "temporal", "que atravessa o tempo", "relativo à evolução", "que considera a história", "que se desenvolve no tempo", "que muda com o tempo", "que acompanha a evolução", "que estuda a história"],
+    "diadema": ["coroa", "tiara", "insígnia real", "ornamento de cabeça", "faixa ornamental", "jóia de cabeça", "adereço para a cabeça", "coroa de flores", "cíntia", "guirlanda"],
+    "diáfano": ["transparente", "translúcido", "cristalino", "límpido", "puro", "etéreo", "delicado", "sutil", "leve", "vago"],
+    "diagnose": ["identificação de doença", "determinação de enfermidade", "avaliação médica", "parecer médico", "reconhecimento de problema", "análise clínica", "conclusão médica", "laudo médico", "determinação de condição", "prognóstico inicial"],
+    "diagnosticar": ["identificar doença", "determinar enfermidade", "avaliar medicamente", "dar parecer médico", "reconhecer problema", "analisar clinicamente", "concluir medicamente", "emitir laudo médico", "determinar condição", "fazer diagnóstico"],
+    "diagnóstico": ["identificação de doença", "determinação de enfermidade", "avaliação médica", "parecer médico", "reconhecimento de problema", "análise clínica", "conclusão médica", "laudo médico", "determinação de condição", "prognóstico"],
+    "diagonal": ["oblíquo", "inclinado", "transversal", "em viés", "que liga vértices não adjacentes", "que corta em ângulo", "que atravessa obliquamente", "que não é paralelo nem perpendicular", "em sentido transversal", "em linha inclinada"],
+    "diagrama": ["esquema", "gráfico", "representação visual", "planta", "croqui", "desenho esquemático", "ilustração", "organograma", "fluxograma", "mapa conceitual"],
+    "dialética": ["arte do diálogo", "método de argumentação", "lógica do discurso", "processo de ideias opostas", "movimento do pensamento", "contradição", "tese e antítese", "síntese", "método hegeliano", "filosofia do debate"],
+    "dialético": ["relativo ao diálogo", "argumentativo", "lógico", "contraditório", "que envolve oposição de ideias", "que segue o método dialético", "que busca a síntese", "que usa a dialética", "que se desenvolve por oposição", "que explora contradições"],
+    "dialeto": ["variedade linguística regional", "fala local", "idioma regional", "modalidade da língua", "fala característica de um grupo", "linguagem particular", "sotaque", "gíria regional", "forma de expressão local", "língua minoritária"],
+    "dialogar": ["conversar", "comunicar-se", "debater", "discutir", "interagir verbalmente", "trocar ideias", "manter um diálogo", "entrar em conversa", "conferenciar", "entrevistar"],
+    "dialógico": ["relativo ao diálogo", "conversacional", "comunicativo", "interativo", "que envolve troca de ideias", "que promove o diálogo", "que se desenvolve através da conversa", "que estimula a interação verbal", "que busca o entendimento mútuo", "que se baseia no diálogo"],
+    "diametralmente": ["totalmente oposto", "completamente contrário", "em extremos opostos", "radicalmente diferente", "em polos opostos", "antagonicamente", "inversamente", "em oposição total", "em contraste absoluto", "em divergência completa"],
+    "diâmetro": ["linha reta que atravessa o centro do círculo", "maior corda de um círculo", "distância entre dois pontos opostos de uma circunferência", "medida da largura de um círculo", "linha que divide o círculo em duas partes iguais", "segmento de reta que passa pelo centro", "extensão máxima de um círculo", "largura máxima de um círculo", "dimensão transversal máxima", "linha que une dois pontos da borda passando pelo centro"],
+    "Diana": ["deusa romana da caça", "ártemis (grega)", "lua", "nome feminino", "personagem mitológica", "referente à caça", "relativo à lua", "nome próprio feminino", "constelação", "satélite natural"],
+    "diante": ["em frente de", "perante", "ante", "na presença de", "em face de", "fronte a", "à frente de", "em primeiro lugar", "antes de", "precedendo"],
+    "diante de": ["em frente a", "perante", "ante", "na presença de", "em face de", "fronte a", "à frente de", "antes de", "precedendo", "em comparação com"],
+    "diapasão": ["afinação", "tom", "norma", "padrão", "critério", "harmonia", "concordância", "afinidade", "sintonia", "consonância"],
+    "diária": ["cotidiana", "de cada dia", "relativa ao dia", "jornal", "salário por dia", "remuneração diária", "indústria", "taxa diária", "consumo diário", "rotineira"],
+    "diariamente": ["cotidianamente", "a cada dia", "todos os dias", "dia após dia", "dia por dia", "em cada dia", "diurno", "cada 24 horas", "com frequência diária", "em regime diário"],
+    "diário": ["cotidiano", "jornal", "periódico diário", "caderno pessoal", "livro de anotações", "registro diário", "relativo ao dia", "que ocorre diariamente", "de uso diário", "rotineiro"],
+    "diarista": ["trabalhador por dia", "empregado doméstico eventual", "pessoa que trabalha por jornada", "trabalhador avulso", "pessoa que presta serviços domésticos por dia", "faxineira por dia", "ajudante por dia", "profissional autônomo por dia", "pessoa contratada por dia", "trabalhador intermitente"],
+    "diarreia": ["soltura de ventre", "fluxo intestinal", "evacuações líquidas", "curso", "ventre solto", "desarranjo intestinal", "moléstia intestinal", "perturbação gastrointestinal", "fluxo diarreico", "enterite"],
+    "dias": ["períodos de 24 horas", "espaços de tempo entre o nascer e o pôr do sol", "manhãs", "tardes", "dias úteis", "datas", "ocasiões", "épocas", "tempos", "jornadas"],
+    "diáspora": ["dispersão de um povo", "emigração em massa", "êxodo", "afastamento da pátria", "dispersão religiosa", "dispersão cultural", "movimento migratório", "deslocamento populacional", "saída forçada", "exílio coletivo"],
+    "diatribe": ["ataque verbal", "crítica mordaz", "discurso acusatório", "sátira violenta", "censura severa", "reprovação veemente", "denúncia inflamada", "libelo", "opinião cáustica", "texto polêmico"],
+    "dica": ["sugestão", "conselho", "indicação", "pista", "palpite", "toque", "aviso", "lembrete", "informação útil", "orientação"],
+    "dicção": ["maneira de falar", "pronúncia", "articulação das palavras", "enunciação", "fala", "modo de expressão oral", "qualidade da voz", "clareza da fala", "elocução", "fonética"],
+    "dicionário": ["léxico", "vocabulário", "glossário", "repertório de palavras", "livro de palavras", "catálogo de termos", "compêndio vocabular", "obra de consulta linguística", "vocabulário organizado", "índice de palavras"],
+    "dicotomia": ["divisão em duas partes", "separação binária", "oposição de dois elementos", "dualidade", "bipartição", "cisão", "polarização", "contraste", "distinção nítida", "separação em dois ramos"],
+    "dicotômico": ["dividido em duas partes", "binário", "dual", "bipartido", "ciso", "polarizado", "contrastante", "que apresenta dicotomia", "que envolve oposição", "que separa em dois ramos"],
+    "didática": ["pedagógica", "instrutiva", "educacional", "ensinativa", "relativa ao ensino", "que facilita o aprendizado", "que visa instruir", "que expõe de forma clara", "que tem como objetivo educar", "que usa métodos de ensino"],
+    "didático": ["pedagógico", "instrutivo", "educacional", "ensinativo", "relativo ao ensino", "que facilita o aprendizado", "que visa instruir", "que expõe de forma clara", "que tem como objetivo educar", "que usa métodos de ensino"],
+    "difamação": ["calúnia", "detração", "maledicência", "injúria", "ataque à reputação", "difamação", "fala maliciosa", "imputação falsa", "detrimento da honra", "difamação"],
+    "difamar": ["caluniar", "detrair", "maledizer", "injuriar", "atacar a reputação", "difamar", "falar maliciosamente", "imputar falsamente", "lesar a honra", "difamar"],
+    "diferença": ["distinção", "diversidade", "discrepância", "variação", "dissemelhança", "singularidade", "peculiaridade", "alteração", "desigualdade", "divergência"],
+    "diferenças": ["distinções", "diversidades", "discrepâncias", "variações", "dissemelhanças", "singularidades", "peculiaridades", "alterações", "desigualdades", "divergências"],
+    "diferenciado": ["distinto", "diverso", "peculiar", "singular", "especial", "notável", "excepcional", "incomum", "original", "característico"],
+    "diferencial": ["distintivo", "peculiar", "singular", "especial", "característico", "próprio", "específico", "marcante", "distinguidor", "que estabelece diferença"],
+    "diferenciar": ["distinguir", "discernir", "discriminar", "especificar", "singularizar", "individualizar", "contrastar", "marcar a diferença", "tornar distinto", "notabilizar"],
+    "diferente": ["diverso", "distinto", "divergente", "discrepante", "desigual", "variado", "singular", "peculiar", "incomum", "outro"],
+    "diferido": ["adiado", "retardado", "postergado", "demorado", "protelado", "suspenso", "interrompido", "diferente", "diverso", "distinto"],
+    "diferimento": ["adiamento", "retardamento", "postergação", "demora", "protelação", "suspensão", "interrupção", "diferença", "diversidade", "distinção"],
+    "diferir": ["distinguir-se", "divergir", "discordar", "variar", "adiar", "retardar", "postergar", "demorar", "protelar", "ser diferente"],
+    "difícil": ["árduo", "complicado", "penoso", "trabalhoso", "laborioso", "custoso", "complexo", "intricado", "embaraçoso", "desafiador"],
+    "dificuldade": ["obstáculo", "empecilho", "complicação", "problema", "embaraço", "dificuldade", "trabalho", "esforço", "resistência", "contrariedade"],
+    "difundida": ["espalhada", "divulgada", "propagada", "disseminada", "vulgarizada", "popularizada", "conhecida", "corrente", "geral", "comum"],
+    "difundido": ["espalhado", "divulgado", "propagado", "disseminado", "vulgarizado", "popularizado", "conhecido", "corrente", "geral", "comum"],
+    "difundir": ["espalhar", "divulgar", "propagar", "disseminar", "vulgarizar", "popularizar", "irradiar", "transmitir", "publicar", "promover"],
+    "difusa": ["vaga", "imprecisa", "indefinida", "nebulosa", "espalhada", "dispersa", "não concentrada", "não delimitada", "não específica", "tênue"],
+    "difusão": ["espalhamento", "divulgação", "propagação", "disseminação", "vulgarização", "popularização", "irradiação", "transmissão", "publicação", "dispersão"],
+    "difuso": ["vago", "impreciso", "indefinido", "nebuloso", "espalhado", "disperso", "não concentrado", "não delimitado", "não específico", "tênue"],
+    "digerir": ["assimilar", "metabolizar", "absorver", "compreender", "entender", "processar mentalmente", "aceitar", "engolir", "consumir", "incorporar"],
+    "digestão": ["assimilação", "metabolismo", "absorção", "compreensão", "entendimento", "processamento mental", "aceitação", "consumo", "incorporação", "processo digestivo"],
+    "digital": ["eletrônico", "numérico", "informático", "virtual", "computadorizado", "tecnológico", "em bits", "codificado", "binário", "eletrônico"],
+    "dígito": ["algarismo", "número", "símbolo numérico", "unidade numérica", "elemento numérico", "caractere numérico", "numeral", "cifra", "guarismo", "sinal numérico"],
+    "digladiar": ["lutar", "combater", "batalhar", "duelar", "guerrear", "contender", "disputar", "opor-se", "confrontar", "rixar"],
+    "digna": ["merecedora", "honrada", "respeitável", "nobre", "ilustre", "íntegra", "decorosa", "decente", "honrosa", "benemérita"],
+    "dignidade": ["honra", "respeito", "nobreza", "ilustração", "integridade", "decoro", "decência", "honraria", "dignidade humana", "mérito"],
+    "dignificar": ["honrar", "ennobrecer", "elevar", "glorificar", "valorizar", "respeitar", "enaltecer", "ilustrar", "apurar", "ennobrecer"],
+    "digno": ["merecedor", "honrado", "respeitável", "nobre", "ilustre", "íntegro", "decoroso", "decente", "honroso", "benemérito"],
+    "digo": ["falo", "declaro", "afirmo", "enuncio", "expresso", "comunico", "assevero", "conto", "narro", "relato"],
+    "digressão": ["desvio do assunto", "aparte", "interrupção", "parêntese", "inciso", "afastamento do tema", "divagação", "rodeio", "desvio", "tangente"],
+    "digresso": ["desviado do assunto", "em aparte", "interrompido", "em parêntese", "inciso", "afastado do tema", "divagado", "em rodeio", "desviado", "tangente"],
+    "dilação": ["prorrogação", "extensão", "prolongamento", "alargamento", "expansão", "demora", "retardamento", "dilatação", "aumento", "ampliação"],
+    "dilacerado": ["rasgado", "espedaçado", "fragmentado", "mutilado", "torturado", "atormentado", "angustiado", "sofrido", "esfacelado", "despedaçado"],
+    "dilacerar": ["rasgar", "espedaçar", "fragmentar", "mutilar", "torturar", "atormentar", "angustiar", "sofrer", "esfacelar", "despedaçar"],
+    "dilapidação": ["destruição", "ruína", "devastação", "desperdício", "esbanjamento", "malversação", "extravagância", "deterioração", "dissipação", "demolição"],
+    "dilapidar": ["destruir", "arruinar", "devastar", "desperdiçar", "esbanjar", "malversar", "extravagar", "deteriorar", "dissipar", "demolir"],
+    "dilatar": ["alargar", "expandir", "aumentar", "esticar", "inchar", "prorrogar", "prolongar", "estender", "ampliar", "acrescentar"],
+    "dilema": ["impasse", "sinuca de bico", "encruzilhada", "escolha difícil", "situação problemática", "alternativa difícil", "questão complexa", "problema insolúvel", "apuro", "conflito"],
+    "diletante": ["amador", "aficionado", "curioso", "superficial", "não profissional", "que se dedica por prazer", "que não leva a sério", "que brinca de", "que faz por hobby", "que não é especialista"],
+    "diletantismo": ["amadorismo", "aficionismo", "superficialidade", "não profissionalismo", "dedicação por prazer", "falta de seriedade", "hobby", "atividade por passatempo", "não especialização", "atividade não remunerada"],
+    "dileto": ["amado", "querido", "predileto", "favorito", "estimado", "prezado", "benquisto", "adorado", "caro", "afetuoso"],
+    "diligenciar": ["esforçar-se", "empenhar-se", "trabalhar com afinco", "cuidar com zelo", "procurar com diligência", "fazer o possível", "mover esforços", "tomar providências", "atuar com presteza", "buscar solução"],
+    "diligente": ["aplicado", "cuidadoso", "zeloso", "ativo", "assíduo", "laborioso", "esforçado", "empenhado", "prestativo", "solícito"],
+    "diligentemente": ["aplicadamente", "cuidadosamente", "zelosamente", "ativamente", "assiduamente", "laboriosamente", "esforçadamente", "empenhadamente", "prestativamente", "solicitamente"],
+    "diluição": ["dissolução", "mistura", "solução", "atenuação", "enfraquecimento", "redução da concentração", "mistura com solvente", "tornar menos denso", "espalhamento", "suavização"],
+    "diluído": ["dissolvido", "misturado", "solucionado", "atenuado", "enfraquecido", "com baixa concentração", "misturado com solvente", "menos denso", "espalhado", "suavizado"],
+    "diluir": ["dissolver", "misturar", "solucionar", "atenuar", "enfraquecer", "reduzir a concentração", "misturar com solvente", "tornar menos denso", "espalhar", "suavizar"],
+    "dilúvio": ["enchente", "inundação", "aguaceiro", "torrente", "chuva forte", "grande quantidade de água", "cataclismo", "desastre natural", "enchente bíblica", "grande fluxo"],
+    "dimensão": ["tamanho", "extensão", "magnitude", "proporção", "amplitude", "envergadura", "alcance", "aspecto", "plano", "nível"],
+    "diminuição": ["redução", "decréscimo", "baixa", "mingua", "atenuação", "encolhimento", "diminuição", "subtração", "retração", "abreviação"],
+    "diminuir": ["reduzir", "decrescer", "baixar", "minguar", "atenuar", "encolher", "diminuir", "subtrair", "retrair", "abreviar"],
+    "diminutivo": ["pequeno", "reduzido", "menor", "minúsculo", "pequenino", "liliputiano", "microscópico", "de tamanho reduzido", "que expressa diminuição", "forma diminuta"],
+    "diminuto": ["pequeno", "reduzido", "menor", "minúsculo", "pequenino", "liliputiano", "microscópico", "de tamanho reduzido", "ínfimo", "exíguo"],
+    "dinâmica": ["movimento", "atividade", "energia", "ação", "força", "impulso", "vivacidade", "agilidade", "interação", "funcionamento"],
+    "dinamicidade": ["atividade", "energia", "movimento", "vivacidade", "agilidade", "interação", "dinamismo", "capacidade de mudar", "força motriz", "caráter dinâmico"],
+    "dinâmico": ["ativo", "enérgico", "movimentado", "vivo", "ágil", "interativo", "dinâmico", "que tem energia", "que está em constante mudança", "que impulsiona"],
+    "dinamismo": ["atividade", "energia", "movimento", "vivacidade", "agilidade", "interação", "força", "impulso", "capacidade de mudar", "caráter dinâmico"],
+    "dinastia": ["casa real", "família reinante", "sucessão hereditária", "linhagem real", "sobrania familiar", "governo familiar", "reinado familiar", "casa imperial", "família no poder", "sucessão de governantes da mesma família"],
+    "dinheiro": ["moeda", "capital", "valores", "recursos financeiros", "numerário", "pecúnia", "verba", "fundos", "metal", "grana"],
+    "dinossauro": ["réptil pré-histórico", "grande animal extinto", "fóssil", "criatura jurássica", "animal gigante do passado", "monstro pré-histórico", "ser extinto da era mesozoica", "animal da megafauna", "grande réptil", "criatura ancestral"],
+    "diplomacia": ["negociação", "tratativas", "relações internacionais", "arte de negociar", "tato", "habilidade política", "conciliação", "mediação", "negócio de estado", "política externa"],
+    "diplomata": ["negociador", "representante", "embaixador", "ministro", "enviado", "agente diplomático", "representante do governo", "mediador internacional", "perito em relações exteriores", "funcionário do serviço exterior"],
+    "diplomático": ["negociador", "hábil", "tático", "conciliador", "mediador", "relativo à diplomacia", "de relações internacionais", "de política externa", "de negociação", "de representação"],
+    "dique": ["barragem", "muro de contenção", "represa", "obstáculo", "barreira", "proteção contra água", "muralha", "aterro", "vedação", "reparo"],
+    "dirão": ["afirmarão", "declararão", "falarão", "enunciarão", "expressarão", "comunicarão", "asseverarão", "contarão", "narrarão", "relatarão"],
+    "direção": ["rumo", "sentido", "orientação", "comando", "gerência", "administração", "chefia", "guia", "controle", "destino"],
+    "direcionar": ["orientar", "guiar", "encaminhar", "apontar", "voltar", "conduzir", "destinar", "encaminhar", "focar", "canalizar"],
+    "direcione": ["oriente", "guie", "encaminhe", "aponte", "volte", "conduza", "destine", "encaminhe", "foque", "canalize"],
+    "direiteza": ["retidão", "integridade", "honestidade", "probidade", "justiça", "correção", "imparcialidade", "equidade", "honradez", "lisura"],
+    "direito": ["reto", "justo", "íntegro", "honesto", "certo", "correto", "legal", "lícito", "legítimo", "faculdade"],
+    "diremos": ["afirmaremos", "declararemos", "falaremos", "enunciaremos", "expressaremos", "comunicaremos", "asseveraremos", "contaremos", "narrarão", "relataremos"],
+    "direta": ["reta", "imediata", "sem intermediários", "franca", "aberta", "explícita", "literal", "textual", "sem rodeios", "sem desvios"],
+    "diretamente": ["imediatamente", "sem intermediários", "francamente", "abertamente", "explicitamente", "literalmente", "textualmente", "sem rodeios", "sem desvios", "de forma direta"],
+    "diretiva": ["instrução", "orientação", "norma", "regulamento", "ordem", "comando", "determinação", "indicação", "guia", "linha de ação"],
+    "direto": ["reto", "imediato", "sem intermediários", "franco", "aberto", "explícito", "literal", "textual", "sem rodeios", "sem desvios"],
+    "diretor": ["gerente", "administrador", "chefe", "responsável", "supervisor", "coordenador", "regente", "presidente", "líder", "comandante"],
+    "diretriz": ["orientação", "norma", "princípio", "guia", "linha mestra", "fundamento", "preceito", "comando", "indicação", "roteiro"],
+    "diretrizes": ["orientações", "normas", "princípios", "guias", "linhas mestras", "fundamentos", "preceitos", "comandos", "indicações", "roteiros"],
+    "diria": ["afirmaria", "declararia", "falaria", "enunciaria", "expressaria", "comunicaria", "asseveraria", "contaria", "narraria", "relataria"],
+    "dirigente": ["líder", "chefe", "comandante", "administrador", "gerente", "diretor", "condutor", "guia", "mentor", "autoridade"],
+    "dirigir": ["guiar", "conduzir", "orientar", "administrar", "gerenciar", "chefiar", "comandar", "encaminhar", "voltar", "apontar"],
+    "dirijo": ["guio", "conduzo", "oriento", "administro", "gerencio", "chefio", "comando", "encaminho", "volto", "aponto"],
+    "dirimir": ["resolver", "solucionar", "decidir", "julgar", "arbitrar", "apaziguar", "conciliar", "sanar", "eliminar", "remover"],
+    "discente": ["aluno", "estudante", "aprendiz", "educando", "escolar", "acadêmico", "pupilo", "noviço", "seguidor", "ouvinte"],
+    "discernimento": ["juízo", "razão", "entendimento", "compreensão", "lucidez", "sensatez", "perspicácia", "sagacidade", "inteligência", "capacidade de distinguir"],
+    "discernir": ["distinguir", "diferenciar", "perceber", "notar", "compreender", "entender", "julgar", "avaliar", "reconhecer", "apurar"],
+    "disciplina": ["ordem", "regras", "regulamento", "método", "sistema", "obediência", "respeito", "autocontrole", "rigor", "matéria de estudo"],
+    "disciplinado": ["ordenado", "regulado", "metódico", "sistemático", "obediente", "respeitoso", "autocontrolado", "rigoroso", "aplicado", "assíduo"],
+    "disciplinar": ["ordenar", "regular", "metodizar", "sistematizar", "educar", "instruir", "punir", "corrigir", "reprimir", "submeter a disciplina"],
+    "disciplinatório": ["punitivo", "corretivo", "repressivo", "que visa a disciplina", "que impõe disciplina", "relativo à disciplina", "de punição", "de correção", "de repressão", "que estabelece regras"],
+    "discípulo": ["aluno", "seguidor", "aprendiz", "adepto", "imitador", "proselito", "noviço", "pupilo", "seguinte", "aderente"],
+    "discordância": ["divergência", "desacordo", "oposição", "contrariedade", "dissensão", "conflito", "atrito", "desentendimento", "discrepância", "incompatibilidade"],
+    "discordar": ["divergir", "desacordar", "opor-se", "contrariar", "dissender", "conflitar", "atritar", "desentender-se", "discrepar", "ser incompatível"],
+    "discórdia": ["desavença", "desentendimento", "conflito", "atrito", "rixa", "briga", "querela", "dissensão", "inimizade", "desarmonia"],
+    "discorrer": ["falar", "expor", "dissertar", "palestrar", "comentar", "desenvolver um tema", "abordar um assunto", "tratar de", "versar sobre", "fazer um discurso"],
+    "discoteca": ["casa noturna com música", "boate", "clube noturno", "danceteria", "local para dançar", "coleção de discos", "acervo musical", "fonoteca", "lojão de discos", "arquivo sonoro"],
+    "discrasia": ["alteração patológica do sangue", "desequilíbrio sanguíneo", "anormalidade na composição do sangue", "doença do sangue", "distúrbio sanguíneo", "temperamento desequilibrado", "mistura anormal", "combinação inadequada", "desarmonia", "desequilíbrio orgânico"],
+    "discrepância": ["divergência", "desacordo", "diferença", "disparidade", "dessemelhança", "incongruência", "contraste", "oposição", "desvio", "desconformidade"],
+    "discrepante": ["divergente", "desacordante", "diferente", "dispar", "dessemelhante", "incongruente", "contrastante", "oposto", "desviante", "desconforme"],
+    "discreto": ["reservado", "prudente", "cauteloso", "comedido", "circunspecto", "modesto", "sutil", "imperceptível", "tênue", "apagado"],
+    "discrição": ["reserva", "prudência", "cautela", "moderação", "circunspeção", "modéstia", "sigilo", "confidencialidade", "sutileza", "imperceptibilidade"],
+    "discricionariedade": ["liberdade de decisão", "poder de decidir", "autonomia de julgamento", "livre arbítrio administrativo", "faculdade de escolha", "poder discricionário", "margem de apreciação", "poder de valorar", "poder de optar", "liberdade de atuação"],
+    "discricionário": ["facultativo", "opcional", "livre", "não obrigatório", "dependente da vontade", "que envolve escolha", "que permite decisão", "que não é vinculado", "que tem margem de apreciação", "que pode ser exercido livremente"],
+    "discriminação": ["preconceito", "segregação", "distinção injusta", "tratamento desigual", "separação", "exclusão", "diferenciação pejorativa", "ato de discriminar", "distinção odiosa", "tratamento diferenciado injusto"],
+    "discriminado": ["segregado", "excluído", "tratado desigualmente", "separado", "vítima de preconceito", "distinguido injustamente", "preterido", "marginalizado", "isolado", "desfavorecido"],
+    "discriminar": ["segregar", "excluir", "tratar desigualmente", "separar", "distinguir injustamente", "prejudicar", "marginalizar", "isolar", "desfavorecer", "diferenciar"],
+    "discriminatório": ["preconceituoso", "segregacionista", "excludente", "que trata desigualmente", "que separa", "que distingue injustamente", "prejudicial", "marginalizador", "isolador", "desfavorável"],
+    "discursasse": ["falasse", "dissertasse", "palestrasse", "expusesse", "comentasse", "abordasse um tema", "tratasse de", "versasse sobre", "fizesse um discurso", "pronunciasse-se"],
+    "discursivo": ["relativo ao discurso", "argumentativo", "expositivo", "narrativo", "oral", "verbal", "que se expressa por meio do discurso", "que envolve argumentação", "que se desenvolve oralmente", "que utiliza a linguagem verbal"],
+    "discurso": ["fala", "exposição", "dissertação", "palestra", "comentário", "pronunciamento", "alocução", "oração", "sermão", "mensagem"],
+    "discussão": ["debate", "controvérsia", "polêmica", "altercação", "disputa", "conflito de opiniões", "troca de argumentos", "exame de um assunto", "análise", "consideração"],
+    "discutir": ["debater", "contender", "polemizar", "altercar", "disputar", "trocar argumentos", "examinar um assunto", "analisar", "considerar", "ponderar"],
+    "disfarçado": ["camuflado", "mascarado", "dissimulado", "oculto", "escondido", "velado", "encoberto", "discreto", "simulado", "fingido"],
+    "disfarçar": ["camuflar", "mascarar", "dissimular", "ocultar", "esconder", "velar", "encobrir", "disfarçar-se", "fingir", "simular"],
+    "disfarce": ["camuflagem", "máscara", "dissimulação", "ocultação", "esconderijo", "véu", "encobrimento", "disfarce", "fingimento", "simulação"],
+    "disforme": ["deforme", "irregular", "anormal", "desproporcionado", "malformado", "feio", "esquisito", "monstruoso", "teratológico", "desfigurado"],
+    "disfunção": ["mau funcionamento", "anormalidade funcional", "perturbação funcional", "desordem funcional", "irregularidade no funcionamento", "incapacidade funcional", "problema de funcionamento", "falha funcional", "desequilíbrio funcional", "afecção funcional"],
+    "dislexia": ["dificuldade de leitura", "transtorno de aprendizagem da leitura", "problema com a decodificação de letras", "dificuldade na associação entre letras e sons", "distúrbio da leitura", "dificuldade em reconhecer palavras", "problema de processamento fonológico", "dificuldade na escrita (associada)", "transtorno específico da leitura", "problema neurológico de aprendizagem"],
+    "díspar": ["desigual", "diferente", "divergente", "discrepante", "dessemelhante", "incompatível", "contrastante", "oposto", "desproporcional", "desuniforme"],
+    "disparate": ["absurdo", "tolice", "besteira", "sandice", "extravagância", "erro crasso", "insensatez", "desatino", "despropósito", "despautério"],
+    "disparidade": ["desigualdade", "diferença", "discrepância", "dessemelhança", "assimetria", "desproporção", "desnível", "incompatibilidade", "contraste", "diversidade"],
+    "dispêndio": ["gasto", "despesa", "consumo", "emprego", "utilização", "investimento", "sacrifício", "desembolso", "gastoamento", "custo"],
+    "dispendioso": ["custoso", "caro", "oneroso", "gasto", "dispensador", "que exige despesa", "que implica gasto", "que demanda recursos", "de alto custo", "que requer investimento"],
+    "dispensa": ["exoneração", "isenção", "liberação", "dispensa", "desobriga", "licença", "afastamento", "demissão", "rescisão", "descarte"],
+    "dispensação": ["distribuição", "fornecimento", "administração", "concessão", "outorga", "ato de dispensar", "ato de distribuir", "ato de fornecer", "ato de administrar", "ato de conceder"],
+    "dispensado": ["exonerado", "isento", "liberado", "dispensado", "desobrigado", "licenciado", "afastado", "demitido", "rescindido", "descartado"],
+    "dispensar": ["exonerar", "isentar", "liberar", "dispensar", "desobrigar", "licenciar", "afastar", "demitir", "rescindir", "descartar"],
+    "dispensável": ["supérfluo", "inútil", "desnecessário", "ocioso", "gratuito", "vão", "despiciendo", "que se pode dispensar", "que não é essencial", "que não é imprescindível"],
+    "dispersa": ["espalhada", "afastada", "dissolvida", "separada", "desunida", "desagregada", "distraída", "desatenta", "divagada", "sem foco"],
+    "dispersão": ["espalhamento", "afastamento", "dissolução", "separação", "desunião", "desagregação", "distração", "desatenção", "divagação", "falta de foco"],
+    "dispersar": ["espalhar", "afastar", "dissolver", "separar", "desunir", "desagregar", "distrair", "desatentar", "divagar", "perder o foco"],
+    "dispersivo": ["que dispersa", "que espalha", "que afasta", "que dissolve", "que separa", "que desune", "que distrai", "que desatenta", "que divaga", "que causa dispersão"],
+    "disperso": ["espalhado", "afastado", "dissolvido", "separado", "desunido", "desagregado", "distraído", "desatento", "divagado", "sem foco"],
+    "displicência": ["negligência", "desleixo", "descuido", "desatenção", "omissão", "indiferença", "inação", "desinteresse", "relaxamento", "frouxidão"],
+    "displicente": ["negligente", "desleixado", "descuidado", "desatento", "omisso", "indiferente", "inativo", "desinteressado", "relaxado", "frouxo"],
+    "dispneia": ["falta de ar", "dificuldade de respirar", "respiração curta", "sufocamento", "opressão torácica", "fadiga respiratória", "respiração ofegante", "ânsia de ar", "aperto no peito", "sensação de sufoco"],
+    "dispõe": ["põe", "coloca", "arruma", "organiza", "prepara", "determina", "decreta", "ordena", "estabelece", "possui"],
+    "disponibilidade": ["acesso", "oferta", "existência", "presença", "facilidade de obtenção", "acessibilidade", "prontidão", "estado de disponível", "livre acesso", "estar à disposição"],
+    "disponibilizar": ["oferecer", "fornecer", "tornar disponível", "facilitar o acesso", "colocar à disposição", "proporcionar", "apresentar", "dar acesso", "permitir o uso", "deixar acessível"],
+    "disponível": ["acessível", "existente", "presente", "livre", "vago", "desocupado", "à disposição", "pronto para uso", "facilmente obtido", "alcançável"],
+    "dispor": ["pôr", "colocar", "arrumar", "organizar", "preparar", "determinar", "decretar", "ordenar", "estabelecer", "possuir"],
+    "disporem": ["ponham", "coloquem", "arrumem", "organizem", "preparem", "determinem", "decretem", "ordenem", "estabeleçam", "possuam"],
+    "disposição": ["arranjo", "organização", "preparação", "ordem", "vontade", "ânimo", "humor", "tendência", "inclinação", "aptidão"],
+    "dispositivo": ["aparelho", "instrumento", "mecanismo", "artefato", "engenho", "utensílio", "meio", "recurso", "disposição legal", "artigo de lei"],
+    "disposto": ["arrumado", "organizado", "preparado", "ordenado", "inclinado", "propenso", "animado", "bem-humorado", "pronto", "apto"],
+    "dispusemos": ["pusemos", "colocamos", "arrumamos", "organizamos", "preparamos", "determinamos", "decretamos", "ordenamos", "estabelecemos", "possuímos"],
+    "disputa": ["competição", "concorrência", "lide", "querela", "contenda", "pugna", "certame", "rivalidade", "conflito", "disputa"],
+    "disrupção": ["ruptura", "interrupção", "quebra", "perturbação", "transtorno", "inovação radical", "mudança drástica", "reviravolta", "transformação profunda", "quebra de paradigma"],
+    "disruptivo": ["ruptural", "inovador radical", "transformador", "revolucionário", "que causa disrupção", "que quebra padrões", "que altera drasticamente", "que provoca reviravolta", "que muda profundamente", "que gera disrupção"],
+    "dissabor": ["desprazer", "contrariedade", "aborrecimento", "pesar", "mágoa", "decepção", "frustração", "amargura", "desgosto", "tristeza"],
+    "dissecar": ["anatomizar", "autopsiar", "analisar detalhadamente", "examinar minuciosamente", "esmiuçar", "investigar a fundo", "separar em partes", "cortar em pedaços", "fazer a vivissecção", "explorar em detalhes"],
+    "disseminação": ["espalhamento", "divulgação", "propagação", "difusão", "irradiação", "transmissão", "distribuição", "multiplicação", "expansão", "alastramento"],
+    "disseminado": ["espalhado", "divulgado", "propagado", "difundido", "irradiado", "transmitido", "distribuído", "multiplicado", "expandido", "alastrado"],
+    "disseminar": ["espalhar", "divulgar", "propagar", "difundir", "irradiar", "transmitir", "distribuir", "multiplicar", "expandir", "alastrar"],
+    "dissemos": ["falamos", "declaramos", "afirmamos", "enunciamos", "expressamos", "comunicamos", "asseveramos", "contamos", "narramos", "relatamos"],
+    "dissensão": ["divergência", "desacordo", "oposição", "contrariedade", "discordância", "conflito", "cisão", "separação", "desunião", "desarmonia"],
+    "dissenso": ["divergência de opiniões", "desacordo", "oposição", "contrariedade", "discordância", "conflito de ideias", "falta de consenso", "não concordância", "divergência", "desarmonia"],
+    "disser": ["falarem", "declararem", "afirmarem", "enunciarem", "expressarem", "comunicarem", "asseverarem", "contarem", "narrarem", "relatarem"],
+    "disseram": ["falaram", "declararam", "afirmaram", "enunciaram", "expressaram", "comunicaram", "asseveraram", "contaram", "narraram", "relataram"],
+    "dissertação": ["exposição", "tratado", "estudo", "análise", "tese", "monografia", "trabalho acadêmico", "comentário extenso", "desenvolvimento de um tema", "explanação detalhada"],
+    "dissertar": ["expor", "tratar", "estudar", "analisar", "argumentar", "desenvolver um tema", "comentar extensamente", "falar sobre", "discorrer", "palestrar"],
+    "dissesse": ["dissolvesse", "desfizesse", "desintegrasse", "desagregasse", "desmanchasse", "terminasse", "acabasse", "extinguisse", "desaparecesse", "desvanecesse"],
+    "dissidência": ["separação", "cisão", "ruptura", "desmembramento", "afastamento", "secessão", "oposição", "discordância", "desconformidade", "rebelião"],
+    "dissidente": ["separado", "ciso", "rupto", "desmembrado", "afastado", "secessionista", "opositor", "discordante", "desconforme", "rebelde"],
+    "dissídio": ["desavença judicial", "litígio trabalhista", "conflito judicial", "processo", "demanda judicial", "querela jurídica", "contenda judicial", "disputa legal", "ação judicial", "pleito judicial"],
+    "dissimulação": ["fingimento", "simulação", "hipocrisia", "ocultação", "encobrimento", "disfarce", "artifício", "astuúcia", "engano", "fraude"],
+    "dissimulada": ["fingida", "simulada", "hipócrita", "oculta", "encoberta", "disfarçada", "artificiosa", "astuta", "enganosa", "fraudulenta"],
+    "dissimulado": ["fingido", "simulado", "hipócrita", "oculto", "encoberto", "disfarçado", "artificioso", "astuto", "enganoso", "fraudulento"],
+    "dissimular": ["fingir", "simular", "ocultar", "encobrir", "disfarçar", "mascarar", "velar", "omitir", "encobrir a verdade", "ser hipócrita"],
+    "dissipação": ["espalhamento", "dispersão", "desaparecimento", "desvanecimento", "extinção", "perda", "gasto excessivo", "esbanjamento", "prodigalidade", "devassidão"],
+    "dissipar": ["espalhar", "dispersar", "desaparecer", "desvanecer", "extinguir", "perder", "gastar excessivamente", "esbanjar", "ser pródigo", "devassar"],
+    "dissociado": ["separado", "desligado", "desvinculado", "desunido", "isolado", "apartado", "desmembrado", "desconectado", "independente", "autônomo"],
+    "dissociar": ["separar", "desligar", "desvincular", "desunir", "isolar", "apartar", "desmembrar", "desconectar", "distinguir", "diferenciar"],
+    "dissolução": ["separação", "desintegração", "desmembramento", "extinção", "término", "fim", "anulação", "rescisão", "destruição", "liquidação"],
+    "dissoluto": ["libertino", "devasso", "desregrado", "imoral", "corrupto", "vicioso", "desenfreado", "extravagante", "perdido", "depravado"],
+    "dissolver": ["desfazer", "desintegrar", "desagregar", "desmanchar", "fundir", "liquidar", "anular", "rescindir", "destruir", "diluir"],
+    "dissonância": ["desarmonia", "discordância", "desacordo", "contraste", "oposição", "incompatibilidade", "desentoação", "cacofonia", "atrito", "conflito"],
+    "dissonante": ["desarmônico", "discordante", "desacordante", "contrastante", "oposto", "incompatível", "desentoado", "cacofônico", "áspero", "estridente"],
+    "dissuadir": ["desencorajar", "desmotivar", "despersuadir", "afastar da ideia", "convencer do contrário", "demover", "desviar", "impedir", "desestimular", "alertar"],
+    "dissuasão": ["desencorajamento", "desmotivação", "despersuasão", "ação de dissuadir", "impedimento", "desvio", "desestímulo", "alerta", "intimidação", "prevenção"],
+    "dissuasório": ["que dissuade", "desencorajador", "desmotivador", "despersuasivo", "que afasta da ideia", "que convence do contrário", "que demove", "que desvia", "que impede", "que desestimula"],
+    "distância": ["afastamento", "separação", "intervalo", "espaço", "longeza", "remoteness", "distância física", "distância temporal", "distância emocional", "distância social"],
+    "distante": ["afastado", "separado", "remoto", "longínquo", "longe", "distante no tempo", "distante emocionalmente", "distante socialmente", "isolado", "retirado"],
+    "distendida": ["esticada", "esticada", "esticada", "esticada", "esticada", "esticada", "esticada", "esticada", "esticada", "esticada"],
+    "distensão": ["estiramento", "estiramento", "estiramento", "estiramento", "estiramento", "estiramento", "estiramento", "estiramento", "estiramento", "estiramento"],
+    "dístico": ["parelha de versos", "estrofe de dois versos", "lema", "inscrição", "epígrafe", "divisa", "sentença", "máxima", "dizer", "texto curto"],
+    "distinção": ["diferença", "singularidade", "peculiaridade", "notabilidade", "excelência", "honraria", "título", "condecoração", "prestígio", "nobreza"],
+    "distingue": ["diferencia", "discrimina", "percebe", "nota", "reconhece", "singulariza", "individualiza", "caracteriza", "evidencia", "ressalta"],
+    "distinguir": ["diferenciar", "discernir", "discriminar", "notar", "perceber", "singularizar", "individualizar", "caracterizar", "evidenciar", "ressaltar"],
+    "distinta": ["diferente", "diversa", "peculiar", "singular", "especial", "notável", "excepcional", "incomum", "original", "característica"],
+    "distintivo": ["característico", "peculiar", "singular", "especial", "próprio", "específico", "marcante", "diferenciador", "distintivo"],
+    "distinto": ["diferente", "diverso", "peculiar", "singular", "especial", "notável", "excepcional", "incomum", "original", "característico"],
+    "distopia": ["utopia negativa", "antiutopia", "sociedade indesejável", "mundo sombrio", "futuro opressor", "estado totalitário", "sociedade controlada", "cenário pessimista", "realidade distorcida", "mundo ficcional negativo"],
+    "distópico": ["antiutópico", "negativo", "opressivo", "totalitário", "controlado", "sombrio", "pessimista", "distorcido", "indesejável", "ficcionalmente negativo"],
+    "distorção": ["deformação", "alteração", "falsificação", "deturpação", "desvio", "erro", "engano", "ilusão", "viés", "inexatidão"],
+    "distorcer": ["deformar", "alterar", "falsificar", "deturpar", "desviar", "falsear", "adulterar", "viciar", "corromper", "desvirtuar"],
+    "distorcido": ["deformado", "alterado", "falsificado", "deturpado", "desviado", "falseado", "adulterado", "viciado", "corrompido", "desvirtuado"],
+    "distração": ["desatenção", "desvio do foco", "divertimento", "passatempo", "lazer", "ócio", "esquecimento", "lapso", "engano", "erro"],
+    "distraidamente": ["desatentamente", "desfocadamente", "distraído", "sem prestar atenção", "de forma distraída", "negligentemente", "superficialmente", "aéreo", "sonhadoramente", "inconscientemente"],
+    "distraído": ["desatento", "desfocado", "aéreo", "sonhador", "negligente", "superficial", "esquecido", "absorvido em pensamentos", "alheio", "desligado"],
+    "distrair": ["desviar a atenção", "divertir", "entretener", "recrear", "desfocar", "desconcentrar", "perturbar", "desviar o pensamento", "ocupar a mente", "afastar do tédio"],
+    "distribuição": ["repartição", "divisão", "entrega", "fornecimento", "disseminação", "espalhamento", "comercialização", "abastecimento", "sorteio", "arranjo"],
+    "distribuído": ["repartido", "dividido", "entregue", "fornecido", "disseminado", "espalhado", "comercializado", "abastecido", "sorteado", "arranjado"],
+    "distribuir": ["repartir", "dividir", "entregar", "fornecer", "disseminar", "espalhar", "comercializar", "abastecer", "sortear", "arranjar"],
+    "distrito": ["circunscrição administrativa", "divisão territorial", "zona", "bairro", "região", "setor", "demarcação", "jurisdição", "área", "localidade"],
+    "distúrbio": ["perturbação", "desordem", "alteração", "anormalidade", "transtorno", "confusão", "tumulto", "motim", "rebuliço", "inquietação"],
+    "dita": ["falada", "declarada", "afirmada", "enunciada", "expressa", "comunicada", "asseverada", "contada", "narrada", "relatada"],
+    "ditado": ["ordem", "comando", "preceito", "máxima", "provérbio", "sentença", "dito popular", "texto para copiar", "exercício de escrita", "regra"],
+    "ditador": ["tirano", "autoritário", "déspota", "opressor", "mandão", "soberano absoluto", "governante absoluto", "chefe de estado totalitário", "autocrata", "caudilho"],
+    "ditadura": ["tirania", "autoritarismo", "despotismo", "opressão", "governo absoluto", "regime totalitário", "comando autocrático", "ausência de democracia", "supressão de direitos", "governo de força"],
+    "ditame": ["ordem", "comando", "preceito", "norma", "regra", "princípio", "mandamento", "determinação", "imposição", "prescrição"],
+    "ditames": ["ordens", "comandos", "preceitos", "normas", "regras", "princípios", "mandamentos", "determinações", "imposições", "prescrições"],
+    "ditatorial": ["tirânico", "autoritário", "déspota", "opressivo", "absolutista", "totalitário", "autocrático", "antidemocrático", "coercitivo", "impositivo"],
+    "dito": ["falado", "declarado", "afirmado", "enunciado", "expresso", "comunicado", "asseverado", "contado", "narrado", "relatado"],
+    "dito-cujo": ["o tal", "o mencionado", "o referido", "aquele de quem se fala", "o supracitado", "o já nomeado", "o em questão", "o aludido", "o citado", "aquele que foi dito"],
+    "ditongo": ["encontro vocálico em uma sílaba", "junção de duas vogais numa só emissão de voz", "vogal e semivogal na mesma sílaba", "semivogal e vogal na mesma sílaba", "ai, ei, oi, ui, au, eu, ou", "combinação de vogais na mesma sílaba", "grupo vocálico indivisível", "unidade fonética vocálica", "sequência de duas vogais em uma sílaba", "encontro de vogais que não se separam"],
+    "ditoso": ["feliz", "venturoso", "afortunado", "bem-sucedido", "próspero", "agraciado", "bem-aventurado", "sortudo", "contente", "alegre"],
+    "diurnal": ["diurno", "relativo ao dia", "que ocorre durante o dia", "que é ativo durante o dia", "que floresce durante o dia", "que se abre durante o dia", "que se manifesta durante o dia", "que vive durante o dia", "que tem hábitos diurnos", "que se refere ao período do dia"],
+    "diurno": ["do dia", "relativo ao dia", "que ocorre durante o dia", "que é ativo durante o dia", "que floresce durante o dia", "que se abre durante o dia", "que se manifesta durante o dia", "que vive durante o dia", "que tem hábitos diurnos", "que se refere ao período do dia"],
+    "diuturnamente": ["constantemente", "continuamente", "incessantemente", "dia e noite", "sem cessar", "sem interrupção", "durante todo o dia e toda a noite", "ininterruptamente", "perpetuamente", "sempre"],
+    "diuturno": ["constante", "contínuo", "incessante", "que dura muito", "prolongado", "duradouro", "perpétuo", "sem fim", "eterno", "ininterrupto"],
+    "divagação": ["desvio do assunto", "digressão", "rodeio", "afastamento do tema", "devaneio", "fantasia", "imaginação", "desatenção", "distração", "erro"],
+    "divagar": ["desviar-se do assunto", "digressionar", "fazer rodeios", "afastar-se do tema", "devanear", "fantasiar", "imaginar", "distrair-se", "perder o foco", "errar"],
+    "divergência": ["desacordo", "discordância", "oposição", "contrariedade", "diferença", "discrepância", "dissensão", "conflito", "atrito", "incompatibilidade"],
+    "divergente": ["desacordante", "discordante", "oposto", "contrário", "diferente", "discrepante", "dissidente", "conflituoso", "incompatível", "dessemelhante"],
+    "divergir": ["desacordar", "discordar", "opor-se", "contrariar", "diferir", "discrepar", "dissidir", "conflitar", "ser incompatível", "desviar"],
+    "diversa": ["diferente", "variada", "vária", "distinta", "peculiar", "singular", "outra", "vários tipos de", "de diferentes maneiras", "de naturezas distintas"],
+    "diversão": ["entretenimento", "lazer", "recreação", "passatempo", "divertimento", "folga", "distração", "prazer", "alegria", "festividade"],
+    "diversas": ["diferentes", "variadas", "várias", "distintas", "peculiares", "singulares", "outras", "vários tipos de", "de diferentes maneiras", "de naturezas distintas"],
+    "diversidade": ["variedade", "pluralidade", "multiplicidade", "diferença", "heterogeneidade", "distinção", "vários tipos", "várias formas", "várias espécies", "várias origens"],
+    "diversificação": ["variação", "multiplicação", "ampliação", "extensão", "diferenciação", "aumento da variedade", "expansão para diferentes áreas", "criação de variedade", "tornar diverso", "desenvolvimento de diferentes tipos"],
+    "diversificado": ["variado", "múltiplo", "amplo", "extenso", "diferenciado", "com variedade", "expandido para diferentes áreas", "com diferentes tipos", "tornado diverso", "com diferentes formas"],
+    "diversificar": ["variar", "multiplicar", "ampliar", "estender", "diferenciar", "aumentar a variedade", "expandir para diferentes áreas", "criar diferentes tipos", "tornar diverso", "desenvolver diferentes formas"],
+    "diverso": ["diferente", "variado", "vário", "distinto", "peculiar", "singular", "outro", "vários tipos de", "de diferentes maneiras", "de naturezas distintas"],
+    "diversos": ["diferentes", "variados", "vários", "distintos", "peculiares", "singulares", "outros", "vários tipos de", "de diferentes maneiras", "de naturezas distintas"],
+    "divertida": ["engraçada", "cômica", "hilária", "alegre", "jovial", "animada", "prazerosa", "recreativa", "entretenedora", "festiva"],
+    "divertido": ["engraçado", "cômico", "hilário", "alegre", "jovial", "animado", "prazeroso", "recreativo", "entretenedor", "festivo"],
+    "divertimento": ["diversão", "entretenimento", "lazer", "recreação", "passatempo", "folga", "distração", "prazer", "alegria", "jogo"],
+    "divertir": ["entreter", "recrear", "alegrar", "animar", "distrair", "descontrair", "fazer rir", "proporcionar prazer", "ocupar o tempo de forma agradável", "jogar"],
+    "dividir": ["separar", "partir", "fracionar", "repartir", "segmentar", "distribuir", "demarcar", "subdividir", "espalhar", "compartilhar"],
+    "divina": ["celestial", "sagrada", "santa", "sublime", "magnífica", "maravilhosa", "excelente", "perfeita", "inspirada por Deus", "de natureza divina"],
+    "divindade": ["deus", "ser supremo", "ente divino", "força superior", "poder celestial", "espírito divino", "objeto de culto", "ser sobrenatural", "potência divina", "numen"],
+    "divino": ["celestial", "sagrado", "santo", "sublime", "magnífico", "maravilhoso", "excelente", "perfeito", "de Deus", "de natureza divina"],
+    "divisa": ["limite", "fronteira", "demarcação", "linha divisória", "lema", "insígnia", "emblema", "símbolo", "distintivo", "marca"],
+    "divisão": ["separação", "partição", "fracionamento", "repartição", "segmentação", "distribuição", "demarcação", "subdivisão", "cisão", "departamento"],
+    "divulgação": ["publicação", "notícia", "informação", "promoção", "anúncio", "espalhamento", "difusão", "propagação", "revelação", "comunicação"],
+    "divulgar": ["publicar", "noticiar", "informar", "promover", "anunciar", "espalhar", "difundir", "propagar", "revelar", "comunicar"],
+    "diz": ["fala", "declara", "afirma", "enuncia", "expressa", "comunica", "assevera", "conta", "narra", "relata"],
+    "dizer": ["falar", "declarar", "afirmar", "enunciar", "expressar", "comunicar", "asseverar", "contar", "narrar", "relatar"],
+    "dizer-se": ["afirmar ser", "declarar-se", "intitular-se", "apresentar-se como", "considerar-se", "julgar-se", "pretender ser", "supor-se", "fazer-se passar por", "ter a fama de ser"],
+    "dizíamos": ["falávamos", "declarávamos", "afirmávamos", "enunciávamos", "expressávamos", "comunicávamos", "asseverávamos", "contávamos", "narrávamos", "relatávamos"],
+    "dizimado": ["destruído em grande parte", "aniquilado", "exterminado", "massacrado", "reduzido drasticamente", "morto em massa", "ceifado", "eliminado em grande número", "arrasado", "devastado"],
+    "dizimar": ["destruir em grande parte", "aniquilar", "exterminar", "massacrar", "reduzir drasticamente", "matar em massa", "ceifar", "eliminar em grande número", "arrasar", "devastar"],
+    "dízimo": ["décima parte", "contribuição religiosa", "oferta à igreja", "parte dos ganhos destinada à religião", "tributo religioso", "contribuição para a comunidade religiosa", "oferta para a manutenção da igreja", "décimo", "contribuição proporcional", "sustento da fé"],
+    "dó": ["pena", "compaixão", "piedade", "misericórdia", "sentimento de tristeza pelo sofrimento alheio", "condolência", "pesar", "lástima", "tristeza", "melancolia"],
+    "doação": ["oferta", "presente", "dádiva", "donativo", "contribuição", "esmolas", "auxílio", "benefício", "liberalidade", "ato de doar"],
+    "doar": ["ofertar", "presentear", "dar", "conceder", "contribuir", "auxiliar", "beneficiar", "ceder", "transferir gratuitamente", "entregar gratuitamente"],
+    "doasse": ["ofercesse", "presenteasse", "desse", "concedesse", "contribuísse", "auxiliasse", "beneficiasse", "cedesse", "transferisse gratuitamente", "entregasse gratuitamente"],
+    "dobrável": ["flexível", "maleável", "que se pode dobrar", "que se dobra facilmente", "articulado", "plástico", "rebatível", "retrátil", "que se pode curvar", "que pode ser pregueado"],
+    "dobro": ["duas vezes", "par", "cópia", "reprodução", "duplicata", "segunda vez", "em dobro", "o dobro de", "duplicação", "geminação"],
+    "doce": ["açucarado", "melífluo", "adocicado", "meloso", "suave", "tierno", "afetuoso", "meigo", "agradável", "encantador"],
+    "docência": ["magistério", "ensino", "professorado", "atividade de professor", "carreira de professor", "função de professor", "arte de ensinar", "profissão de educador", "exercício do ensino", "atividade didática"],
+    "docente": ["professor", "mestre", "educador", "instrutor", "ensinador", "catedrático", "preceptor", "tutor", "mentor", "pedagogo"],
+    "docentes": ["professores", "mestres", "educadores", "instrutores", "ensinadores", "catedráticos", "preceptores", "tutores", "mentores", "pedagogos"],
+    "dócil": ["manso", "obediente", "submisso", "maleável", "tratável", "disciplinado", "humilde", "brando", "suave", "cordato"],
+    "documento": ["registro", "comprovante", "prova", "testemunho escrito", "papel oficial", "instrumento", "título", "escrito", "registro formal", "peça escrita"],
+    "doçura": ["suavidade", "ternura", "afeto", "meiguice", "amabilidade", "gentileza", "encanto", "delicadeza", "agrado", "melifluidade"],
+    "dodói": ["dor", "machucado", "ferimento", "lesão", "contusão", "dorzinha", "mal-estar", "incômodo", "afecção", "padecimento"],
+    "doença": ["enfermidade", "moléstia", "padecimento", "mal", "afeção", "morbo", "indisposição", "complicação de saúde", "estado patológico", "enfermidade"],
+    "doente": ["enfermo", "molesto", "indisposto", "achacado", "padecente", "com saúde debilitada", "com enfermidade", "com moléstia", "com saúde precária", "com saúde frágil"],
+    "dogma": ["doutrina", "princípio", "crença", "dogma religioso", "ponto fundamental de uma doutrina", "artigo de fé", "verdade inquestionável", "axioma", "postulado", "credo"],
+    "dogmas": ["doutrinas", "princípios", "crenças", "dogmas religiosos", "pontos fundamentais de uma doutrina", "artigos de fé", "verdades inquestionáveis", "axiomas", "postulados", "credos"],
+    "dogmática": ["doutrinária", "normativa", "prescritiva", "autoritária", "inflexível", "rígida", "doutrinal", "relativa a dogmas", "que segue dogmas", "que impõe dogmas"],
+    "dogmático": ["doutrinário", "normativo", "prescritivo", "autoritário", "inflexível", "rígido", "doutrinal", "que segue dogmas", "que impõe dogmas", "que não admite questionamento"],
+    "doida": ["louca", "insana", "desvairada", "maluca", "alienada", "demente", "extravagante", "absurda", "incoerente", "descontrolada"],
+    "dois": ["2", "II", "par", "duplo", "ambos", "um par de", "o número seguinte a um", "a soma de um mais um", "o dobro de um", "dois elementos"],
+    "dolo": ["intenção de prejudicar", "má-fé", "fraude", "engano intencional", "vontade consciente de praticar um ato ilícito", "artifício fraudulento", "manobra enganosa", "simulação maliciosa", "engano", "fraude"],
+    "doloso": ["intencional", "proposital", "premeditado", "com má-fé", "fraudulento", "enganoso", "malicioso", "culposo com intenção", "que tem dolo", "mal intencionado"],
+    "dom": ["talento", "aptidão", "habilidade", "virtude", "qualidade", "dádiva", "presente", "graça", "favor", "predomínio"],
+    "domar": ["amansar", "domesticar", "submeter", "controlar", "refrear", "moderar", "conter", "subjugar", "vencer", "governar"],
+    "domesticar": ["amansar", "domar", "habituar ao convívio humano", "criar em casa", "tornar caseiro", "civilizar", "submeter", "controlar", "refrear", "governar"],
+    "doméstico": ["caseiro", "familiar", "da casa", "interno", "particular", "íntimo", "criado em casa", "domesticado", "relativo ao lar", "serviço doméstico"],
+    "domiciliado": ["residente", "morador", "habitante", "estabelecido", "fixado", "instalado", "morando em", "residente em", "habitando em", "vivendo em"],
+    "domicílio": ["residência", "morada", "habitação", "casa", "lar", "endereço", "local de residência", "lugar onde se vive", "habitação principal", "moradia"],
+    "dominação": ["controle", "poder", "autoridade", "comando", "influência", "ascendência", "supremacia", "subjugação", "opressão", "governo"],
+    "dominância": ["predomínio", "prevalência", "supremacia", "ascendência", "influência maior", "controle maior", "posição de destaque", "superioridade", "hegemonia", "preponderância"],
+    "dominante": ["predominante", "prevalecente", "supremo", "ascendente", "influente", "controlador", "principal", "maior", "hegemônico", "preponderante"],
+    "dominar": ["controlar", "governar", "reger", "subjugar", "vencer", "influenciar", "conhecer profundamente", "ter domínio sobre", "exercer poder sobre", "ter ascendência sobre"],
+    "dominativo": ["autoritário", "controlador", "impositivo", "opressivo", "dominador", "que busca dominar", "que exerce domínio", "que tem tendência a controlar", "que submete", "que governa com poder"],
+    "dominical": ["de domingo", "relativo ao domingo", "próprio de domingo", "semanal", "do dia do Senhor", "da missa dominical", "da guarda do domingo", "que ocorre aos domingos", "pertencente ao domingo", "referente ao domingo"],
+    "domínio": ["poder", "controle", "autoridade", "jurisdição", "território", "propriedade", "conhecimento profundo", "habilidade", "influência", "ascendência"],
+    "domo": ["cúpula", "abóbada", "zimbório", "cobertura hemisférica", "teto em forma de meia esfera", "construção com teto arredondado", "parte superior arredondada de um edifício", "estrutura arquitetônica em forma de calota", "elemento arquitetônico curvo", "cobertura convexa"],
+    "dona": ["senhora", "proprietária", "possuidora", "titular", "chefe", "mestra", "patroa", "senhoria", "mulher casada", "dama"],
+    "donatário": ["beneficiário de doação", "agraciado com uma doação", "quem recebe uma doação", "receptor de uma dádiva", "favorecido por uma doação", "quem é investido em uma doação", "aquele a quem se doa", "quem recebe um donativo", "beneficiado", "agraciado"],
+    "donativo": ["doação", "presente", "dádiva", "oferta", "contribuição", "auxílio", "benefício", "liberalidade", "esmola", "donativo"],
+    "donde": ["de onde", "de que lugar", "de qual origem", "de que causa", "por que razão", "de que maneira", "de que fonte", "de que procedência", "de onde vem", "a partir de onde"],
+    "dondoca": ["mulher elegante e ociosa", "mulher que se veste com ostentação", "mulher frívola", "mulher que vive de aparências", "mulher que não trabalha", "mulher rica e vaidosa", "mulher que se preocupa excessivamente com a moda", "mulher que gosta de luxo", "mulher que vive sem ocupações sérias", "mulher que se exibe"],
+    "dono": ["proprietário", "possuidor", "titular", "chefe", "mestre", "patrão", "senhor", "responsável", "gerente", "administrador"],
+    "donzela": ["moça virgem", "jovem solteira", "senhorita", "virgem", "rapariga", "menina", "garota", "jovem mulher", "inocente", "pura"],
+    "dor": ["sofrimento", "padecimento", "aflição", "tormento", "angústia", "dolorimento", "mal-estar", "incômodo", "sensação desagradável", "punição"],
+    "doravante": ["de agora em diante", "daqui por diante", "em diante", "doravante", "daqui para o futuro", "a partir deste momento", "de hoje em diante", "no futuro", "daqui em frente", "daqui para adiante"],
+    "dormente": ["adormecido", "inativo", "paralisado", "entorpecido", "inerte", "letárgico", "hibernando", "em repouso", "adormecido", "insensível"],
+    "dormíamos": ["estávamos dormindo", "repousávamos", "adormecíamos", "estávamos em sono", "estávamos a descansar", "estávamos a repousar", "estávamos a adormecer", "estávamos em sono profundo", "estávamos a sonhar", "estávamos a cochilar"],
+    "dormideira": ["sonolência", "moleza", "preguiça", "indolência", "torpor", "letargia", "sono", "vontade de dormir", "sensação de sono", "estado de sonolência"],
+    "dormir": ["repousar", "adormecer", "estar em sono", "descansar", "repousar", "adormecer", "estar em sono profundo", "sonhar", "cochilar", "sestear"],
+    "dormiremos": ["repousaremos", "adormeceremos", "estaremos em sono", "descansaremos", "repousaremos", "adormeceremos", "estaremos em sono profundo", "sonharemos", "cochilaremos", "sestearemos"],
+    "dorso": ["costas", "parte posterior do corpo", "espinhaço", "lombo", "verso", "parte de trás", "superfície dorsal", "parte traseira", "parte superior das costas", "parte inferior do pescoço às nádegas"],
+    "dose": ["porção", "quantidade", "medida", "ração", "toma", "porção medicamentosa", "quantidade administrada", "medida terapêutica", "quantidade de radiação", "quantidade de exposição"],
+    "dossel": ["baldaquim", "pálio", "cobertura ornamental", "ornamento suspenso", "teto decorativo", "cortinado sobre um trono ou cama", "estrutura suspensa sobre um altar", "proteção ornamental", "cobertura cerimonial", "estrutura decorativa suspensa"],
+    "dossiê": ["conjunto de documentos", "arquivo", "pasta", "processo", "relatório", "informação compilada", "conjunto de dados", "coleção de papéis", "registro", "documentação"],
+    "dotação": ["verba", "crédito", "recurso financeiro", "subvenção", "auxílio financeiro", "montante destinado", "quantia alocada", "previsão orçamentária", "fundos", "subsídio"],
+    "dotado": ["talentoso", "hábil", "capacitado", "inteligente", "provido", "munido", "equipado", "agraciado", "favorecido", "possuidor de dons"],
+    "dotar": ["prover", "munir", "equipar", "fornecer", "dar", "conceder", "agraciar", "favorecer", "investir", "ornamentar"],
+    "dote": ["bens da noiva", "conjunto de bens que a mulher leva para o casamento", "patrimônio da noiva", "bens matrimoniais", "presente de casamento", "dádiva", "qualidade natural", "talento", "dom", "aptidão"],
+    "dou": ["dôo", "oferto", "presenteio", "concedo", "contribuo", "auxilio", "beneficio", "cedo", "transfiro gratuitamente", "entrego gratuitamente"],
+    "dourado": ["de cor de ouro", "aurífero", "áureo", "brilhante", "reluzente", "resplandecente", "lustroso", "magnífico", "precioso", "valioso"],
+    "douto": ["sábio", "erudito", "instruído", "culto", "conhecedor", "versado", "experiente", "entendido", "letrado", "ilustrado"],
+    "doutor": ["médico", "advogado", "graduado", "titulado", "acadêmico", "sabichão", "erudito", "mestre", "especialista", "perito"],
+    "doutrina": ["conjunto de princípios", "sistema de crenças", "teoria", "ensinamento", "ideologia", "escola de pensamento", "catecismo", "dogma", "credo", "ensinamento religioso"],
+    "doutrinação": ["catequização", "instrução doutrinária", "ensino de doutrina", "indotrinação", "imposição de crenças", "persuasão ideológica", "formação ideológica", "lavagem cerebral", "manipulação ideológica", "proselitismo"],
+    "doutrinar": ["catequizar", "instruir em doutrina", "ensinar doutrina", "indoutrinar", "impor crenças", "persuadir ideologicamente", "formar ideologicamente", "fazer proselitismo", "converter", "ensinar"],
+    "doxologia": ["louvor divino", "hino de louvor a Deus", "fórmula de louvor religioso", "bendição litúrgica", "canto de exaltação divina", "oração de glorificação a Deus", "expressão de louvor", "canto religioso de louvor", "fórmula litúrgica de glorificação", "hino de adoração"],
+    "dracma": ["moeda grega antiga", "unidade monetária da Grécia até 2002", "antiga moeda de prata", "unidade de peso grega", "medida de peso grega", "moeda histórica grega", "antiga moeda de Atenas", "unidade monetária histórica grega", "moeda da mitologia grega", "referência monetária clássica"],
+    "draconiano": ["severo", "rigoroso", "cruel", "inflexível", "implacável", "duro", "austero", "rígido como as leis de Drácon", "extremamente severo", "cruel e inflexível"],
+    "drama": ["peça teatral", "tragédia", "comédia", "obra dramática", "acontecimento trágico", "situação difícil", "problema sério", "conflito", "tensão", "agitação"],
+    "dramática": ["teatral", "trágica", "comovente", "emocionante", "impressionante", "viva", "expressiva", "intensa", "agitada", "conflituosa"],
+    "drasticamente": ["radicalmente", "extremamente", "severamente", "rigorosamente", "fortemente", "acentuadamente", "decisivamente", "completamente", "totalmente", "profundamente"],
+    "drástico": ["radical", "extremo", "severo", "rigoroso", "forte", "acentuado", "decisivo", "completo", "total", "profundo"],
+    "driblar": ["evitar", "esquivar-se", "contornar", "ultrapassar com habilidade", "enganar", "ludibriar", "trapacear", "burlar", "desviar", "iludir"],
+    "droga": ["entorpecente", "narcótico", "medicamento", "remédio", "fármaco", "substância química", "veneno", "tóxico", "estupefaciente", "vício"],
+    "drops": ["bala", "pastilha", "confeito", "doce pequeno", "caramelo pequeno", "guloseima pequena", "pastilha refrescante", "bala refrescante", "doce duro pequeno", "confeito pequeno e duro"],
+    "dual": ["duplo", "binário", "par", "geminado", "que tem duas partes", "que envolve dois elementos", "que se manifesta em dois aspectos", "que possui duas naturezas", "que é composto por dois", "que se refere a dois"],
+    "dualidade": ["duplicidade", "bipartição", "dicotomia", "oposição de dois elementos", "natureza dupla", "dois aspectos", "dois lados", "dois polos", "dois princípios", "dois elementos contrastantes"],
+    "dualismo": ["doutrina filosófica que admite duas substâncias", "crença em dois princípios opostos", "oposição de dois elementos", "dualidade", "bipartição", "dicotomia", "crença em bem e mal", "crença em corpo e alma", "crença em matéria e espírito", "crença em mente e corpo"],
+    "dubiedade": ["ambiguidade", "incerteza", "indefinição", "hesitação", "irresolução", "dúvida", "equívoco", "ambivalência", "obscuridade", "vagueza"],
+    "dubieza": ["ambiguidade", "incerteza", "indefinição", "hesitação", "irresolução", "dúvida", "equívoco", "ambivalência", "obscuridade", "vagueza"],
+    "dúbio": ["incerto", "indefinido", "hesitante", "irresoluto", "duvidoso", "equívoco", "ambíguo", "obscuro", "vago", "indeterminado"],
+    "dúctil": ["maleável", "flexível", "plástico", "moldável", "que se pode estirar em fios", "que se deforma facilmente sem romper", "que pode ser laminado", "que se adapta facilmente", "que se dobra facilmente", "que se trabalha facilmente"],
+    "ductilidade": ["maleabilidade", "flexibilidade", "plasticidade", "capacidade de ser estirado em fios", "capacidade de deformação sem ruptura", "capacidade de ser laminado", "adaptabilidade", "facilidade de dobra", "facilidade de trabalho", "propriedade de ser dúctil"],
+    "ducto": ["canal", "tubo", "conduto", "via", "passagem", "duto", "tubulação", "canalização", "via de passagem", "condutor"],
+    "duplicata": ["cópia", "segunda via", "reprodução", "traslado", "similar", "semelhante", "igual", "idêntico", "segundo exemplar", "via adicional"],
+    "duplicidade": ["dobro", "duas vezes", "falsidade", "hipocrisia", "engano", "má-fé", "simulação", "dissimulação", "ambiguidade", "equivocação"],
+    "duque": ["nobre de alta patente", "título nobiliárquico", "membro da nobreza", "fidalgo", "grande", "par do reino", "título hereditário", "nobre graduado", "aristocrata", "membro da alta nobreza"],
+    "duquesa": ["esposa de um duque", "nobre de alta patente feminina", "título nobiliárquico feminino", "membro da nobreza feminina", "fidalga", "grande dama", "par do reino feminina", "nobre graduada feminina", "aristocrata feminina", "membro da alta nobreza feminina"],
+    "duradouro": ["longo", "permanente", "eterno", "estável", "sólido", "resistente", "indestrutível", "que dura muito tempo", "que não se deteriora facilmente", "que perdura"],
+    "durante": ["enquanto", "no tempo de", "no período de", "ao longo de", "no decurso de", "enquanto durar", "no decorrer de", "no interregno de", "no espaço de tempo de", "no transcurso de"],
+    "duro": ["rígido", "sólido", "firme", "resistente", "áspero", "cruel", "severo", "difícil", "penoso", "intenso"],
+    "dúvida": ["incerteza", "hesitação", "irresolução", "indecisão", "vacilação", "perplexidade", "questionamento", "incredulidade", "suspeita", "obscuridade"],
+    "duvidar": ["hesitar", "vacilar", "questionar", "desconfiar", "suspeitar", "incrédulo", "titubear", "ponderar", "ter dúvidas", "não acreditar"],
+    "duzentos": ["duas centenas", "200", "CC", "o dobro de cem", "cem mais cem", "vinte vezes dez", "quatro vezes cinquenta", "dez vezes vinte", "o sucessor de cento e noventa e nove", "o antecessor de duzentos e um"],
 
-
-
-
-    //D
-    "doce": ["açucarado", "melado", "suave", "meigo", "agradável"],
-    "difícil": ["complicado", "complexo", "árduo", "trabalhoso", "desafiador"],
-    "decidido": ["resoluto", "determinado", "firme", "convicto", "seguro"],
-    "delicado": ["sensível", "frágil", "suave", "sutil", "refinado"],
-    "duro": ["rígido", "resistente", "firme", "áspero", "sólido"],
-    "doente": ["enfermo", "adoentado", "enfraquecido", "indisposto", "convalescente"],
-    "dócil": ["manso", "obediente", "submisso", "tranquilo", "pacífico"],
-    "desonesto": ["mentiroso", "corrupto", "trapaceiro", "fraudulento", "enganador"],
-    "divertido": ["engraçado", "alegre", "animado", "cômico", "descontraído"],
-    "desorganizado": ["bagunçado", "confuso", "desordenado", "caótico", "impreciso"],
-    "determinado": ["firme", "decidido", "resoluto", "convicto", "persistente"],
-    "desatento": ["distraído", "negligente", "descuidado", "relapso", "inadvertido"],
-    "discreto": ["reservado", "comedido", "moderado", "prudente", "contido"],
-    "duvidoso": ["incerto", "questionável", "inseguro", "ambíguo", "suspeito"],
-    "desesperado": ["aflito", "angustiado", "atormentado", "abatido", "inconsolável"],
-    "decente": ["honesto", "digno", "respeitável", "íntegro", "honrado"],
-    "desleixado": ["relaxado", "negligente", "descuidado", "desorganizado", "preguiçoso"],
-    "diferente": ["diverso", "distinto", "variado", "desigual", "singular"],
-    "direto": ["reto", "objetivo", "franco", "linear", "claro"],
-    "duradouro": ["permanente", "constante", "estável", "prolongado", "longevo"],
     //E
     "elegante": ["chique", "requintado", "sofisticado", "fino", "distinto"],
     "esperto": ["inteligente", "astuto", "sagaz", "rápido", "habilidoso"],
@@ -3968,9 +5029,11 @@ const bancoDeSinonimos = {
 };
 // Modificação 1: Adicionar um objeto para armazenar as substituições
 let substituicoes = {};
-// 1. Adicione esta variável global logo após a declaração do bancoDeSinonimos
+//  Adicione esta variável global logo após a declaração do bancoDeSinonimos
 let indiceSinonimos = {};
-// 2. Adicione esta função para criar o índice invertido
+
+//2. Funções de inicialização e core
+// Adicione esta função para criar o índice invertido
 function atualizarIndiceSinonimos() {
     indiceSinonimos = {};
     Object.keys(bancoDeSinonimos).forEach(palavraPrincipal => {
@@ -3979,41 +5042,168 @@ function atualizarIndiceSinonimos() {
         });
     });
 }
+// Modificação da função quebrarTexto para detectar palavras compostas
+function quebrarTexto(texto) {
+    // Primeiro vamos identificar expressões compostas no banco de sinônimos
+    const expressoes = Object.keys(bancoDeSinonimos)
+        .filter(palavra => palavra.includes(' ') || palavra.includes('-'))
+        .sort((a, b) => b.length - a.length); // Ordenar do maior para o menor para priorizar expressões mais longas
 
-// Funções para importar e exportar o dicionário de sinônimos
-function exportarSinonimos() {
-    // Converter o banco de sinônimos para JSON e fazer download
-    const dataStr = "data:text/json;charset=utf-8," + encodeURIComponent(JSON.stringify(bancoDeSinonimos));
-    const downloadAnchorNode = document.createElement('a');
-    downloadAnchorNode.setAttribute("href", dataStr);
-    downloadAnchorNode.setAttribute("download", "sinonimos.json");
-    document.body.appendChild(downloadAnchorNode);
-    downloadAnchorNode.click();
-    downloadAnchorNode.remove();
-}
+    // Array para armazenar os tokens resultantes
+    let tokens = [];
 
-function importarSinonimos(evento) {
-    const arquivo = evento.target.files[0];
-    if (arquivo) {
-        const leitor = new FileReader();
-        leitor.onload = function (e) {
-            try {
-                const sinonimosImportados = JSON.parse(e.target.result);
-                // Substituir ou mesclar com o banco existente
-                Object.assign(bancoDeSinonimos, sinonimosImportados);
-                alert('Sinônimos importados com sucesso!');
-                // Limpar o input de arquivo
-                document.getElementById('importarArquivo').value = '';
-                // Atualizar qualquer interface que mostre os sinônimos
-                atualizarListaSinonimos();
-            } catch (erro) {
-                alert('Erro ao importar sinônimos: ' + erro.message);
+    // Copiar o texto original para manipulação
+    let textoRestante = texto;
+    let indiceAtual = 0;
+
+    while (textoRestante.length > 0) {
+        let encontrou = false;
+
+        // Verificar se temos uma expressão composta no início do texto restante
+        for (const expressao of expressoes) {
+            const expressaoLower = expressao.toLowerCase();
+            const textoLower = textoRestante.toLowerCase();
+
+            if (textoLower.startsWith(expressaoLower)) {
+                // Verificar se a expressão é uma palavra completa (tem espaço ou pontuação depois)
+                const finalExpressao = textoRestante.substring(expressao.length, expressao.length + 1);
+                if (finalExpressao === '' || /[\s,.!?;:()—–-]/.test(finalExpressao)) {
+                    // Encontramos uma expressão composta
+                    const expressaoOriginal = textoRestante.substring(0, expressao.length);
+                    tokens.push({
+                        texto: expressaoOriginal,
+                        tipo: 'palavra',
+                        indice: indiceAtual,
+                        composta: true
+                    });
+
+                    textoRestante = textoRestante.substring(expressao.length);
+                    indiceAtual += expressao.length;
+                    encontrou = true;
+                    break;
+                }
             }
-        };
-        leitor.readAsText(arquivo);
+        }
+
+        // Se não encontrou expressão composta, processe normalmente
+        if (!encontrou) {
+            // Verificar se é um espaço ou pontuação
+            if (/^[\s,.!?;:()—–-]/.test(textoRestante)) {
+                const match = textoRestante.match(/^[\s,.!?;:()—–-]+/)[0];
+                tokens.push({
+                    texto: match,
+                    tipo: 'separador',
+                    indice: indiceAtual
+                });
+
+                textoRestante = textoRestante.substring(match.length);
+                indiceAtual += match.length;
+            } else {
+                // É uma palavra comum
+                const match = textoRestante.match(/^[^\s,.!?;:()—–-]+/)[0];
+                tokens.push({
+                    texto: match,
+                    tipo: 'palavra',
+                    indice: indiceAtual,
+                    composta: false
+                });
+
+                textoRestante = textoRestante.substring(match.length);
+                indiceAtual += match.length;
+            }
+        }
     }
+
+    return tokens;
+}
+// Nova função para processar o texto de forma interativa
+function processarTextoInterativo(texto, cursorPos) {
+    // Primeiro, atualizamos o índice de sinônimos para garantir que estamos atuando com dados atualizados
+    atualizarIndiceSinonimos();
+
+    const tokens = quebrarTexto(texto);
+    const resultado = document.getElementById('resultado');
+    resultado.innerHTML = '';
+
+    // Para rastrear qual token contém o cursor
+    let tokenComCursor = null;
+    let cursorPosicionado = 0;
+
+    tokens.forEach((token, index) => {
+        // Verificar se é uma palavra que pode ter sinônimos
+        if (token.tipo === 'palavra') {
+            const texto = token.texto;
+            const palavraLower = texto.toLowerCase();
+            const indiceOriginal = token.indice;
+
+            // Verificar se o cursor está dentro deste token
+            if (cursorPos >= token.indice && cursorPos <= token.indice + texto.length) {
+                tokenComCursor = token;
+                cursorPosicionado = cursorPos - token.indice;
+            }
+
+            // Criar o span para a palavra
+            const spanPalavra = document.createElement('span');
+
+            // Verificar se esta palavra tem sinônimos disponíveis
+            const temSinonimos = bancoDeSinonimos[palavraLower] || indiceSinonimos[palavraLower];
+
+            if (temSinonimos) {
+                spanPalavra.classList.add('palavra-com-sinonimos');
+
+                // Adicionar tooltip
+                spanPalavra.title = 'Clique para ver sinônimos';
+
+                // Adicionar evento para mostrar dropdown
+                spanPalavra.addEventListener('click', function (e) {
+                    mostrarDropdownSinonimos(this, palavraLower, e);
+                });
+            }
+
+            // Verificar se já existe uma substituição para esta palavra
+            const indexTexto = indiceOriginal.toString();
+            if (substituicoes[indexTexto] && substituicoes[indexTexto].original === texto) {
+                spanPalavra.textContent = substituicoes[indexTexto].substituido;
+                spanPalavra.classList.add('palavra-original');
+            } else {
+                spanPalavra.textContent = texto;
+            }
+
+            spanPalavra.className += ' palavra';
+            if (token.composta) {
+                spanPalavra.classList.add('palavra-composta');
+            }
+            spanPalavra.dataset.original = texto;
+            spanPalavra.dataset.index = indiceOriginal;
+
+            resultado.appendChild(spanPalavra);
+        } else {
+            // Se for espaço ou pontuação, apenas adicionar ao resultado
+            const spanSeparador = document.createElement('span');
+            spanSeparador.textContent = token.texto;
+            resultado.appendChild(spanSeparador);
+        }
+    });
+}
+// Modificação na função de processamento em tempo real
+function processarEmTempoReal() {
+    const textarea = document.getElementById('textoEntrada');
+    const texto = textarea.value;
+
+    if (texto.trim() === '') return;
+
+    // Limpar e usar a área de resultado 
+    const resultado = document.getElementById('resultado');
+    if (!resultado) return;
+
+    // Criar um span temporário para calcular a posição atual do cursor
+    const cursorPos = textarea.selectionStart;
+
+    // Processar o texto e destacar palavras com sinônimos disponíveis
+    processarTextoInterativo(texto, cursorPos);
 }
 
+//3.Funções de manipulação de sinônimos
 // Funções para gerenciar sinônimos (adicionar, editar, excluir)
 function adicionarSinonimo(palavra, sinonimos) {
     if (!palavra || palavra.trim() === '') {
@@ -4044,7 +5234,6 @@ function adicionarSinonimo(palavra, sinonimos) {
     atualizarIndiceSinonimos();
     return true;
 }
-
 function editarSinonimo(palavraAntiga, palavraNova, sinonimos) {
     const palavraAntigaLower = palavraAntiga.toLowerCase().trim();
     const palavraNovaLower = palavraNova.toLowerCase().trim();
@@ -4078,7 +5267,6 @@ function editarSinonimo(palavraAntiga, palavraNova, sinonimos) {
     atualizarIndiceSinonimos();
     return true;
 }
-
 function excluirSinonimo(palavra) {
     const palavraLower = palavra.toLowerCase().trim();
 
@@ -4096,80 +5284,7 @@ function excluirSinonimo(palavra) {
 
     return false;
 }
-
-// Função para mostrar todos os sinônimos em uma interface de gerenciamento
-function atualizarListaSinonimos() {
-    const listaSinonimos = document.getElementById('listaSinonimos');
-    if (!listaSinonimos) return;
-
-    listaSinonimos.innerHTML = '';
-
-    // Ordenar as palavras alfabeticamente
-    const palavrasOrdenadas = Object.keys(bancoDeSinonimos).sort();
-
-    palavrasOrdenadas.forEach(palavra => {
-        const sinonimosTexto = bancoDeSinonimos[palavra].join(', ');
-
-        const divPalavra = document.createElement('div');
-        divPalavra.classList.add('item-sinonimo');
-        divPalavra.innerHTML = `
-            <div class="palavra-principal">${palavra}</div>
-            <div class="sinonimos-lista">${sinonimosTexto}</div>
-            <div class="acoes">
-                <button class="editar-btn" data-palavra="${palavra}">Editar</button>
-                <button class="excluir-btn" data-palavra="${palavra}">Excluir</button>
-            </div>
-        `;
-
-        listaSinonimos.appendChild(divPalavra);
-    });
-
-    // Adicionar eventos aos botões
-    document.querySelectorAll('.editar-btn').forEach(btn => {
-        btn.addEventListener('click', function () {
-            const palavra = this.dataset.palavra;
-            iniciarEdicao(palavra);
-        });
-    });
-
-    document.querySelectorAll('.excluir-btn').forEach(btn => {
-        btn.addEventListener('click', function () {
-            const palavra = this.dataset.palavra;
-            if (excluirSinonimo(palavra)) {
-                atualizarListaSinonimos();
-            }
-        });
-    });
-}
-
-// Função para iniciar a edição de uma palavra
-function iniciarEdicao(palavra) {
-    const formEditar = document.getElementById('formSinonimos');
-    const inputPalavra = document.getElementById('novaPalavra');
-    const inputSinonimos = document.getElementById('novosSinonimos');
-    const palavraAntigaInput = document.getElementById('palavraAntiga');
-
-    if (!formEditar || !inputPalavra || !inputSinonimos) return;
-
-    inputPalavra.value = palavra;
-    inputSinonimos.value = bancoDeSinonimos[palavra].join(', ');
-
-    if (palavraAntigaInput) {
-        palavraAntigaInput.value = palavra;
-    } else {
-        const hiddenInput = document.createElement('input');
-        hiddenInput.type = 'hidden';
-        hiddenInput.id = 'palavraAntiga';
-        hiddenInput.value = palavra;
-        formEditar.appendChild(hiddenInput);
-    }
-
-    // Rolar até o formulário
-    formEditar.scrollIntoView({ behavior: 'smooth' });
-}
-
-// Função para pesquisar sinônimos
-// Modifique a função pesquisarSinonimos para pesquisa em tempo real e incluir botões
+// Função para pesquisar sinônimos em tempo real e incluir botões
 function pesquisarSinonimos(termoPesquisa) {
     const resultadosPesquisa = document.getElementById('resultadosPesquisa');
     if (!resultadosPesquisa) return;
@@ -4336,83 +5451,8 @@ function pesquisarSinonimos(termoPesquisa) {
     adicionarEventosBotoes();
 }
 
-// Modificação da função quebrarTexto para detectar palavras compostas
-function quebrarTexto(texto) {
-    // Primeiro vamos identificar expressões compostas no banco de sinônimos
-    const expressoes = Object.keys(bancoDeSinonimos)
-        .filter(palavra => palavra.includes(' ') || palavra.includes('-'))
-        .sort((a, b) => b.length - a.length); // Ordenar do maior para o menor para priorizar expressões mais longas
-
-    // Array para armazenar os tokens resultantes
-    let tokens = [];
-
-    // Copiar o texto original para manipulação
-    let textoRestante = texto;
-    let indiceAtual = 0;
-
-    while (textoRestante.length > 0) {
-        let encontrou = false;
-
-        // Verificar se temos uma expressão composta no início do texto restante
-        for (const expressao of expressoes) {
-            const expressaoLower = expressao.toLowerCase();
-            const textoLower = textoRestante.toLowerCase();
-
-            if (textoLower.startsWith(expressaoLower)) {
-                // Verificar se a expressão é uma palavra completa (tem espaço ou pontuação depois)
-                const finalExpressao = textoRestante.substring(expressao.length, expressao.length + 1);
-                if (finalExpressao === '' || /[\s,.!?;:()—–-]/.test(finalExpressao)) {
-                    // Encontramos uma expressão composta
-                    const expressaoOriginal = textoRestante.substring(0, expressao.length);
-                    tokens.push({
-                        texto: expressaoOriginal,
-                        tipo: 'palavra',
-                        indice: indiceAtual,
-                        composta: true
-                    });
-
-                    textoRestante = textoRestante.substring(expressao.length);
-                    indiceAtual += expressao.length;
-                    encontrou = true;
-                    break;
-                }
-            }
-        }
-
-        // Se não encontrou expressão composta, processe normalmente
-        if (!encontrou) {
-            // Verificar se é um espaço ou pontuação
-            if (/^[\s,.!?;:()—–-]/.test(textoRestante)) {
-                const match = textoRestante.match(/^[\s,.!?;:()—–-]+/)[0];
-                tokens.push({
-                    texto: match,
-                    tipo: 'separador',
-                    indice: indiceAtual
-                });
-
-                textoRestante = textoRestante.substring(match.length);
-                indiceAtual += match.length;
-            } else {
-                // É uma palavra comum
-                const match = textoRestante.match(/^[^\s,.!?;:()—–-]+/)[0];
-                tokens.push({
-                    texto: match,
-                    tipo: 'palavra',
-                    indice: indiceAtual,
-                    composta: false
-                });
-
-                textoRestante = textoRestante.substring(match.length);
-                indiceAtual += match.length;
-            }
-        }
-    }
-
-    return tokens;
-}
-
+// 4.Funções de interface do usuário
 // Função para criar elementos HTML para sinônimos
-// Função modificada para criar elementos HTML para sinônimos
 function criarAreaSinonimos(texto) {
     // Armazenar as substituições no armazenamento local para persistência
     if (Object.keys(substituicoes).length > 0) {
@@ -4629,197 +5669,7 @@ function criarAreaSinonimos(texto) {
             });
         });
     }
-
-    // Adicionar um estilo destacado para a palavra clicada
-    const style = document.createElement('style');
-    style.textContent = `
-        .palavra-destacada {
-            background-color: #ffff99;
-            border-radius: 3px;
-            padding: 2px 4px;
-            cursor: pointer;
-        }
-        .palavra {
-            cursor: pointer;
-        }
-        .palavra-composta {
-            border-bottom: 1px dotted #999;
-        }
-        .palavra-original {
-            color: #0066cc;
-            font-weight: bold;
-            text-decoration: underline;
-            cursor: pointer;
-        }
-        .escondido {
-            display: none;
-        }
-        .pesquisa-sinonimos {
-            margin-bottom: 15px;
-        }
-        .pesquisa-sinonimos input {
-            width: 100%;
-            padding: 8px;
-            border: 1px solid #ccc;
-            border-radius: 4px;
-            margin-bottom: 5px;
-        }
-        .pesquisa-sinonimos small {
-            color: #777;
-            font-size: 0.8em;
-        }
-        .palavras-container {
-            max-height: 300px;
-            overflow-y: auto;
-            border: 1px solid #eee;
-            padding: 10px;
-        }
-    `;
-
-    document.head.appendChild(style);
 }
-
-
-// Adicionar evento ao botão processar
-document.getElementById('processar').addEventListener('click', function () {
-    const texto = document.getElementById('textoEntrada').value;
-    if (texto.trim() !== '') {
-        criarAreaSinonimos(texto);
-    } else {
-        alert('Por favor, digite algum texto antes de processar.');
-    }
-});
-
-
-// Modificação na função de processamento em tempo real
-function processarEmTempoReal() {
-    const textarea = document.getElementById('textoEntrada');
-    const texto = textarea.value;
-
-    if (texto.trim() === '') return;
-
-    // Limpar e usar a área de resultado 
-    const resultado = document.getElementById('resultado');
-    if (!resultado) return;
-
-    // Criar um span temporário para calcular a posição atual do cursor
-    const cursorPos = textarea.selectionStart;
-
-    // Processar o texto e destacar palavras com sinônimos disponíveis
-    processarTextoInterativo(texto, cursorPos);
-}
-
-// Nova função para processar o texto de forma interativa
-function processarTextoInterativo(texto, cursorPos) {
-    // Primeiro, atualizamos o índice de sinônimos para garantir que estamos atuando com dados atualizados
-    atualizarIndiceSinonimos();
-
-    const tokens = quebrarTexto(texto);
-    const resultado = document.getElementById('resultado');
-    resultado.innerHTML = '';
-
-    // Para rastrear qual token contém o cursor
-    let tokenComCursor = null;
-    let cursorPosicionado = 0;
-
-    tokens.forEach((token, index) => {
-        // Verificar se é uma palavra que pode ter sinônimos
-        if (token.tipo === 'palavra') {
-            const texto = token.texto;
-            const palavraLower = texto.toLowerCase();
-            const indiceOriginal = token.indice;
-
-            // Verificar se o cursor está dentro deste token
-            if (cursorPos >= token.indice && cursorPos <= token.indice + texto.length) {
-                tokenComCursor = token;
-                cursorPosicionado = cursorPos - token.indice;
-            }
-
-            // Criar o span para a palavra
-            const spanPalavra = document.createElement('span');
-
-            // Verificar se esta palavra tem sinônimos disponíveis
-            const temSinonimos = bancoDeSinonimos[palavraLower] || indiceSinonimos[palavraLower];
-
-            if (temSinonimos) {
-                spanPalavra.classList.add('palavra-com-sinonimos');
-
-                // Adicionar tooltip
-                spanPalavra.title = 'Clique para ver sinônimos';
-
-                // Adicionar evento para mostrar dropdown
-                spanPalavra.addEventListener('click', function (e) {
-                    mostrarDropdownSinonimos(this, palavraLower, e);
-                });
-            }
-
-            // Verificar se já existe uma substituição para esta palavra
-            const indexTexto = indiceOriginal.toString();
-            if (substituicoes[indexTexto] && substituicoes[indexTexto].original === texto) {
-                spanPalavra.textContent = substituicoes[indexTexto].substituido;
-                spanPalavra.classList.add('palavra-original');
-            } else {
-                spanPalavra.textContent = texto;
-            }
-
-            spanPalavra.className += ' palavra';
-            if (token.composta) {
-                spanPalavra.classList.add('palavra-composta');
-            }
-            spanPalavra.dataset.original = texto;
-            spanPalavra.dataset.index = indiceOriginal;
-
-            resultado.appendChild(spanPalavra);
-        } else {
-            // Se for espaço ou pontuação, apenas adicionar ao resultado
-            const spanSeparador = document.createElement('span');
-            spanSeparador.textContent = token.texto;
-            resultado.appendChild(spanSeparador);
-        }
-    });
-
-    // Adicionar estilos para palavras com sinônimos disponíveis
-    const style = document.createElement('style');
-    if (!document.getElementById('estilos-interativos')) {
-        style.id = 'estilos-interativos';
-        style.textContent = `
-            .palavra-com-sinonimos {
-                border-bottom: 1px dashed #0066cc;
-                cursor: pointer;
-                position: relative;
-            }
-            .palavra-com-sinonimos:hover {
-                background-color: #f0f7ff;
-            }
-            .dropdown-sinonimos {
-                position: absolute;
-                background-color: white;
-                border: 1px solid #ccc;
-                border-radius: 4px;
-                box-shadow: 0 2px 5px rgba(0,0,0,0.2);
-                z-index: 1000;
-                max-height: 200px;
-                overflow-y: auto;
-                width: auto;
-                min-width: 150px;
-            }
-            .dropdown-sinonimos div {
-                padding: 8px 12px;
-                cursor: pointer;
-            }
-            .dropdown-sinonimos div:hover {
-                background-color: #f0f7ff;
-            }
-            .dropdown-titulo {
-                font-weight: bold;
-                background-color: #f0f0f0;
-                border-bottom: 1px solid #ccc;
-            }
-        `;
-        document.head.appendChild(style);
-    }
-}
-
 // Função para mostrar dropdown com sinônimos
 function mostrarDropdownSinonimos(elemento, palavra, evento) {
     // Remover qualquer dropdown existente
@@ -4890,7 +5740,6 @@ function mostrarDropdownSinonimos(elemento, palavra, evento) {
     // Prevenir propagação para evitar que o dropdown feche imediatamente
     evento.stopPropagation();
 }
-
 // Função para substituir a palavra pelo sinônimo selecionado
 function substituirPalavra(elemento, novoTexto) {
     const indice = elemento.dataset.index;
@@ -4912,7 +5761,189 @@ function substituirPalavra(elemento, novoTexto) {
     // Atualizar o texto no textarea
     atualizarTextoEntrada();
 }
+// Função para mostrar todos os sinônimos em uma interface de gerenciamento
+function atualizarListaSinonimos() {
+    const listaSinonimos = document.getElementById('listaSinonimos');
+    if (!listaSinonimos) return;
 
+    listaSinonimos.innerHTML = '';
+
+    // Ordenar as palavras alfabeticamente
+    const palavrasOrdenadas = Object.keys(bancoDeSinonimos).sort();
+
+    palavrasOrdenadas.forEach(palavra => {
+        const sinonimosTexto = bancoDeSinonimos[palavra].join(', ');
+
+        const divPalavra = document.createElement('div');
+        divPalavra.classList.add('item-sinonimo');
+        divPalavra.innerHTML = `
+            <div class="palavra-principal">${palavra}</div>
+            <div class="sinonimos-lista">${sinonimosTexto}</div>
+            <div class="acoes">
+                <button class="editar-btn" data-palavra="${palavra}">Editar</button>
+                <button class="excluir-btn" data-palavra="${palavra}">Excluir</button>
+            </div>
+        `;
+
+        listaSinonimos.appendChild(divPalavra);
+    });
+
+    // Adicionar eventos aos botões
+    document.querySelectorAll('.editar-btn').forEach(btn => {
+        btn.addEventListener('click', function () {
+            const palavra = this.dataset.palavra;
+            iniciarEdicao(palavra);
+        });
+    });
+
+    document.querySelectorAll('.excluir-btn').forEach(btn => {
+        btn.addEventListener('click', function () {
+            const palavra = this.dataset.palavra;
+            if (excluirSinonimo(palavra)) {
+                atualizarListaSinonimos();
+            }
+        });
+    });
+}
+// Função para iniciar a edição de uma palavra
+function iniciarEdicao(palavra) {
+    const formEditar = document.getElementById('formSinonimos');
+    const inputPalavra = document.getElementById('novaPalavra');
+    const inputSinonimos = document.getElementById('novosSinonimos');
+    const palavraAntigaInput = document.getElementById('palavraAntiga');
+
+    if (!formEditar || !inputPalavra || !inputSinonimos) return;
+
+    inputPalavra.value = palavra;
+    inputSinonimos.value = bancoDeSinonimos[palavra].join(', ');
+
+    if (palavraAntigaInput) {
+        palavraAntigaInput.value = palavra;
+    } else {
+        const hiddenInput = document.createElement('input');
+        hiddenInput.type = 'hidden';
+        hiddenInput.id = 'palavraAntiga';
+        hiddenInput.value = palavra;
+        formEditar.appendChild(hiddenInput);
+    }
+
+    // Rolar até o formulário
+    formEditar.scrollIntoView({ behavior: 'smooth' });
+}
+// Função para criar e gerenciar o modal
+function abrirModal(modo, palavra = '') {
+    // Criar o modal se ainda não existir
+    let modal = document.getElementById('sinonimosModal');
+    if (!modal) {
+        modal = document.createElement('div');
+        modal.id = 'sinonimosModal';
+        modal.className = 'modal';
+        modal.innerHTML = `
+            <div class="modal-conteudo">
+                <span class="fechar-modal">&times;</span>
+                <h3 id="modalTitulo">Adicionar Sinônimo</h3>
+                <form id="modalForm" class="form-sinonimos">
+                    <div class="campo">
+                        <label for="modalPalavra">Palavra:</label>
+                        <input type="text" id="modalPalavra" placeholder="Digite uma palavra" required>
+                    </div>
+                    <div class="campo">
+                        <label for="modalSinonimos">Sinônimos (separados por vírgula):</label>
+                        <textarea id="modalSinonimos" placeholder="Digite os sinônimos separados por vírgula" required></textarea>
+                    </div>
+                    <input type="hidden" id="modalPalavraAntiga" value="">
+                    <div class="acoes">
+                        <button type="button" id="modalBtnSalvar">Salvar</button>
+                        <button type="button" id="modalBtnCancelar">Cancelar</button>
+                    </div>
+                </form>
+            </div>
+        `;
+        document.body.appendChild(modal);
+
+        // Adicionar eventos ao modal
+        document.querySelector('.fechar-modal').addEventListener('click', function () {
+            modal.style.display = 'none';
+        });
+
+        document.getElementById('modalBtnCancelar').addEventListener('click', function () {
+            modal.style.display = 'none';
+        });
+
+        document.getElementById('modalBtnSalvar').addEventListener('click', function () {
+            const novaPalavra = document.getElementById('modalPalavra').value;
+            const novosSinonimos = document.getElementById('modalSinonimos').value;
+            const palavraAntiga = document.getElementById('modalPalavraAntiga').value;
+
+            let sucesso = false;
+
+            if (palavraAntiga) {
+                // Modo de edição
+                sucesso = editarSinonimo(palavraAntiga, novaPalavra, novosSinonimos);
+            } else {
+                // Modo de adição
+                sucesso = adicionarSinonimo(novaPalavra, novosSinonimos);
+            }
+
+            if (sucesso) {
+                modal.style.display = 'none';
+                // Atualizar a pesquisa após salvar
+                pesquisarSinonimos(document.getElementById('termoPesquisa').value);
+            }
+        });
+
+        // Fechar o modal se clicar fora dele
+        window.addEventListener('click', function (event) {
+            if (event.target == modal) {
+                modal.style.display = 'none';
+            }
+        });
+    }
+
+    // Configurar o modal de acordo com o modo
+    if (modo === 'editar') {
+        document.getElementById('modalTitulo').textContent = 'Editar Sinônimo';
+        document.getElementById('modalPalavra').value = palavra;
+        document.getElementById('modalSinonimos').value = bancoDeSinonimos[palavra].join(', ');
+        document.getElementById('modalPalavraAntiga').value = palavra;
+    } else {
+        document.getElementById('modalTitulo').textContent = 'Adicionar Sinônimo';
+        document.getElementById('modalPalavra').value = document.getElementById('termoPesquisa').value || '';
+        document.getElementById('modalSinonimos').value = '';
+        document.getElementById('modalPalavraAntiga').value = '';
+    }
+
+    // Exibir o modal
+    modal.style.display = 'block';
+}
+// Função para adicionar eventos aos botões nos resultados da pesquisa
+function adicionarEventosBotoes() {
+    // Adicionar evento ao botão Novo Sinônimo
+    document.getElementById('btnNovoSinonimo').addEventListener('click', function () {
+        abrirModal('novo');
+    });
+
+    // Adicionar eventos aos botões de editar
+    document.querySelectorAll('.editar-btn').forEach(btn => {
+        btn.addEventListener('click', function () {
+            const palavra = this.dataset.palavra;
+            abrirModal('editar', palavra);
+        });
+    });
+
+    // Adicionar eventos aos botões de excluir
+    document.querySelectorAll('.excluir-btn').forEach(btn => {
+        btn.addEventListener('click', function () {
+            const palavra = this.dataset.palavra;
+            if (excluirSinonimo(palavra)) {
+                // Atualizar a pesquisa após excluir
+                pesquisarSinonimos(document.getElementById('termoPesquisa').value);
+            }
+        });
+    });
+}
+
+//5. Funções de atualização e manipulação de texto
 // Função para atualizar o texto no textarea com as substituições feitas
 function atualizarTextoEntrada() {
     const resultado = document.getElementById('resultado');
@@ -4944,6 +5975,129 @@ function copiarResultado() {
         console.error('Erro ao copiar texto: ', err);
     });
 }
+
+//6. Funções de importação e exportação
+// Funções para importar e exportar o dicionário de sinônimos
+function exportarSinonimos() {
+    // Converter o banco de sinônimos para JSON e fazer download
+    const dataStr = "data:text/json;charset=utf-8," + encodeURIComponent(JSON.stringify(bancoDeSinonimos));
+    const downloadAnchorNode = document.createElement('a');
+    downloadAnchorNode.setAttribute("href", dataStr);
+    downloadAnchorNode.setAttribute("download", "sinonimos.json");
+    document.body.appendChild(downloadAnchorNode);
+    downloadAnchorNode.click();
+    downloadAnchorNode.remove();
+}
+function importarSinonimos(evento) {
+    const arquivo = evento.target.files[0];
+    if (arquivo) {
+        const leitor = new FileReader();
+        leitor.onload = function (e) {
+            try {
+                const sinonimosImportados = JSON.parse(e.target.result);
+                // Substituir ou mesclar com o banco existente
+                Object.assign(bancoDeSinonimos, sinonimosImportados);
+                alert('Sinônimos importados com sucesso!');
+                // Limpar o input de arquivo
+                document.getElementById('importarArquivo').value = '';
+                // Atualizar qualquer interface que mostre os sinônimos
+                atualizarListaSinonimos();
+            } catch (erro) {
+                alert('Erro ao importar sinônimos: ' + erro.message);
+            }
+        };
+        leitor.readAsText(arquivo);
+    }
+}
+
+//7. Funções para reconhecimento de voz
+function iniciarReconhecimentoVoz() {
+    // Verificar se o navegador suporta reconhecimento de voz
+    if (!('webkitSpeechRecognition' in window) && !('SpeechRecognition' in window)) {
+        alert('Seu navegador não suporta reconhecimento de voz. Tente usar Chrome ou Edge.');
+        return;
+    }
+
+    // Criar instância do reconhecimento de voz
+    const SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
+    const recognition = new SpeechRecognition();
+
+    // Configurar o reconhecimento
+    recognition.lang = 'pt-BR'; // Configurar para português brasileiro
+    recognition.continuous = false;
+    recognition.interimResults = false; // Mudado para false para evitar resultados parciais
+
+    const textoEntrada = document.getElementById('textoEntrada');
+    const botaoMic = document.getElementById('botaoMic');
+
+    // Variável para armazenar a posição atual do cursor
+    let cursorPos = textoEntrada.selectionStart || textoEntrada.value.length;
+
+    // Salvar a posição do cursor antes de iniciar o reconhecimento
+    textoEntrada.addEventListener('click', () => {
+        cursorPos = textoEntrada.selectionStart;
+    });
+
+    // Evento ao iniciar o reconhecimento
+    recognition.onstart = () => {
+        botaoMic.classList.add('ativo');
+        botaoMic.innerHTML = '<i class="mic-icon-ativo"></i>'; // ícone de microfone ativo
+    };
+
+    // Evento para resultados finais apenas
+    recognition.onresult = (event) => {
+        // Pegar apenas o último resultado (resultado final)
+        const transcript = event.results[0][0].transcript;
+
+        // Inserir o texto na posição do cursor
+        const valorAntes = textoEntrada.value.substring(0, cursorPos);
+        const valorDepois = textoEntrada.value.substring(cursorPos);
+
+        textoEntrada.value = valorAntes + transcript + valorDepois;
+
+        // Atualizar a posição do cursor
+        cursorPos += transcript.length;
+        textoEntrada.selectionStart = cursorPos;
+        textoEntrada.selectionEnd = cursorPos;
+
+        // Disparar o evento input para processar em tempo real
+        const inputEvent = new Event('input', {
+            bubbles: true,
+            cancelable: true,
+        });
+        textoEntrada.dispatchEvent(inputEvent);
+    };
+
+    // Evento ao finalizar o reconhecimento
+    recognition.onend = () => {
+        botaoMic.classList.remove('ativo');
+        botaoMic.innerHTML = '<i class="mic-icon"></i>'; // ícone de microfone normal
+    };
+
+    // Evento de erro
+    recognition.onerror = (event) => {
+        console.error('Erro no reconhecimento de voz:', event.error);
+        botaoMic.classList.remove('ativo');
+        botaoMic.innerHTML = '<i class="mic-icon"></i>';
+
+        if (event.error === 'not-allowed') {
+            alert('Permissão de microfone negada. Por favor, permita o acesso ao microfone.');
+        }
+    };
+
+    // Iniciar ou parar o reconhecimento ao clicar no botão
+    botaoMic.addEventListener('click', () => {
+        if (botaoMic.classList.contains('ativo')) {
+            recognition.stop();
+        } else {
+            // Salvar a posição atual do cursor
+            cursorPos = textoEntrada.selectionStart || textoEntrada.value.length;
+            recognition.start();
+        }
+    });
+}
+
+//8. Event listeners
 // Adicionar eventos depois que o DOM estiver carregado
 document.addEventListener('DOMContentLoaded', function () {
     // Atualizar o índice invertido para garantir que está funcionando corretamente
@@ -4979,10 +6133,10 @@ document.addEventListener('DOMContentLoaded', function () {
     atualizarIndiceSinonimos();
     // Adicionar evento de input para processamento em tempo real
     document.getElementById('textoEntrada').addEventListener('input', processarEmTempoReal);
-
+    
     // Adicionar evento ao botão copiar
     document.getElementById('copiar').addEventListener('click', copiarResultado);
-
+    
     // Manter o evento no botão processar (opcional, já que agora é em tempo real)
     document.getElementById('textoEntrada').addEventListener('input', processarEmTempoReal);
     document.getElementById('copiar').addEventListener('click', copiarResultado);
@@ -5082,203 +6236,3 @@ document.addEventListener('DOMContentLoaded', function () {
     iniciarReconhecimentoVoz();
 
 });
-
-// Função para adicionar eventos aos botões nos resultados da pesquisa
-function adicionarEventosBotoes() {
-    // Adicionar evento ao botão Novo Sinônimo
-    document.getElementById('btnNovoSinonimo').addEventListener('click', function () {
-        abrirModal('novo');
-    });
-
-    // Adicionar eventos aos botões de editar
-    document.querySelectorAll('.editar-btn').forEach(btn => {
-        btn.addEventListener('click', function () {
-            const palavra = this.dataset.palavra;
-            abrirModal('editar', palavra);
-        });
-    });
-
-    // Adicionar eventos aos botões de excluir
-    document.querySelectorAll('.excluir-btn').forEach(btn => {
-        btn.addEventListener('click', function () {
-            const palavra = this.dataset.palavra;
-            if (excluirSinonimo(palavra)) {
-                // Atualizar a pesquisa após excluir
-                pesquisarSinonimos(document.getElementById('termoPesquisa').value);
-            }
-        });
-    });
-}
-
-// Função para criar e gerenciar o modal
-function abrirModal(modo, palavra = '') {
-    // Criar o modal se ainda não existir
-    let modal = document.getElementById('sinonimosModal');
-    if (!modal) {
-        modal = document.createElement('div');
-        modal.id = 'sinonimosModal';
-        modal.className = 'modal';
-        modal.innerHTML = `
-            <div class="modal-conteudo">
-                <span class="fechar-modal">&times;</span>
-                <h3 id="modalTitulo">Adicionar Sinônimo</h3>
-                <form id="modalForm" class="form-sinonimos">
-                    <div class="campo">
-                        <label for="modalPalavra">Palavra:</label>
-                        <input type="text" id="modalPalavra" placeholder="Digite uma palavra" required>
-                    </div>
-                    <div class="campo">
-                        <label for="modalSinonimos">Sinônimos (separados por vírgula):</label>
-                        <textarea id="modalSinonimos" placeholder="Digite os sinônimos separados por vírgula" required></textarea>
-                    </div>
-                    <input type="hidden" id="modalPalavraAntiga" value="">
-                    <div class="acoes">
-                        <button type="button" id="modalBtnSalvar">Salvar</button>
-                        <button type="button" id="modalBtnCancelar">Cancelar</button>
-                    </div>
-                </form>
-            </div>
-        `;
-        document.body.appendChild(modal);
-
-        // Adicionar eventos ao modal
-        document.querySelector('.fechar-modal').addEventListener('click', function () {
-            modal.style.display = 'none';
-        });
-
-        document.getElementById('modalBtnCancelar').addEventListener('click', function () {
-            modal.style.display = 'none';
-        });
-
-        document.getElementById('modalBtnSalvar').addEventListener('click', function () {
-            const novaPalavra = document.getElementById('modalPalavra').value;
-            const novosSinonimos = document.getElementById('modalSinonimos').value;
-            const palavraAntiga = document.getElementById('modalPalavraAntiga').value;
-
-            let sucesso = false;
-
-            if (palavraAntiga) {
-                // Modo de edição
-                sucesso = editarSinonimo(palavraAntiga, novaPalavra, novosSinonimos);
-            } else {
-                // Modo de adição
-                sucesso = adicionarSinonimo(novaPalavra, novosSinonimos);
-            }
-
-            if (sucesso) {
-                modal.style.display = 'none';
-                // Atualizar a pesquisa após salvar
-                pesquisarSinonimos(document.getElementById('termoPesquisa').value);
-            }
-        });
-
-        // Fechar o modal se clicar fora dele
-        window.addEventListener('click', function (event) {
-            if (event.target == modal) {
-                modal.style.display = 'none';
-            }
-        });
-    }
-
-    // Configurar o modal de acordo com o modo
-    if (modo === 'editar') {
-        document.getElementById('modalTitulo').textContent = 'Editar Sinônimo';
-        document.getElementById('modalPalavra').value = palavra;
-        document.getElementById('modalSinonimos').value = bancoDeSinonimos[palavra].join(', ');
-        document.getElementById('modalPalavraAntiga').value = palavra;
-    } else {
-        document.getElementById('modalTitulo').textContent = 'Adicionar Sinônimo';
-        document.getElementById('modalPalavra').value = document.getElementById('termoPesquisa').value || '';
-        document.getElementById('modalSinonimos').value = '';
-        document.getElementById('modalPalavraAntiga').value = '';
-    }
-
-    // Exibir o modal
-    modal.style.display = 'block';
-}
-// Função para controlar o reconhecimento de voz
-function iniciarReconhecimentoVoz() {
-    // Verificar se o navegador suporta reconhecimento de voz
-    if (!('webkitSpeechRecognition' in window) && !('SpeechRecognition' in window)) {
-        alert('Seu navegador não suporta reconhecimento de voz. Tente usar Chrome ou Edge.');
-        return;
-    }
-
-    // Criar instância do reconhecimento de voz
-    const SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
-    const recognition = new SpeechRecognition();
-
-    // Configurar o reconhecimento
-    recognition.lang = 'pt-BR'; // Configurar para português brasileiro
-    recognition.continuous = false;
-    recognition.interimResults = false; // Mudado para false para evitar resultados parciais
-
-    const textoEntrada = document.getElementById('textoEntrada');
-    const botaoMic = document.getElementById('botaoMic');
-
-    // Variável para armazenar a posição atual do cursor
-    let cursorPos = textoEntrada.selectionStart || textoEntrada.value.length;
-
-    // Salvar a posição do cursor antes de iniciar o reconhecimento
-    textoEntrada.addEventListener('click', () => {
-        cursorPos = textoEntrada.selectionStart;
-    });
-
-    // Evento ao iniciar o reconhecimento
-    recognition.onstart = () => {
-        botaoMic.classList.add('ativo');
-        botaoMic.innerHTML = '<i class="mic-icon-ativo"></i>'; // ícone de microfone ativo
-    };
-
-    // Evento para resultados finais apenas
-    recognition.onresult = (event) => {
-        // Pegar apenas o último resultado (resultado final)
-        const transcript = event.results[0][0].transcript;
-
-        // Inserir o texto na posição do cursor
-        const valorAntes = textoEntrada.value.substring(0, cursorPos);
-        const valorDepois = textoEntrada.value.substring(cursorPos);
-
-        textoEntrada.value = valorAntes + transcript + valorDepois;
-
-        // Atualizar a posição do cursor
-        cursorPos += transcript.length;
-        textoEntrada.selectionStart = cursorPos;
-        textoEntrada.selectionEnd = cursorPos;
-
-        // Disparar o evento input para processar em tempo real
-        const inputEvent = new Event('input', {
-            bubbles: true,
-            cancelable: true,
-        });
-        textoEntrada.dispatchEvent(inputEvent);
-    };
-
-    // Evento ao finalizar o reconhecimento
-    recognition.onend = () => {
-        botaoMic.classList.remove('ativo');
-        botaoMic.innerHTML = '<i class="mic-icon"></i>'; // ícone de microfone normal
-    };
-
-    // Evento de erro
-    recognition.onerror = (event) => {
-        console.error('Erro no reconhecimento de voz:', event.error);
-        botaoMic.classList.remove('ativo');
-        botaoMic.innerHTML = '<i class="mic-icon"></i>';
-
-        if (event.error === 'not-allowed') {
-            alert('Permissão de microfone negada. Por favor, permita o acesso ao microfone.');
-        }
-    };
-
-    // Iniciar ou parar o reconhecimento ao clicar no botão
-    botaoMic.addEventListener('click', () => {
-        if (botaoMic.classList.contains('ativo')) {
-            recognition.stop();
-        } else {
-            // Salvar a posição atual do cursor
-            cursorPos = textoEntrada.selectionStart || textoEntrada.value.length;
-            recognition.start();
-        }
-    });
-}
